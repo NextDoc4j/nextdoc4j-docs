@@ -1,0 +1,688 @@
+/**
+ * 绿色主题自定义变量
+ * ---------------------------------------------------------------- */
+:root {
+    --vp-c-brand-1: #22c55e;
+    --vp-c-brand-2: #16a34a;
+    --vp-c-brand-3: #15803d;
+    --vp-c-brand-soft: rgba(34, 197, 94, 0.14);
+    --vp-c-green-1: #22c55e;
+    --vp-c-green-2: #16a34a;
+    --vp-c-green-3: #15803d;
+    --vp-c-green-soft: rgba(34, 197, 94, 0.1);
+}
+
+/* 暗色主题变量 */
+.dark {
+    --vp-c-brand-1: #4ade80;
+    --vp-c-brand-2: #22c55e;
+    --vp-c-brand-3: #16a34a;
+    --vp-c-brand-soft: rgba(74, 222, 128, 0.14);
+    --vp-c-green-1: #4ade80;
+    --vp-c-green-2: #22c55e;
+    --vp-c-green-3: #16a34a;
+    --vp-c-green-soft: rgba(74, 222, 128, 0.1);
+}
+
+/**
+ * 组件：自定义块
+ * ---------------------------------------------------------------- */
+:root {
+    --vp-custom-block-tip-border: transparent;
+    --vp-custom-block-tip-text: var(--vp-c-text-1);
+    --vp-custom-block-tip-bg: var(--vp-c-brand-soft);
+    --vp-custom-block-tip-code-bg: var(--vp-c-brand-soft);
+}
+
+/**
+ * 组件：算法
+ * ---------------------------------------------------------------- */
+.vp-doc [class*='language-'] .line {
+    line-height: 1.7;
+}
+
+/**
+ *  Hero 区域样式
+ * ---------------------------------------------------------------- */
+.VPHero {
+    padding-top: 88px;
+    padding-bottom: 88px;
+    background: linear-gradient(135deg,
+    rgba(34, 197, 94, 0.05) 0%,
+    rgba(22, 163, 74, 0.08) 50%,
+    rgba(21, 128, 61, 0.05) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.VPHero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 30% 20%,
+    rgba(34, 197, 94, 0.1) 0%,
+    transparent 50%),
+    radial-gradient(circle at 70% 80%,
+            rgba(22, 163, 74, 0.08) 0%,
+            transparent 50%);
+    pointer-events: none;
+}
+
+.VPHero .container {
+    position: relative;
+    z-index: 1;
+}
+
+.VPHero .main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 3rem;
+}
+
+.VPHero .name {
+    font-size: 4rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--vp-c-green-1), var(--vp-c-green-3));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: none;
+    margin-bottom: 0.5rem;
+    line-height: 1.1;
+}
+
+.VPHero .text {
+    max-width: none;
+    font-size: 2.0rem;
+    font-weight: 600;
+    color: var(--vp-c-text-1);
+    margin-bottom: 1.5rem;
+    line-height: 1.3;
+}
+
+.VPHero .tagline {
+    max-width: 600px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--vp-c-text-2);
+    margin-bottom: 2.5rem;
+}
+
+.VPHero .action {
+    padding: 10px 24px;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 16px;
+    transition: all 0.2s ease;
+    text-decoration: none;
+}
+
+.VPHero .action.brand {
+    background: var(--vp-c-green-1);
+    color: white;
+}
+
+.VPHero .action.brand:hover {
+    background: var(--vp-c-green-2);
+}
+
+.VPHero .action.alt {
+    background: var(--vp-c-bg-soft);
+    color: var(--vp-c-text-1);
+    border: 1px solid var(--vp-c-divider);
+}
+
+.VPHero .action.alt:hover {
+    border-color: var(--vp-c-green-1);
+}
+
+/* Logo 区域现代化处理 */
+.VPHero .image {
+    opacity: 1;
+    transform: scale(1);
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 8px 24px rgba(34, 197, 94, 0.2));
+}
+
+.VPHero .image:hover {
+    transform: scale(1.05) rotate(2deg);
+    filter: drop-shadow(0 12px 32px rgba(34, 197, 94, 0.3));
+}
+
+.VPHero .image img {
+    border-radius: 24px;
+    background: linear-gradient(135deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.05));
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 1.5rem;
+}
+
+/**
+ * 增强的功能特性样式
+ * ---------------------------------------------------------------- */
+.VPFeatures {
+    position: relative;
+    padding: 88px 24px;
+    background: var(--vp-c-bg-alt);
+}
+
+.VPFeatures::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg,
+    transparent,
+    var(--vp-c-green-soft),
+    transparent);
+}
+
+.VPFeatures .container {
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.VPFeatures .items {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -16px;
+    justify-content: center;
+}
+
+.VPFeatures .item {
+    flex: 1 1 calc(25% - 32px);
+    min-width: 260px;
+    max-width: 320px;
+    padding: 16px;
+}
+
+.VPFeatures .item .box {
+    background: var(--vp-c-bg);
+    border: 1px solid var(--vp-c-divider-light);
+    border-radius: 20px;
+    padding: 2rem;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.VPFeatures .item .box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+    transparent,
+    rgba(34, 197, 94, 0.1),
+    transparent);
+    transition: left 0.6s ease;
+}
+
+.VPFeatures .item:hover .box::before {
+    left: 100%;
+}
+
+.VPFeatures .item:hover .box {
+    transform: translateY(-12px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+    border-color: var(--vp-c-green-1);
+}
+
+.VPFeatures .item .icon {
+    font-size: 3rem !important;
+    margin-bottom: 1.5rem;
+    display: block;
+    transition: all 0.3s ease;
+    width: auto !important;
+    height: auto !important;
+}
+
+.VPFeatures .item:hover .icon {
+    transform: scale(1.2) rotate(10deg);
+    filter: drop-shadow(0 4px 8px rgba(34, 197, 94, 0.3));
+}
+
+.VPFeatures .item .title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--vp-c-text-1);
+    transition: color 0.3s ease;
+    line-height: 1.3;
+}
+
+.VPFeatures .item:hover .title {
+    color: var(--vp-c-green-1);
+}
+
+.VPFeatures .item .details {
+    color: var(--vp-c-text-2);
+    line-height: 1.7;
+    font-size: 1rem;
+    flex: 1;
+}
+
+/* 为每个特性卡片添加不同的绿色强调 */
+.VPFeatures .item:nth-child(1):hover .box {
+    border-color: #22c55e;
+    box-shadow: 0 20px 40px rgba(34, 197, 94, 0.2);
+}
+
+.VPFeatures .item:nth-child(2):hover .box {
+    border-color: #16a34a;
+    box-shadow: 0 20px 40px rgba(22, 163, 74, 0.2);
+}
+
+.VPFeatures .item:nth-child(3):hover .box {
+    border-color: #15803d;
+    box-shadow: 0 20px 40px rgba(21, 128, 61, 0.2);
+}
+
+.VPFeatures .item:nth-child(4):hover .box {
+    border-color: #166534;
+    box-shadow: 0 20px 40px rgba(22, 101, 52, 0.2);
+}
+
+/* 响应式调整 */
+@media (min-width: 640px) {
+    .VPFeatures {
+        padding: 88px 48px;
+    }
+}
+
+@media (min-width: 960px) {
+    .VPFeatures {
+        padding: 88px 64px;
+    }
+
+    .VPFeatures .item {
+        flex: none;
+        width: calc(100% / 4);
+        min-width: 260px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .VPFeatures .item {
+        width: calc(100% / 4);
+        min-width: 280px;
+    }
+}
+
+/* 当屏幕不够宽时，回退到两列 */
+@media (max-width: 1199px) and (min-width: 960px) {
+    .VPFeatures .item {
+        width: calc(100% / 2);
+        min-width: 280px;
+    }
+}
+
+@media (max-width: 768px) {
+    .VPHero .name {
+        font-size: 2.5rem;
+    }
+
+    .VPHero .text {
+        font-size: 1.4rem;
+    }
+
+    .VPHero .main {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/**
+ * 核心优势网格样式 - 绿色主题
+ * ---------------------------------------------------------------- */
+.advantages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.advantage-item {
+    background: linear-gradient(135deg,
+    rgba(34, 197, 94, 0.05),
+    rgba(22, 163, 74, 0.03));
+    border: 2px solid var(--vp-c-divider-light);
+    border-radius: 16px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+}
+
+.advantage-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--vp-c-green-1), var(--vp-c-green-2));
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+    border-radius: 2px;
+}
+
+.advantage-item:hover::before {
+    transform: scaleX(1);
+}
+
+.advantage-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 32px rgba(34, 197, 94, 0.15);
+    border-color: var(--vp-c-green-1);
+    background: linear-gradient(135deg,
+    rgba(34, 197, 94, 0.08),
+    rgba(22, 163, 74, 0.05));
+}
+
+.advantage-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 2px 4px rgba(34, 197, 94, 0.2));
+}
+
+.advantage-item:hover .advantage-icon {
+    transform: scale(1.15) rotate(5deg);
+    filter: drop-shadow(0 4px 8px rgba(34, 197, 94, 0.4));
+}
+
+.advantage-item h4 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    color: var(--vp-c-text-1);
+    transition: color 0.3s ease;
+}
+
+.advantage-item:hover h4 {
+    color: var(--vp-c-green-1);
+}
+
+.advantage-item p {
+    color: var(--vp-c-text-2);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/**
+ * 验证效果网格样式 - 绿色主题
+ * ---------------------------------------------------------------- */
+.verification-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin: 3rem 0;
+}
+
+.verification-item {
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg,
+    rgba(34, 197, 94, 0.03),
+    rgba(22, 163, 74, 0.02));
+    border: 2px solid var(--vp-c-divider-light);
+    border-radius: 12px;
+    padding: 1.5rem 2rem;
+    transition: all 0.3s ease;
+}
+
+.verification-item:hover {
+    background: linear-gradient(135deg,
+    rgba(34, 197, 94, 0.08),
+    rgba(22, 163, 74, 0.05));
+    border-color: var(--vp-c-green-1);
+    transform: translateX(6px);
+    box-shadow: 0 8px 24px rgba(34, 197, 94, 0.12);
+}
+
+.verification-emoji {
+    font-size: 2rem;
+    margin-right: 1rem;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.verification-item:hover .verification-emoji {
+    transform: scale(1.1);
+}
+
+.verification-item strong {
+    color: var(--vp-c-green-1);
+    margin-right: 0.5rem;
+    font-weight: 700;
+}
+
+/**
+ * 下一步卡片样式 - 绿色主题
+ * ---------------------------------------------------------------- */
+.next-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.next-step-card {
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg,
+    rgba(34, 197, 94, 0.05),
+    rgba(22, 163, 74, 0.03));
+    border: 2px solid var(--vp-c-divider-light);
+    border-radius: 16px;
+    padding: 2rem;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+}
+
+.next-step-card::after {
+    content: '→';
+    position: absolute;
+    right: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%) translateX(15px);
+    font-size: 1.5rem;
+    color: var(--vp-c-green-1);
+    opacity: 0;
+    transition: all 0.3s ease;
+    font-weight: 700;
+}
+
+.next-step-card:hover {
+    border-color: var(--vp-c-green-1);
+    transform: translateY(-4px);
+    box-shadow: 0 16px 32px rgba(34, 197, 94, 0.15);
+    background: linear-gradient(135deg,
+    rgba(34, 197, 94, 0.08),
+    rgba(22, 163, 74, 0.05));
+}
+
+.next-step-card:hover::after {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
+}
+
+.next-step-icon {
+    font-size: 2.5rem;
+    margin-right: 1.5rem;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 2px 4px rgba(34, 197, 94, 0.2));
+}
+
+.next-step-card:hover .next-step-icon {
+    transform: scale(1.15);
+    filter: drop-shadow(0 4px 8px rgba(34, 197, 94, 0.4));
+}
+
+.next-step-content h4 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--vp-c-text-1);
+    transition: color 0.3s ease;
+}
+
+.next-step-card:hover .next-step-content h4 {
+    color: var(--vp-c-green-1);
+}
+
+.next-step-content p {
+    color: var(--vp-c-text-2);
+    font-size: 0.95rem;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/**
+ * 代码组自定义样式 - 绿色主题
+ * ---------------------------------------------------------------- */
+.vp-code-group .tabs {
+    border-radius: 12px 12px 0 0;
+}
+
+.vp-code-group .tabs .tab {
+    border-radius: 8px 8px 0 0;
+}
+
+.vp-code-group .tabs .tab.active {
+    background: var(--vp-c-green-soft);
+    color: var(--vp-c-green-1);
+}
+
+/**
+ * 响应式优化
+ * ---------------------------------------------------------------- */
+@media (max-width: 768px) {
+    .VPNavBar .title {
+        font-size: 18px;
+    }
+
+    .VPSidebar {
+        width: 280px;
+    }
+
+    .VPFeatures .items {
+        margin: -12px;
+    }
+
+    .VPFeatures .item {
+        min-width: 280px;
+        padding: 12px;
+    }
+
+    .advantages-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .verification-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .next-steps {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .next-step-card {
+        padding: 1.5rem;
+    }
+}
+
+/**
+ * 搜索框优化 - 绿色主题
+ * ---------------------------------------------------------------- */
+.VPNavBarSearch .DocSearch-Button {
+    border-radius: 8px;
+    background-color: var(--vp-c-bg-soft);
+    border: 1px solid var(--vp-c-divider);
+}
+
+.VPNavBarSearch .DocSearch-Button:hover {
+    background-color: var(--vp-c-green-soft);
+    border-color: var(--vp-c-green-1);
+}
+
+/**
+ * 链接样式优化 - 绿色主题
+ * ---------------------------------------------------------------- */
+.vp-doc a {
+    color: var(--vp-c-green-1);
+    text-decoration: none;
+    transition: color 0.2s;
+    font-weight: 500;
+}
+
+.vp-doc a:hover {
+    color: var(--vp-c-green-2);
+    text-decoration: underline;
+}
+
+/**
+ * 表格样式优化
+ * ---------------------------------------------------------------- */
+.vp-doc table {
+    font-size: 14px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.vp-doc th,
+.vp-doc td {
+    padding: 12px 16px;
+}
+
+.vp-doc th {
+    font-weight: 700;
+    background: linear-gradient(135deg,
+    rgba(34, 197, 94, 0.05),
+    rgba(22, 163, 74, 0.03));
+    color: var(--vp-c-green-1);
+}
+
+/**
+ * 自定义容器样式 - 绿色主题
+ * ---------------------------------------------------------------- */
+.custom-container {
+    border-radius: 8px;
+}
+
+.custom-container.tip {
+    border-color: var(--vp-c-green-1);
+    background: var(--vp-c-green-soft);
+}
+
+.custom-container.warning {
+    border-color: #f59e0b;
+}
+
+.custom-container.danger {
+    border-color: #ef4444;
+}
