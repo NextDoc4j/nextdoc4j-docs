@@ -110,6 +110,7 @@ http://localhost:端口/doc.html
 ::: tip 💡 提示
 - 默认端口通常是 `8080`
 - 完整地址示例：`http://localhost:8080/doc.html`
+- 启用全局鉴权的项目需要配置路径白名单：/doc.html 和 /nextdoc/**
   :::
 
 ### 主界面预览
