@@ -12,14 +12,17 @@
   },
   "scripts": {
     "docs:dev": "vitepress dev",
-    "docs:build": "vitepress build",
+    "docs:build": "pnpm run team:update && vitepress build",
     "docs:preview": "vitepress preview",
-    "team:update": "tsx update-team.ts",
-    "team:force-update": "tsx update-team.ts --force",
-    "team:check": "tsx -e \"import('./update-team.js').then(m => new m.default().needsUpdate().then(needs => console.log('需要更新:', needs)))\"",
-    "team:status": "tsx update-team.ts --status",
-    "team:cron": "node -e \"setInterval(() => import('./update-team.js').then(m => new m.default().updateTeamMembers()), 24*60*60*1000)\"",
+
+    "team:update": "tsx more/team/build-team-cache.ts",
+    "team:force-update": "tsx more/team/build-team-cache.ts --force",
+    "team:status": "tsx more/team/build-team-cache.ts --status",
+
     "prebuild": "npm run team:update",
+    "build": "npm run docs:build",
+    "preview": "npm run docs:preview",
+
     "type-check": "tsc --noEmit",
     "build:ts": "tsc"
   },

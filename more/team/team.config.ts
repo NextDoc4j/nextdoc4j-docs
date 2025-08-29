@@ -42,31 +42,11 @@ interface SponsorConfig {
     }>
 }
 
-interface ApiRequestConfig {
-    requestDelay: number
-    timeout: number
-    userAgent: string
-}
-
-interface AutoUpdateConfig {
-    enabled: boolean
-    interval: number
-    scheduledTime?: string
-    retryCount: number
-    retryInterval: number
-}
-
-interface CacheConfig {
-    duration: number
-    autoUpdate: AutoUpdateConfig
-    api: ApiRequestConfig
-}
 
 interface TeamConfiguration {
     teams: Team[]
     project: ProjectConfig
     sponsor: SponsorConfig
-    cache: CacheConfig
 }
 
 // 配置导出
@@ -112,40 +92,6 @@ const teamConfig: TeamConfiguration = {
             alipay: '/images/paymentcode/alipay-qr.jpg',
             wechat: '/images/paymentcode/wechat-qr.jpg'
         }
-    },
-
-    // 缓存配置
-    cache: {
-        // 缓存持续时间（毫秒）
-        duration: 30 * 24 * 60 * 60 * 1000, // 30天
-
-        // 自动更新配置
-        autoUpdate: {
-            enabled: true,
-            // 更新间隔（毫秒）
-            interval: 24 * 60 * 60 * 1000, // 每24小时检查一次
-
-            // 更新时间配置（可选，格式：HH:MM）
-            scheduledTime: '03:00', // 凌晨3点更新
-
-            // 失败重试次数
-            retryCount: 3,
-
-            // 重试间隔（毫秒）
-            retryInterval: 5 * 60 * 1000 // 5分钟
-        },
-
-        // API请求配置
-        api: {
-            // 请求间隔（避免频率限制）
-            requestDelay: 1000,
-
-            // 超时时间
-            timeout: 10000,
-
-            // User-Agent
-            userAgent: 'NextDoc4j-TeamUpdater/1.0'
-        }
     }
 }
 
@@ -159,6 +105,5 @@ export type {
     ProjectConfig,
     PaymentMethods,
     SponsorConfig,
-    CacheConfig,
     TeamConfiguration
 }

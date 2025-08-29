@@ -144,6 +144,16 @@
       <p>{{ error }}</p>
       <button @click="loadTeamMembers" class="retry-button">重试</button>
     </div>
+
+    <!-- 缓存信息 -->
+    <div v-if="cacheInfo && !loading && !error" class="cache-info">
+      <p class="cache-status">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+        </svg>
+        数据更新于 {{ formatDate(cacheInfo.lastUpdate) }}
+      </p>
+    </div>
   </div>
 </template>
 
@@ -182,7 +192,7 @@ interface TeamConfig {
   project?: ProjectConfig
 }
 
-interface ApiUserData {
+interface TeamMember {
   login: string
   name?: string
   avatar_url: string
@@ -191,27 +201,19 @@ interface ApiUserData {
   location?: string
   blog?: string
   company?: string
-}
-
-interface TeamMember extends ApiUserData {
+  platform: string
+  cached_at: number
   username: string
   role: string
   skills: string[]
   displayName?: string
   social: SocialLinks
-  platform: string
-}
-
-interface CachedMember {
-  [key: string]: ApiUserData & {
-    platform: string
-    cached_at: number
-  }
 }
 
 interface CacheData {
   lastUpdate: number
-  members: CachedMember
+  version: string
+  members: TeamMember[]
 }
 
 // 响应式数据
@@ -219,11 +221,17 @@ const config = ref<TeamConfig>({})
 const teamMembers = ref<TeamMember[]>([])
 const loading = ref<boolean>(false)
 const error = ref<string>('')
+const cacheInfo = ref<{ lastUpdate: number } | null>(null)
 
-// 缓存配置
-const CACHE_CONFIG = {
-  CACHE_DURATION: 7 * 24 * 60 * 60 * 1000, // 7天客户端缓存
-  CACHE_KEY: 'team_members_cache'
+// 格式化日期
+const formatDate = (timestamp: number): string => {
+  return new Date(timestamp).toLocaleString('zh-CN', {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit'
+  })
 }
 
 // 加载配置文件
@@ -232,6 +240,7 @@ const loadConfig = async (): Promise<void> => {
     const configModule = await import('/more/team/team.config.ts')
     config.value = configModule.default || configModule
   } catch (error) {
+    console.warn('加载配置失败，使用默认配置:', (error as Error).message)
     config.value = {
       teams: [
         {
@@ -252,34 +261,40 @@ const loadConfig = async (): Promise<void> => {
   }
 }
 
-// 尝试加载缓存文件
-const loadCachedData = async (): Promise<CachedMember | null> => {
+// 从缓存加载数据
+const loadFromCache = async (): Promise<boolean> => {
   try {
-    const response = await fetch('/more/team/team.cache.json')
-    if (response.ok) {
-      const cacheData: CacheData = await response.json()
-      const now = Date.now()
-
-      // 检查缓存是否过期
-      if (now - cacheData.lastUpdate < CACHE_CONFIG.CACHE_DURATION) {
-        console.log('使用服务端缓存数据')
-        return cacheData.members
-      }
+    // 尝试从 public 目录加载缓存
+    const response = await fetch('/more/team/team-cache.json')
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}: ${response.statusText}`)
     }
-  } catch (error) {
-    console.log('无法加载缓存文件，将使用API获取')
+
+    const cacheData: CacheData = await response.json()
+
+    if (cacheData.members && cacheData.members.length > 0) {
+      teamMembers.value = cacheData.members
+      cacheInfo.value = { lastUpdate: cacheData.lastUpdate }
+      console.log('✓ 成功从缓存加载团队数据')
+      return true
+    }
+
+    throw new Error('缓存数据为空')
+  } catch (err) {
+    console.warn('从缓存加载失败:', (err as Error).message)
+    return false
   }
-  return null
 }
 
 // GitHub API 请求
-const fetchGitHubUser = async (username: string): Promise<ApiUserData | null> => {
+const fetchGitHubUser = async (username: string): Promise<TeamMember | null> => {
   try {
     const response = await fetch(`https://api.github.com/users/${username}`)
     if (!response.ok) {
       throw new Error(`GitHub API 请求失败: ${response.status}`)
     }
-    return await response.json()
+    const data = await response.json()
+    return { ...data, platform: 'github' }
   } catch (error) {
     console.error(`获取 GitHub 用户 ${username} 失败:`, (error as Error).message)
     return null
@@ -287,75 +302,33 @@ const fetchGitHubUser = async (username: string): Promise<ApiUserData | null> =>
 }
 
 // Gitee API 请求
-const fetchGiteeUser = async (username: string): Promise<ApiUserData | null> => {
+const fetchGiteeUser = async (username: string): Promise<TeamMember | null> => {
   try {
     const response = await fetch(`https://gitee.com/api/v5/users/${username}`)
     if (!response.ok) {
       throw new Error(`Gitee API 请求失败: ${response.status}`)
     }
     const data = await response.json()
-    // 为 Gitee 用户添加 html_url
     data.html_url = data.html_url || `https://gitee.com/${data.login}`
-    return data
+    return { ...data, platform: 'gitee' }
   } catch (error) {
     console.error(`获取 Gitee 用户 ${username} 失败:`, (error as Error).message)
     return null
   }
 }
 
-// 处理缓存数据转换为组件数据
-const processCachedMembers = (cachedMembers: CachedMember, config: TeamConfig): TeamMember[] => {
-  const result: TeamMember[] = []
-
-  for (const team of config.teams || []) {
-    for (const userConfig of team.users || []) {
-      const cacheKey = `${team.platform}_${userConfig.username}`
-      const cachedData = cachedMembers[cacheKey]
-
-      if (cachedData) {
-        const memberData: TeamMember = {
-          ...cachedData,
-          username: userConfig.username,
-          role: userConfig.role,
-          skills: userConfig.skills || [],
-          displayName: userConfig.displayName,
-          location: userConfig.location || cachedData.location,
-          social: {
-            github: userConfig.social?.github || userConfig.githubUsername || userConfig.username,
-            gitee: userConfig.social?.gitee || userConfig.giteeUsername || userConfig.username
-          }
-        }
-
-        if (userConfig.avatar) {
-          memberData.avatar_url = userConfig.avatar
-        }
-
-        result.push(memberData)
-      }
-    }
-  }
-
-  return result
-}
-
-// 备用方案：直接API获取（保持原有逻辑）
+// 备用方案：直接从API获取（仅在缓存失败时使用）
 const fetchMembersFromAPI = async (): Promise<TeamMember[]> => {
   const members: TeamMember[] = []
 
   for (const team of config.value.teams || []) {
     for (const userConfig of team.users || []) {
-      let userData: ApiUserData | null = null
+      let userData: any = null
 
       if (team.platform === 'github') {
         userData = await fetchGitHubUser(userConfig.username)
-        if (userData) {
-          (userData as any).platform = 'github'
-        }
       } else if (team.platform === 'gitee') {
         userData = await fetchGiteeUser(userConfig.username)
-        if (userData) {
-          (userData as any).platform = 'gitee'
-        }
       }
 
       if (userData) {
@@ -371,7 +344,7 @@ const fetchMembersFromAPI = async (): Promise<TeamMember[]> => {
             github: userConfig.social?.github || userConfig.githubUsername || userConfig.username,
             gitee: userConfig.social?.gitee || userConfig.giteeUsername || userConfig.username
           },
-          platform: team.platform
+          cached_at: Date.now()
         }
 
         if (userConfig.avatar) {
@@ -393,18 +366,19 @@ const loadTeamMembers = async (): Promise<void> => {
   teamMembers.value = []
 
   try {
-    // 首先尝试加载缓存数据
-    const cachedMembers = await loadCachedData()
+    // 优先从缓存加载
+    const cacheSuccess = await loadFromCache()
 
-    if (cachedMembers) {
-      // 使用缓存数据
-      teamMembers.value = processCachedMembers(cachedMembers, config.value)
-      console.log('使用缓存数据加载完成')
-    } else {
-      // 备用方案：使用API获取
-      console.log('缓存不可用，使用API获取数据')
+    if (!cacheSuccess) {
+      // 缓存加载失败，回退到API
+      console.log('🔄 缓存不可用，使用API获取数据')
       teamMembers.value = await fetchMembersFromAPI()
-      console.log('API数据获取完成')
+
+      if (teamMembers.value.length === 0) {
+        throw new Error('无法获取任何团队成员信息')
+      }
+
+      console.log('✓ 使用API获取数据完成')
     }
   } catch (err) {
     error.value = `获取团队信息失败: ${(err as Error).message}`
@@ -422,6 +396,7 @@ onMounted(async () => {
 </script>
 
 <style scoped>
+/* 保持原有样式不变 */
 .team-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -530,7 +505,7 @@ onMounted(async () => {
   display: flex;
   align-items: center;
   gap: 1.2rem;
-  padding-right: 3rem; /* 为右上角社交链接预留空间 */
+  padding-right: 3rem;
 }
 
 /* 头像部分 */
@@ -754,6 +729,28 @@ onMounted(async () => {
 .retry-button:hover {
   background: var(--vp-c-green-2);
   transform: translateY(-1px);
+}
+
+/* 缓存信息 */
+.cache-info {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.cache-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--vp-c-text-2);
+  background: var(--vp-c-bg-soft);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  border: 1px solid var(--vp-c-divider);
+}
+
+.cache-status svg {
+  color: var(--vp-c-green-1);
 }
 
 @keyframes spin {
