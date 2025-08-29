@@ -645,6 +645,24 @@
     text-decoration: underline;
 }
 
+/* 亮色模式下显示亮色图片，隐藏深色图片 */
+html:not(.dark) .dark-only {
+    display: none;
+}
+
+html:not(.dark) .light-only {
+    display: block;
+}
+
+/* 深色模式下显示深色图片，隐藏亮色图片 */
+html.dark .light-only {
+    display: none;
+}
+
+html.dark .dark-only {
+    display: block;
+}
+
 /**
  * 表格样式优化
  * ---------------------------------------------------------------- */
@@ -685,4 +703,241 @@
 
 .custom-container.danger {
     border-color: #ef4444;
+}
+
+/**
+ * Vue 组件相关样式优化
+ * ---------------------------------------------------------------- */
+
+/* 团队成员卡片样式 */
+.team-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.team-members {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.member-card {
+    background: var(--vp-c-bg);
+    border: 2px solid var(--vp-c-divider-light);
+    border-radius: 16px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+/* 深色模式下增强边框和阴影效果 */
+.dark .member-card {
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    box-shadow:
+            0 4px 16px rgba(0, 0, 0, 0.3),
+            0 0 0 1px rgba(255, 255, 255, 0.1);
+    background: var(--vp-c-bg);
+}
+
+.dark .member-card:hover {
+    border-color: var(--vp-c-green-1);
+    box-shadow:
+            0 8px 32px rgba(34, 197, 94, 0.25),
+            0 0 0 1px var(--vp-c-green-1);
+}
+
+.member-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+    transparent,
+    rgba(34, 197, 94, 0.1),
+    transparent);
+    transition: left 0.6s ease;
+}
+
+.member-card:hover::before {
+    left: 100%;
+}
+
+.member-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--vp-c-green-1);
+    box-shadow: 0 8px 32px rgba(34, 197, 94, 0.15);
+}
+
+.member-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1.5rem;
+    border: 3px solid var(--vp-c-green-1);
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.member-card:hover .member-avatar {
+    transform: scale(1.1);
+    box-shadow: 0 8px 24px rgba(34, 197, 94, 0.3);
+}
+
+.member-info h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--vp-c-text-1);
+    margin-bottom: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.member-card:hover .member-info h3 {
+    color: var(--vp-c-green-1);
+}
+
+.member-info .role {
+    color: var(--vp-c-text-2);
+    font-weight: 500;
+    margin-bottom: 0.5rem !important;
+}
+
+.member-info .location {
+    color: var(--vp-c-text-2);
+    font-size: 0.9rem;
+    margin-bottom: 1rem !important;
+}
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.skill {
+    background: var(--vp-c-green-soft);
+    color: var(--vp-c-green-1);
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    border: 1px solid var(--vp-c-green-1);
+    transition: all 0.3s ease;
+}
+
+.skill:hover {
+    background: var(--vp-c-green-1);
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* 团队成员卡片内的社交链接样式 - 添加更具体的选择器避免与 VitePress socialLinks 冲突 */
+.member-card .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.member-card .social-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    background: var(--vp-c-bg-soft);
+    border: 1px solid var(--vp-c-divider);
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.member-card .social-links a:hover {
+    background: var(--vp-c-green-1);
+    color: white;
+    border-color: var(--vp-c-green-1);
+    transform: translateY(-2px);
+}
+
+.member-card .social-links .social-icon {
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
+}
+
+/* Gitee 特定颜色 */
+.member-card .social-links a.gitee:hover {
+    background: #c71d23;
+    border-color: #c71d23;
+}
+
+/* GitHub 特定颜色 */
+.member-card .social-links a.github:hover {
+    background: #333;
+    border-color: #333;
+}
+
+/* 加入我们卡片特殊样式 */
+.member-card.join-card {
+    background: linear-gradient(135deg,
+    rgba(34, 197, 94, 0.05),
+    rgba(22, 163, 74, 0.03));
+    border: 2px dashed var(--vp-c-green-1);
+}
+
+.member-card.join-card:hover {
+    background: linear-gradient(135deg,
+    rgba(34, 197, 94, 0.1),
+    rgba(22, 163, 74, 0.05));
+}
+
+.join-icon svg {
+    transition: all 0.3s ease;
+}
+
+.member-card.join-card:hover .join-icon svg {
+    transform: scale(1.1) rotate(90deg);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .team-members {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .team-container {
+        padding: 1rem;
+    }
+
+    .social-links {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* 额外的工具类 */
+.text-gradient {
+    background: linear-gradient(135deg, var(--vp-c-green-1), var(--vp-c-green-3));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.glass-effect {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }

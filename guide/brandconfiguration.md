@@ -4,8 +4,8 @@
 
 ## 品牌配置项
 
-| 配置项                                     | 类型 | 说明                                                    |
-|-----------------------------------------|------|-------------------------------------------------------|
+| 配置项                                     | 类型     | 说明                                                    |
+|-----------------------------------------|--------|-------------------------------------------------------|
 | `nextdoc4j.extension.brand.logo`        | string | 自定义 Logo 文件路径                                         |
 | `nextdoc4j.extension.brand.title`       | string | 项目标题 同时也是登录界面标题,<br>为空则获取 springdoc 的title <br>再为空则默认 |
 | `nextdoc4j.extension.brand.footer-text` | string | 自定义页脚文本，支持变量替换和 HTML                                  |
@@ -76,13 +76,13 @@ nextdoc4j:
 
 页脚文本支持以下变量替换：
 
-| 变量 | 说明 | 示例 |
-|------|------|------|
-| `${application.name}` | 应用名称 | MyAPI |
-| `${application.version}` | 应用版本 | 1.0.0 |
-| `${application.contact.name}` | 联系人姓名 | 张三 |
-| `${application.contact.url}` | 联系人网址 | https://github.com/zhangsan |
-| `${application.url}` | 应用官网地址 | https://myapi.com |
+| 变量                            | 说明     | 示例                          |
+|-------------------------------|--------|-----------------------------|
+| `${application.name}`         | 应用名称   | MyAPI                       |
+| `${application.version}`      | 应用版本   | 1.0.0                       |
+| `${application.contact.name}` | 联系人姓名  | 张三                          |
+| `${application.contact.url}`  | 联系人网址  | https://github.com/zhangsan |
+| `${application.url}`          | 应用官网地址 | https://myapi.com           |
 
 ### 页脚样式示例
 

@@ -4,10 +4,10 @@
 
 ## 配置项说明
 
-| 配置项 | 类型 | 默认值 | 说明 |
-|--------|------|--------|------|
-| `nextdoc4j.enabled` | boolean | `false` | 是否启用 NextDoc4j 文档功能 |
-| `nextdoc4j.cors` | boolean | `false` | 是否启用跨域支持，便于前后端分离项目调试 |
+| 配置项                    | 类型      | 默认值     | 说明                   |
+|------------------------|---------|---------|----------------------|
+| `nextdoc4j.enabled`    | boolean | `false` | 是否启用 NextDoc4j 文档功能  |
+| `nextdoc4j.cors`       | boolean | `false` | 是否启用跨域支持，便于前后端分离项目调试 |
 | `nextdoc4j.production` | boolean | `false` | 是否为生产环境，启用后会隐藏某些调试功能 |
 
 ## 配置示例

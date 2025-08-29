@@ -4,10 +4,10 @@ NextDoc4j 支持密码认证，保护您的API文档不被未授权访问。
 
 ## 认证配置项
 
-| 配置项 | 类型 | 默认值     | 说明                |
-|--------|------|---------|-------------------|
-| `nextdoc4j.auth.enabled` | boolean | `false` | 是否启用认证功能          |
-| `nextdoc4j.auth.password` | string | `UUID 密码` | 访问密码非必填,不填则默认生成密码 |
+| 配置项                       | 类型      | 默认值       | 说明                |
+|---------------------------|---------|-----------|-------------------|
+| `nextdoc4j.auth.enabled`  | boolean | `false`   | 是否启用认证功能          |
+| `nextdoc4j.auth.password` | string  | `UUID 密码` | 访问密码非必填,不填则默认生成密码 |
 
 ## 配置示例
 
@@ -32,7 +32,7 @@ nextdoc4j:
 
 启用认证后，用户首次访问文档时会看到登录界面：
 
-![NextDoc4j 登录界面](/images/screenshots/guide/login.png)
+![NextDoc4j 登录界面](/public/images/screenshots/guide/login.png)
 
 *▲ NextDoc4j 认证登录界面*
 

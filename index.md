@@ -115,7 +115,10 @@ http://localhost:端口/doc.html
 
 ### 主界面预览
 
-![NextDoc4j 主界面](/images/screenshots/main-interface.png)
+<div class="theme-image">
+  <img src="/images/screenshots/bright.png" alt="NextDoc4j 主界面" class="light-only" />
+  <img src="/images/screenshots/dark.png" alt="NextDoc4j 主界面" class="dark-only" />
+</div>
 
 ::: details 🎯 界面功能说明
 - **左侧导航栏**：展示所有API分组和接口列表
