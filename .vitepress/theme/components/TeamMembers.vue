@@ -444,7 +444,7 @@ onMounted(async () => {
   box-shadow: 0 10px 25px rgba(34, 197, 94, 0.15), 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* 右上角社交链接 */
+/* 右上角社交链接 - 增强动效 */
 .member-social-corner {
   position: absolute;
   top: 1rem;
@@ -465,32 +465,62 @@ onMounted(async () => {
   border: 1px solid var(--vp-c-divider);
   color: var(--vp-c-text-2);
   text-decoration: none;
-  transition: all 0.2s ease;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   opacity: 0.8;
+  position: relative;
+  overflow: hidden;
+}
+
+.social-link::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.3;
+  transform: translate(-50%, -50%);
+  transition: width 0.4s ease, height 0.4s ease;
+}
+
+.social-link:hover::before {
+  width: 40px;
+  height: 40px;
 }
 
 .social-icon {
   width: 14px;
   height: 14px;
   fill: currentColor;
+  position: relative;
+  z-index: 1;
+  transition: transform 0.3s ease;
 }
 
 .social-link:hover {
-  transform: scale(1.1);
+  transform: scale(1.15) translateY(-2px);
   opacity: 1;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.social-link:hover .social-icon {
+  transform: rotate(360deg);
 }
 
 .github-link:hover {
   background: #333;
   color: white;
   border-color: #333;
+  box-shadow: 0 4px 12px rgba(51, 51, 51, 0.4);
 }
 
 .gitee-link:hover {
   background: #c71d23;
   color: white;
   border-color: #c71d23;
+  box-shadow: 0 4px 12px rgba(199, 29, 35, 0.4);
 }
 
 .blog-link:hover,
@@ -498,6 +528,7 @@ onMounted(async () => {
   background: var(--vp-c-green-1);
   color: white;
   border-color: var(--vp-c-green-1);
+  box-shadow: 0 4px 12px rgba(34, 197, 94, 0.4);
 }
 
 /* 主要内容区域 */

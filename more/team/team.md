@@ -5,11 +5,7 @@
 :::
 
 ## 团队成员
-
 <TeamMembers></TeamMembers>
 
----
-
 ## 💝 赞助
-
 <SponsorSection></SponsorSection>
