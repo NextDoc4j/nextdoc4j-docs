@@ -79,7 +79,6 @@
                   <p class="sub-tip">感谢您的支持 ❤️</p>
                 </div>
               </div>
-
             </div>
           </div>
         </div>
@@ -92,27 +91,58 @@
         </div>
       </div>
     </div>
-
   </div>
 </template>
 
-<script setup>
-import { ref, onMounted } from 'vue'
+<script setup lang="ts">
+import { ref, onMounted, onUnmounted } from 'vue'
+
+// 类型定义
+interface PaymentMethods {
+  alipay?: string
+  wechat?: string
+}
+
+interface SponsorConfig {
+  enabled?: boolean
+  payments?: PaymentMethods
+  gratitudeText?: string
+  suggestedAmounts?: number[]
+  supporters?: Array<{
+    name: string
+    avatar: string
+    amount?: number
+  }>
+}
+
+interface TeamConfig {
+  sponsor?: SponsorConfig
+}
 
 // 响应式数据
-const showPaymentModal = ref(false)
-const activePayment = ref('alipay')
-const selectedAmount = ref(10)
-const config = ref({})
+const showPaymentModal = ref<boolean>(false)
+const activePayment = ref<'alipay' | 'wechat'>('alipay')
+const selectedAmount = ref<number>(10)
+const config = ref<TeamConfig>({})
+
+// 建议金额（从配置文件获取）
+const suggestedAmounts = ref<number[]>([10, 20, 50, 100])
+
+// 支持者列表（从配置文件获取）
+const supporters = ref<Array<{
+  name: string
+  avatar: string
+  amount?: number
+}>>([])
 
 // 加载配置文件
-async function loadConfig() {
+const loadConfig = async (): Promise<void> => {
   try {
-    const configModule = await import('/more/team/team.config.js')
+    const configModule = await import('/more/team/team.config.ts')
     config.value = configModule.default || configModule
     console.log('✅ 赞助组件成功加载配置文件')
   } catch (error) {
-    console.warn('⚠️ 赞助组件未找到 team.config.js 文件，使用默认配置')
+    console.warn('⚠️ 赞助组件未找到 team.config.ts 文件，使用默认配置')
     config.value = {
       sponsor: {
         enabled: true,
@@ -127,29 +157,38 @@ async function loadConfig() {
   }
 }
 
-// 建议金额（从配置文件获取）
-const suggestedAmounts = ref([10, 20, 50, 100])
+// 键盘事件处理函数
+const handleKeydown = (e: KeyboardEvent): void => {
+  if (e.key === 'Escape' && showPaymentModal.value) {
+    showPaymentModal.value = false
+  }
+}
 
-// 支持者列表（从配置文件获取）
-const supporters = ref([])
-
-// 组件挂载时加载配置
+// 组件挂载时的操作
 onMounted(async () => {
   await loadConfig()
+
   if (config.value.sponsor?.suggestedAmounts) {
     suggestedAmounts.value = config.value.sponsor.suggestedAmounts
   }
+
   if (config.value.sponsor?.supporters) {
     supporters.value = config.value.sponsor.supporters
   }
+
   // 设置默认选中金额
   selectedAmount.value = suggestedAmounts.value[0]
+
+  // 只在客户端添加键盘事件监听器
+  if (typeof window !== 'undefined' && typeof document !== 'undefined') {
+    document.addEventListener('keydown', handleKeydown)
+  }
 })
 
-// 监听键盘事件关闭弹窗
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape' && showPaymentModal.value) {
-    showPaymentModal.value = false
+// 组件卸载时清理事件监听器
+onUnmounted(() => {
+  if (typeof window !== 'undefined' && typeof document !== 'undefined') {
+    document.removeEventListener('keydown', handleKeydown)
   }
 })
 </script>

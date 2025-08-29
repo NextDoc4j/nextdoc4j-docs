@@ -38,7 +38,7 @@
               >
                 {{ skill }}
               </span>
-              <span v-if="member.skills?.length > 3" class="skill-more">
+              <span v-if="member.skills && member.skills.length > 3" class="skill-more">
                 +{{ member.skills.length - 3 }}
               </span>
             </div>
@@ -135,14 +135,78 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { ref, onMounted } from 'vue'
 
+// 类型定义
+interface SocialLinks {
+  github?: string
+  gitee?: string
+}
+
+interface UserConfig {
+  username: string
+  role: string
+  skills?: string[]
+  displayName?: string
+  location?: string
+  avatar?: string
+  social?: SocialLinks
+  githubUsername?: string
+  giteeUsername?: string
+}
+
+interface Team {
+  platform: 'github' | 'gitee'
+  users: UserConfig[]
+}
+
+interface ProjectConfig {
+  contributeUrl?: string
+}
+
+interface TeamConfig {
+  teams?: Team[]
+  project?: ProjectConfig
+}
+
+interface ApiUserData {
+  login: string
+  name?: string
+  avatar_url: string
+  html_url?: string
+  bio?: string
+  location?: string
+  blog?: string
+  company?: string
+}
+
+interface TeamMember extends ApiUserData {
+  username: string
+  role: string
+  skills: string[]
+  displayName?: string
+  social: SocialLinks
+  platform: string
+}
+
+interface CachedMember {
+  [key: string]: ApiUserData & {
+    platform: string
+    cached_at: number
+  }
+}
+
+interface CacheData {
+  lastUpdate: number
+  members: CachedMember
+}
+
 // 响应式数据
-const config = ref({})
-const teamMembers = ref([])
-const loading = ref(false)
-const error = ref('')
+const config = ref<TeamConfig>({})
+const teamMembers = ref<TeamMember[]>([])
+const loading = ref<boolean>(false)
+const error = ref<string>('')
 
 // 缓存配置
 const CACHE_CONFIG = {
@@ -151,9 +215,9 @@ const CACHE_CONFIG = {
 }
 
 // 加载配置文件
-async function loadConfig() {
+const loadConfig = async (): Promise<void> => {
   try {
-    const configModule = await import('/more/team/team.config.js')
+    const configModule = await import('/more/team/team.config.ts')
     config.value = configModule.default || configModule
   } catch (error) {
     config.value = {
@@ -177,11 +241,11 @@ async function loadConfig() {
 }
 
 // 尝试加载缓存文件
-async function loadCachedData() {
+const loadCachedData = async (): Promise<CachedMember | null> => {
   try {
     const response = await fetch('/more/team/team.cache.json')
     if (response.ok) {
-      const cacheData = await response.json()
+      const cacheData: CacheData = await response.json()
       const now = Date.now()
 
       // 检查缓存是否过期
@@ -197,22 +261,39 @@ async function loadCachedData() {
 }
 
 // GitHub API 请求
-async function fetchGitHubUser(username) {
-  const response = await fetch(`https://api.github.com/users/${username}`)
-  if (!response.ok) throw new Error(`GitHub API 请求失败: ${response.status}`)
-  return response.json()
+const fetchGitHubUser = async (username: string): Promise<ApiUserData | null> => {
+  try {
+    const response = await fetch(`https://api.github.com/users/${username}`)
+    if (!response.ok) {
+      throw new Error(`GitHub API 请求失败: ${response.status}`)
+    }
+    return await response.json()
+  } catch (error) {
+    console.error(`获取 GitHub 用户 ${username} 失败:`, (error as Error).message)
+    return null
+  }
 }
 
 // Gitee API 请求
-async function fetchGiteeUser(username) {
-  const response = await fetch(`https://gitee.com/api/v5/users/${username}`)
-  if (!response.ok) throw new Error(`Gitee API 请求失败: ${response.status}`)
-  return response.json()
+const fetchGiteeUser = async (username: string): Promise<ApiUserData | null> => {
+  try {
+    const response = await fetch(`https://gitee.com/api/v5/users/${username}`)
+    if (!response.ok) {
+      throw new Error(`Gitee API 请求失败: ${response.status}`)
+    }
+    const data = await response.json()
+    // 为 Gitee 用户添加 html_url
+    data.html_url = data.html_url || `https://gitee.com/${data.login}`
+    return data
+  } catch (error) {
+    console.error(`获取 Gitee 用户 ${username} 失败:`, (error as Error).message)
+    return null
+  }
 }
 
 // 处理缓存数据转换为组件数据
-function processCachedMembers(cachedMembers, config) {
-  const result = []
+const processCachedMembers = (cachedMembers: CachedMember, config: TeamConfig): TeamMember[] => {
+  const result: TeamMember[] = []
 
   for (const team of config.teams || []) {
     for (const userConfig of team.users || []) {
@@ -220,7 +301,7 @@ function processCachedMembers(cachedMembers, config) {
       const cachedData = cachedMembers[cacheKey]
 
       if (cachedData) {
-        const memberData = {
+        const memberData: TeamMember = {
           ...cachedData,
           username: userConfig.username,
           role: userConfig.role,
@@ -245,40 +326,48 @@ function processCachedMembers(cachedMembers, config) {
   return result
 }
 
-// 后备方案：直接API获取（保持原有逻辑）
-async function fetchMembersFromAPI() {
-  const members = []
+// 备用方案：直接API获取（保持原有逻辑）
+const fetchMembersFromAPI = async (): Promise<TeamMember[]> => {
+  const members: TeamMember[] = []
 
   for (const team of config.value.teams || []) {
     for (const userConfig of team.users || []) {
-      let userData
+      let userData: ApiUserData | null = null
 
       if (team.platform === 'github') {
         userData = await fetchGitHubUser(userConfig.username)
-        userData.platform = 'github'
+        if (userData) {
+          (userData as any).platform = 'github'
+        }
       } else if (team.platform === 'gitee') {
         userData = await fetchGiteeUser(userConfig.username)
-        userData.platform = 'gitee'
-        userData.html_url = userData.html_url || `https://gitee.com/${userData.login}`
+        if (userData) {
+          (userData as any).platform = 'gitee'
+        }
       }
 
-      // 合并用户配置信息
-      userData.username = userConfig.username
-      userData.role = userConfig.role
-      userData.skills = userConfig.skills || []
-      userData.displayName = userConfig.displayName
-      userData.location = userConfig.location
+      if (userData) {
+        // 合并用户配置信息
+        const memberData: TeamMember = {
+          ...userData,
+          username: userConfig.username,
+          role: userConfig.role,
+          skills: userConfig.skills || [],
+          displayName: userConfig.displayName,
+          location: userConfig.location || userData.location,
+          social: {
+            github: userConfig.social?.github || userConfig.githubUsername || userConfig.username,
+            gitee: userConfig.social?.gitee || userConfig.giteeUsername || userConfig.username
+          },
+          platform: team.platform
+        }
 
-      userData.social = {
-        github: userConfig.social?.github || userConfig.githubUsername || userConfig.username,
-        gitee: userConfig.social?.gitee || userConfig.giteeUsername || userConfig.username
+        if (userConfig.avatar) {
+          memberData.avatar_url = userConfig.avatar
+        }
+
+        members.push(memberData)
       }
-
-      if (userConfig.avatar) {
-        userData.avatar_url = userConfig.avatar
-      }
-
-      members.push(userData)
     }
   }
 
@@ -286,7 +375,7 @@ async function fetchMembersFromAPI() {
 }
 
 // 加载团队成员信息
-async function loadTeamMembers() {
+const loadTeamMembers = async (): Promise<void> => {
   loading.value = true
   error.value = ''
   teamMembers.value = []
@@ -300,13 +389,13 @@ async function loadTeamMembers() {
       teamMembers.value = processCachedMembers(cachedMembers, config.value)
       console.log('使用缓存数据加载完成')
     } else {
-      // 后备方案：使用API获取
+      // 备用方案：使用API获取
       console.log('缓存不可用，使用API获取数据')
       teamMembers.value = await fetchMembersFromAPI()
       console.log('API数据获取完成')
     }
   } catch (err) {
-    error.value = `获取团队信息失败: ${err.message}`
+    error.value = `获取团队信息失败: ${(err as Error).message}`
     console.error('获取团队信息失败:', err)
   } finally {
     loading.value = false

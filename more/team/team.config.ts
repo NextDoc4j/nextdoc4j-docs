@@ -1,4 +1,76 @@
-export default {
+// 类型定义
+interface SocialLinks {
+    github?: string
+    gitee?: string
+}
+
+interface UserConfig {
+    username: string
+    role: string
+    skills?: string[]
+    displayName?: string
+    location?: string
+    avatar?: string
+    social?: SocialLinks
+    githubUsername?: string
+    giteeUsername?: string
+}
+
+interface Team {
+    platform: 'github' | 'gitee'
+    users: UserConfig[]
+}
+
+interface ProjectConfig {
+    contributeUrl?: string
+}
+
+interface PaymentMethods {
+    alipay?: string
+    wechat?: string
+}
+
+interface SponsorConfig {
+    enabled: boolean
+    payments?: PaymentMethods
+    gratitudeText?: string
+    suggestedAmounts?: number[]
+    supporters?: Array<{
+        name: string
+        avatar: string
+        amount?: number
+    }>
+}
+
+interface ApiRequestConfig {
+    requestDelay: number
+    timeout: number
+    userAgent: string
+}
+
+interface AutoUpdateConfig {
+    enabled: boolean
+    interval: number
+    scheduledTime?: string
+    retryCount: number
+    retryInterval: number
+}
+
+interface CacheConfig {
+    duration: number
+    autoUpdate: AutoUpdateConfig
+    api: ApiRequestConfig
+}
+
+interface TeamConfiguration {
+    teams: Team[]
+    project: ProjectConfig
+    sponsor: SponsorConfig
+    cache: CacheConfig
+}
+
+// 配置导出
+const teamConfig: TeamConfiguration = {
     // 团队配置
     teams: [
         {
@@ -75,4 +147,18 @@ export default {
             userAgent: 'NextDoc4j-TeamUpdater/1.0'
         }
     }
+}
+
+export default teamConfig
+
+// 导出类型定义供其他文件使用
+export type {
+    SocialLinks,
+    UserConfig,
+    Team,
+    ProjectConfig,
+    PaymentMethods,
+    SponsorConfig,
+    CacheConfig,
+    TeamConfiguration
 }
