@@ -265,7 +265,7 @@ const loadConfig = async (): Promise<void> => {
 const loadFromCache = async (): Promise<boolean> => {
   try {
     // 尝试从 public 目录加载缓存
-    const response = await fetch('/more/team/team-cache.json')
+    const response = await fetch('/team-cache.json')
     if (!response.ok) {
       throw new Error(`HTTP ${response.status}: ${response.statusText}`)
     }

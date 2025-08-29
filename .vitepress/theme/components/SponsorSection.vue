@@ -140,7 +140,6 @@ const loadConfig = async (): Promise<void> => {
   try {
     const configModule = await import('/more/team/team.config.ts')
     config.value = configModule.default || configModule
-    console.log('✅ 赞助组件成功加载配置文件')
   } catch (error) {
     console.warn('⚠️ 赞助组件未找到 team.config.ts 文件，使用默认配置')
     config.value = {

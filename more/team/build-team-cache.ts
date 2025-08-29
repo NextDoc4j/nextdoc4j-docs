@@ -74,7 +74,8 @@ const CONFIG = {
     CACHE_DURATION: 30 * 24 * 60 * 60 * 1000,
     REQUEST_DELAY: 1000,
     TEAM_CONFIG_PATH: path.join(__dirname, '/team.config.ts'),
-    CACHE_OUTPUT_PATH: path.join(__dirname, '/team-cache.json'),
+    // 修改输出路径 - 生成到 public 目录，这样 VitePress 会自动复制到 dist
+    CACHE_OUTPUT_PATH: path.join(__dirname, '../../public/team-cache.json'),
     MAX_RETRIES: 3,
     TIMEOUT: 10000
 }
@@ -386,7 +387,7 @@ const isMainModule = import.meta.url === `file://${process.argv[1]}` ||
 
 if (isMainModule) {
     main().catch((error) => {
-        console.error('❌ 脚本执行失败:', (error as Error).message)
+        console.error('⌐ 脚本执行失败:', (error as Error).message)
         process.exit(1)
     })
 }
