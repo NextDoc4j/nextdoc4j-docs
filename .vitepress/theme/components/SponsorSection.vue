@@ -42,14 +42,14 @@
                 :class="['tab-btn', { active: activePayment === 'alipay' }]"
                 @click="activePayment = 'alipay'"
             >
-              <span class="tab-icon">💰</span>
+              <span class="tab-icon"></span>
               支付宝
             </button>
             <button
                 :class="['tab-btn', { active: activePayment === 'wechat' }]"
                 @click="activePayment = 'wechat'"
             >
-              <span class="tab-icon">💳</span>
+              <span class="tab-icon"></span>
               微信支付
             </button>
           </div>

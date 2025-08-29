@@ -1,13 +1,22 @@
 {
+  "name": "nextdoc4j-docs",
+  "version": "1.0.0",
+  "type": "module",
   "devDependencies": {
     "@iconify-json/simple-icons": "^1.2.49",
     "unplugin-icons": "^22.2.0",
-    "vitepress": "2.0.0-alpha.12"
+    "vitepress": "2.0.0-alpha.12",
+    "@types/node": "^20.0.0"
   },
   "scripts": {
     "docs:dev": "vitepress dev",
     "docs:build": "vitepress build",
-    "docs:preview": "vitepress preview"
+    "docs:preview": "vitepress preview",
+    "team:update": "node update-team.js",
+    "team:force-update": "node update-team.js --force",
+    "team:check": "node -e \"import('./update-team.js').then(m => new m.default().needsUpdate().then(needs => console.log('需要更新:', needs)))\"",
+    "team:cron": "node -e \"setInterval(() => import('./update-team.js').then(m => new m.default().updateTeamMembers()), 24*60*60*1000)\"",
+    "postbuild": "npm run team:update"
   },
   "dependencies": {
     "vue": "^3.5.20"

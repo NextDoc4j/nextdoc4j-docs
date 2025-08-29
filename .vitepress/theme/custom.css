@@ -10,6 +10,17 @@
     --vp-c-green-2: #16a34a;
     --vp-c-green-3: #15803d;
     --vp-c-green-soft: rgba(34, 197, 94, 0.1);
+
+    /* 新增现代化变量 */
+    --vp-gradient-primary: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+    --vp-gradient-hover: linear-gradient(135deg, #4ade80 0%, #22c55e 100%);
+    --vp-shadow-subtle: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+    --vp-shadow-medium: 0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
+    --vp-shadow-large: 0 10px 25px rgba(34, 197, 94, 0.15), 0 4px 10px rgba(0, 0, 0, 0.1);
+    --vp-radius-sm: 8px;
+    --vp-radius-md: 12px;
+    --vp-radius-lg: 16px;
+    --vp-radius-xl: 20px;
 }
 
 /* 暗色主题变量 */
@@ -22,6 +33,12 @@
     --vp-c-green-2: #22c55e;
     --vp-c-green-3: #16a34a;
     --vp-c-green-soft: rgba(74, 222, 128, 0.1);
+
+    --vp-gradient-primary: linear-gradient(135deg, #4ade80 0%, #22c55e 100%);
+    --vp-gradient-hover: linear-gradient(135deg, #6ee7b7 0%, #4ade80 100%);
+    --vp-shadow-subtle: 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px 2px rgba(0, 0, 0, 0.2);
+    --vp-shadow-medium: 0 4px 6px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.2);
+    --vp-shadow-large: 0 10px 25px rgba(34, 197, 94, 0.25), 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 /**
@@ -709,49 +726,498 @@ html.dark .dark-only {
  * Vue 组件相关样式优化
  * ---------------------------------------------------------------- */
 
-/* 团队成员卡片样式 */
+/**
+ * 现代化团队成员卡片样式增强
+ * ---------------------------------------------------------------- */
+
+/* 团队容器优化 */
 .team-container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 2rem;
+    position: relative;
 }
 
+.team-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 1px;
+    background: var(--vp-gradient-primary);
+    opacity: 0.3;
+    border-radius: 1px;
+}
+
+/* 网格布局优化 */
 .team-members {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 1.5rem;
     margin: 2rem 0;
 }
 
-.member-card {
+/* 现代化卡片基础样式 */
+.modern-card {
     background: var(--vp-c-bg);
-    border: 2px solid var(--vp-c-divider-light);
-    border-radius: 16px;
-    padding: 2rem;
-    text-align: center;
+    border: 1px solid var(--vp-c-divider-light);
+    border-radius: var(--vp-radius-xl);
+    padding: 1.8rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--vp-shadow-subtle);
+    backdrop-filter: blur(10px);
+}
+
+/* 卡片光效动画 */
+.modern-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(34, 197, 94, 0.08) 50%,
+    transparent 100%);
+    transition: left 0.8s ease-out;
+    z-index: 1;
+}
+
+.modern-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 30% 20%,
+    rgba(34, 197, 94, 0.05) 0%,
+    transparent 50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+}
+
+.modern-card:hover::before {
+    left: 100%;
+}
+
+.modern-card:hover::after {
+    opacity: 1;
+}
+
+.modern-card:hover {
+    transform: translateY(-6px) scale(1.02);
+    border-color: var(--vp-c-green-1);
+    box-shadow: var(--vp-shadow-large);
+    background: linear-gradient(135deg,
+    rgba(255, 255, 255, 0.05),
+    rgba(34, 197, 94, 0.02));
+}
+
+/* 暗色模式卡片增强 */
+.dark .modern-card {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow:
+            0 4px 16px rgba(0, 0, 0, 0.3),
+            0 0 0 1px rgba(255, 255, 255, 0.05);
+    background: linear-gradient(135deg,
+    rgba(255, 255, 255, 0.03),
+    rgba(255, 255, 255, 0.01));
+}
+
+.dark .modern-card:hover {
+    border-color: var(--vp-c-green-1);
+    box-shadow:
+            0 10px 25px rgba(74, 222, 128, 0.2),
+            0 0 0 1px var(--vp-c-green-1),
+            inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* 头像部分增强 */
+.member-avatar-section {
+    position: relative;
+    flex-shrink: 0;
+    z-index: 2;
+}
+
+.member-avatar {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid transparent;
+    background: var(--vp-gradient-primary);
+    background-clip: padding-box;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    z-index: 3;
+    box-shadow: var(--vp-shadow-medium);
+}
+
+.avatar-ring {
+    position: absolute;
+    top: -6px;
+    left: -6px;
+    right: -6px;
+    bottom: -6px;
+    border-radius: 50%;
+    background: conic-gradient(from 45deg, var(--vp-c-green-1), var(--vp-c-green-2), var(--vp-c-green-3), var(--vp-c-green-1));
+    opacity: 0;
+    transform: scale(0.8) rotate(-45deg);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 2;
+}
+
+.modern-card:hover .member-avatar {
+    transform: scale(1.08);
+    box-shadow:
+            0 8px 24px rgba(34, 197, 94, 0.3),
+            0 0 0 4px rgba(34, 197, 94, 0.1);
+}
+
+.modern-card:hover .avatar-ring {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+}
+
+/* 加入我们头像特殊效果 */
+.join-avatar {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: var(--vp-gradient-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid transparent;
+    background-clip: padding-box;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    z-index: 3;
+    box-shadow: var(--vp-shadow-medium);
+}
+
+.join-avatar svg {
+    transition: transform 0.3s ease;
+    filter: drop-shadow(0 2px 4px rgba(255, 255, 255, 0.3));
+}
+
+.modern-card.join-card:hover .join-avatar {
+    transform: scale(1.08);
+}
+
+.modern-card.join-card:hover .join-avatar svg {
+    transform: rotate(90deg) scale(1.1);
+}
+
+.join-ring {
+    background: conic-gradient(from 45deg, var(--vp-c-green-2), var(--vp-c-green-3), var(--vp-c-green-1), var(--vp-c-green-2));
+}
+
+/* 内容区域优化 */
+.member-content {
+    flex: 1;
+    min-width: 0;
+    z-index: 2;
+    position: relative;
+}
+
+.member-name {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--vp-c-text-1);
+    margin: 0 0 0.25rem 0;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    line-height: 1.2;
+    background: linear-gradient(135deg, var(--vp-c-text-1), var(--vp-c-text-2));
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.modern-card:hover .member-name {
+    background: var(--vp-gradient-primary);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transform: translateX(4px);
+}
+
+.member-role {
+    color: var(--vp-c-text-2);
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin: 0 0 0.75rem 0;
+    line-height: 1.3;
+    transition: all 0.3s ease;
+}
+
+.modern-card:hover .member-role {
+    color: var(--vp-c-green-2);
+    transform: translateX(4px);
+}
+
+/* 位置信息增强 */
+.member-location {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--vp-c-text-2);
+    font-size: 0.85rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.3;
+    transition: all 0.3s ease;
+}
+
+.location-icon {
+    color: var(--vp-c-green-1);
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+
+.modern-card:hover .member-location {
+    color: var(--vp-c-text-1);
+    transform: translateX(4px);
+}
+
+.modern-card:hover .location-icon {
+    transform: scale(1.1);
+}
+
+/* 技能标签现代化 */
+.member-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 1rem;
+}
+
+.skill-tag {
+    background: linear-gradient(135deg,
+    rgba(34, 197, 94, 0.08),
+    rgba(22, 163, 74, 0.05));
+    color: var(--vp-c-green-1);
+    padding: 0.3rem 0.75rem;
+    border-radius: var(--vp-radius-sm);
+    font-size: 0.75rem;
+    font-weight: 600;
+    border: 1px solid rgba(34, 197, 94, 0.2);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    white-space: nowrap;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+}
+
+.skill-tag::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: var(--vp-gradient-primary);
+    transition: left 0.3s ease;
+    opacity: 0.1;
+}
+
+.skill-tag:hover::before {
+    left: 0;
+}
+
+.skill-tag:hover {
+    background: var(--vp-c-green-1);
+    color: white;
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
+    border-color: var(--vp-c-green-1);
+}
+
+.skill-more {
+    background: var(--vp-c-bg-soft);
+    color: var(--vp-c-text-2);
+    padding: 0.3rem 0.75rem;
+    border-radius: var(--vp-radius-sm);
+    font-size: 0.75rem;
+    font-weight: 500;
+    border: 1px solid var(--vp-c-divider);
+    transition: all 0.3s ease;
+}
+
+.skill-more:hover {
+    background: var(--vp-c-divider);
+    transform: translateY(-2px);
+}
+
+/* 社交链接现代化 */
+.member-social {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.social-link {
+    width: 36px;
+    height: 36px;
+    border-radius: var(--vp-radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--vp-c-bg-soft);
+    border: 1px solid var(--vp-c-divider);
+    color: var(--vp-c-text-2);
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+}
+
+.social-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: currentColor;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.social-icon {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+    transition: transform 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.social-link:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.social-link:hover .social-icon {
+    transform: scale(1.1);
+}
+
+/* 特定社交平台颜色 */
+.github-link:hover {
+    background: linear-gradient(135deg, #333, #1a1a1a);
+    color: white;
+    border-color: #333;
+}
+
+.gitee-link:hover {
+    background: linear-gradient(135deg, #c71d23, #a01419);
+    color: white;
+    border-color: #c71d23;
+}
+
+.blog-link:hover,
+.contribute-link:hover {
+    background: var(--vp-gradient-primary);
+    color: white;
+    border-color: var(--vp-c-green-1);
+}
+
+/* 加入我们卡片特殊样式 */
+.join-card {
+    border: 2px dashed var(--vp-c-green-1);
+    background: linear-gradient(135deg,
+    rgba(34, 197, 94, 0.03),
+    rgba(22, 163, 74, 0.02));
+    position: relative;
+}
+
+.join-card::before {
+    background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(34, 197, 94, 0.12) 50%,
+    transparent 100%);
+}
+
+.join-card:hover {
+    background: linear-gradient(135deg,
+    rgba(34, 197, 94, 0.08),
+    rgba(22, 163, 74, 0.05));
+    border-style: solid;
+}
+
+/* 加载和错误状态现代化 */
+.loading-state, .error-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    text-align: center;
+    background: linear-gradient(135deg,
+    rgba(34, 197, 94, 0.03),
+    rgba(22, 163, 74, 0.02));
+    border-radius: var(--vp-radius-xl);
+    border: 1px solid var(--vp-c-divider-light);
+}
+
+.loading-spinner {
+    width: 48px;
+    height: 48px;
+    border: 4px solid var(--vp-c-divider);
+    border-top: 4px solid var(--vp-c-green-1);
+    border-radius: 50%;
+    animation: modernSpin 1.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.loading-spinner::after {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    border: 2px solid transparent;
+    border-top: 2px solid var(--vp-c-green-2);
+    border-radius: 50%;
+    animation: modernSpin 0.8s linear infinite reverse;
+}
+
+.error-icon {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    background: var(--vp-gradient-primary);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.retry-button {
+    margin-top: 1.5rem;
+    padding: 0.875rem 2rem;
+    background: var(--vp-gradient-primary);
+    color: white;
+    border: none;
+    border-radius: var(--vp-radius-sm);
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: var(--vp-shadow-medium);
     position: relative;
     overflow: hidden;
 }
 
-/* 深色模式下增强边框和阴影效果 */
-.dark .member-card {
-    border: 2px solid rgba(255, 255, 255, 0.15);
-    box-shadow:
-            0 4px 16px rgba(0, 0, 0, 0.3),
-            0 0 0 1px rgba(255, 255, 255, 0.1);
-    background: var(--vp-c-bg);
-}
-
-.dark .member-card:hover {
-    border-color: var(--vp-c-green-1);
-    box-shadow:
-            0 8px 32px rgba(34, 197, 94, 0.25),
-            0 0 0 1px var(--vp-c-green-1);
-}
-
-.member-card::before {
+.retry-button::before {
     content: '';
     position: absolute;
     top: 0;
@@ -760,85 +1226,167 @@ html.dark .dark-only {
     height: 100%;
     background: linear-gradient(90deg,
     transparent,
-    rgba(34, 197, 94, 0.1),
+    rgba(255, 255, 255, 0.2),
     transparent);
     transition: left 0.6s ease;
 }
 
-.member-card:hover::before {
+.retry-button:hover::before {
     left: 100%;
 }
 
-.member-card:hover {
-    transform: translateY(-8px);
-    border-color: var(--vp-c-green-1);
-    box-shadow: 0 8px 32px rgba(34, 197, 94, 0.15);
+.retry-button:hover {
+    background: var(--vp-gradient-hover);
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: var(--vp-shadow-large);
 }
 
-.member-avatar {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 1.5rem;
-    border: 3px solid var(--vp-c-green-1);
-    transition: all 0.3s ease;
-    position: relative;
-    z-index: 1;
+@keyframes modernSpin {
+    0% {
+        transform: rotate(0deg);
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+    100% {
+        transform: rotate(360deg);
+        opacity: 1;
+    }
 }
 
-.member-card:hover .member-avatar {
-    transform: scale(1.1);
-    box-shadow: 0 8px 24px rgba(34, 197, 94, 0.3);
+/* 响应式设计增强 */
+@media (max-width: 768px) {
+    .team-members {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+
+    .modern-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem 1.5rem;
+        gap: 1.5rem;
+    }
+
+    .member-avatar-section {
+        align-self: center;
+    }
+
+    .member-content {
+        width: 100%;
+    }
+
+    .member-social {
+        justify-content: center;
+    }
+
+    .member-skills {
+        justify-content: center;
+    }
 }
 
-.member-info h3 {
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: var(--vp-c-text-1);
-    margin-bottom: 0.5rem;
-    transition: color 0.3s ease;
+@media (max-width: 480px) {
+    .team-container {
+        padding: 1rem;
+    }
+
+    .team-members {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .modern-card {
+        padding: 1.5rem 1rem;
+    }
+
+    .member-avatar, .join-avatar {
+        width: 64px;
+        height: 64px;
+    }
+
+    .member-name {
+        font-size: 1.1rem;
+    }
+
+    .social-link {
+        width: 32px;
+        height: 32px;
+    }
+
+    .social-icon {
+        width: 16px;
+        height: 16px;
+    }
 }
 
-.member-card:hover .member-info h3 {
-    color: var(--vp-c-green-1);
+/* 高分辨率屏幕优化 */
+@media (min-resolution: 2dppx) {
+    .modern-card {
+        backdrop-filter: blur(20px);
+    }
+
+    .skill-tag {
+        backdrop-filter: blur(15px);
+    }
+
+    .social-link {
+        backdrop-filter: blur(15px);
+    }
 }
 
-.member-info .role {
-    color: var(--vp-c-text-2);
-    font-weight: 500;
-    margin-bottom: 0.5rem !important;
+/* 深色模式特殊优化 */
+.dark .skill-tag {
+    background: linear-gradient(135deg,
+    rgba(74, 222, 128, 0.12),
+    rgba(34, 197, 94, 0.08));
+    border-color: rgba(74, 222, 128, 0.3);
 }
 
-.member-info .location {
-    color: var(--vp-c-text-2);
-    font-size: 0.9rem;
-    margin-bottom: 1rem !important;
+.dark .social-link {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.1);
 }
 
-.skills {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    justify-content: center;
-    margin-bottom: 1.5rem;
+.dark .loading-state,
+.dark .error-state {
+    background: linear-gradient(135deg,
+    rgba(74, 222, 128, 0.05),
+    rgba(34, 197, 94, 0.03));
 }
 
-.skill {
-    background: var(--vp-c-green-soft);
-    color: var(--vp-c-green-1);
-    padding: 0.25rem 0.75rem;
-    border-radius: 12px;
-    font-size: 0.8rem;
-    font-weight: 600;
-    border: 1px solid var(--vp-c-green-1);
-    transition: all 0.3s ease;
+/* 可访问性增强 */
+@media (prefers-reduced-motion: reduce) {
+    .modern-card,
+    .member-avatar,
+    .avatar-ring,
+    .skill-tag,
+    .social-link {
+        transition: none;
+    }
+
+    .loading-spinner {
+        animation: none;
+    }
+
+    .modern-card::before {
+        display: none;
+    }
 }
 
-.skill:hover {
-    background: var(--vp-c-green-1);
-    color: white;
-    transform: translateY(-2px);
+/* 高对比度模式支持 */
+@media (prefers-contrast: high) {
+    .modern-card {
+        border-width: 2px;
+    }
+
+    .skill-tag {
+        border-width: 2px;
+    }
+
+    .social-link {
+        border-width: 2px;
+    }
 }
 
 /* 团队成员卡片内的社交链接样式 - 添加更具体的选择器避免与 VitePress socialLinks 冲突 */
