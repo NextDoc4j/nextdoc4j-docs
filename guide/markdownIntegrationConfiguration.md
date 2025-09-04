@@ -132,115 +132,11 @@ nextdoc4j:
 | `changelog`       | 变更日志   | 版本更新、新增功能 |
 | `examples`        | 示例代码   | 代码示例、最佳实践 |
 
-### 分组显示顺序
-文档分组在导航中的显示顺序与配置顺序一致：
-
-```yaml
-markdown:
-  - group: getting-started    # 第一个显示
-  - group: api-reference     # 第二个显示
-  - group: user-guide        # 第三个显示
-```
 
 ## 文档集成效果
 
 集成的 Markdown 文档会在左侧导航栏中显示：
 
-![NextDoc4j Markdown 文档集成](/public/images/screenshots/guide/login.png)
+![NextDoc4j Markdown 文档集成](/public/images/screenshots/guide/markdown.png)
 
 *▲ 集成 Markdown 文档后的导航界面*
-
-## 文档编写规范
-
-### Markdown 语法支持
-- 标准 Markdown 语法
-- GitHub Flavored Markdown (GFM)
-- 表格、代码块、链接
-- 图片嵌入（建议使用相对路径）
-
-### 文档结构建议
-```markdown
-# 文档标题
-
-## 概述
-简短介绍文档内容和用途
-
-## 详细说明
-具体的功能介绍或操作步骤
-
-### 子章节
-更详细的分类说明
-
-## 示例
-```yaml
-# 配置示例
-key: value
-```
-
-## 注意事项
-重要提示和注意点
-```
-
-### 图片资源管理
-```
-src/main/resources/
-├── markdown/
-│   └── images/           # 文档图片目录
-│       ├── api/         # API 文档图片
-│       ├── deployment/  # 部署文档图片
-│       └── common/      # 通用图片
-```
-
-## 高级配置示例
-
-### 动态内容配置
-```yaml
-nextdoc4j:
-  extension:
-    enabled: true
-    markdown:
-      # 环境特定文档
-      - group: environment
-        location: classpath:markdown/env/${spring.profiles.active}/**
-      
-      # 版本特定文档  
-      - group: version-docs
-        location: classpath:markdown/v${application.version}/**
-```
-
-### 多语言文档支持
-```yaml
-nextdoc4j:
-  extension:
-    enabled: true
-    markdown:
-      # 中文文档
-      - group: docs-zh
-        location: classpath:markdown/zh/**
-      
-      # 英文文档
-      - group: docs-en
-        location: classpath:markdown/en/**
-```
-
-## 文档维护最佳实践
-
-1. **内容组织**：
-    - 按功能模块合理分组
-    - 保持文档结构清晰
-    - 使用统一的命名规范
-
-2. **内容质量**：
-    - 定期更新文档内容
-    - 保持与代码同步
-    - 添加清晰的示例
-
-3. **用户体验**：
-    - 提供完整的目录结构
-    - 添加内部链接导航
-    - 使用清晰的标题层级
-
-4. **版本管理**：
-    - 记录文档变更历史
-    - 维护版本对应关系
-    - 及时清理过期文档

@@ -84,7 +84,7 @@ nextdoc4j:
 | `${application.contact.url}`  | 联系人网址  | https://github.com/zhangsan |
 | `${application.url}`          | 应用官网地址 | https://myapi.com           |
 
-### 页脚样式示例
+### 页脚样式示例(支持Markdown格式)
 
 #### 简单版权信息
 ```yaml
@@ -103,11 +103,18 @@ footer-text: 'Copyright © 2024 [${application.contact.name}](${application.cont
 
 ## 品牌效果展示
 
-配置品牌定制后的文档界面效果：
+### 登录页
+![登录页](/images/screenshots/guide/login-logo.png)  
+*展示自定义登录页的 标题 和 Logo*
 
-![NextDoc4j 品牌定制效果](/images/screenshots/guide/login.png)
+### 主页
+![主页](/images/screenshots/guide/home-logo.png)  
+*展示自定义主页的标题、页脚、Logo*
 
-*▲ 自定义 Logo 和页脚的文档界面*
+---
+
+> ▲ 支持自定义 Logo 和页脚，实现品牌化的文档界面
+
 
 ## 完整品牌配置示例
 
