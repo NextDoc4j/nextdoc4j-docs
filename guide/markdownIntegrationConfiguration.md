@@ -2,6 +2,10 @@
 
 NextDoc4j 支持集成额外的 Markdown 文档，为您的 API 文档提供更丰富的内容支持。
 
+::: warning 📋 关于 Markdown 
+当前版本暂时只支持纯 Markdown 语法
+:::
+
 ## 文档集成配置项
 
 | 配置项                            | 类型     | 说明              |
