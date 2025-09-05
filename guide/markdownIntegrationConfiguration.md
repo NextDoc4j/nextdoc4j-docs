@@ -2,8 +2,20 @@
 
 NextDoc4j 支持集成额外的 Markdown 文档，为您的 API 文档提供更丰富的内容支持。
 
-::: warning 📋 关于 Markdown 
-当前版本暂时只支持纯 Markdown 语法
+::: warning 📋 关于图片路径
+在 Markdown 中插入图片时，可以使用：
+
+1. **相对路径（相对于项目静态资源根目录）**
+    - 例如 `/img/test.png`。
+    - 不需要 Markdown 文件与图片在同一目录。
+    - 需要后端静态资源映射正确（如 Spring Boot `src/main/resources/static` 或 `WebMvcConfigurer` 中的映射）。
+    - Markdown-it 渲染时会根据静态资源 URL 显示图片。
+
+2. **完整路径（URL）**
+    - 例如 `https://example.com/img/test.png`。
+    - 无需额外处理。
+
+> ⚠️ 如果图片路径不符合静态资源映射，浏览器将显示 404。
 :::
 
 ## 文档集成配置项
