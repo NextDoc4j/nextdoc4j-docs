@@ -1,8 +1,9 @@
 # 🚀 NextDoc4j 快速开始
 
 ## 📋 版本要求
-
-> ⚠️ **重要提示**：NextDoc4j 目前仅支持 **Spring Boot 3.4.x** 版本，请确保您的项目版本符合要求。
+::: warning  ⚠️
+ NextDoc4j 目前仅支持 **Spring Boot 3.4.x** 版本，请确保您的项目版本符合要求。
+:::
 
 ## 🛠️ 三步快速集成
 
@@ -22,27 +23,22 @@
 
 在您的配置文件中启用 NextDoc4j：
 
-**方式一：使用 application.yml**
+在 `application.yml` 或 `application.properties` 中添加配置：
 
-```yaml
+::: code-group
+
+```yaml [application.yml]
 nextdoc4j:
-  enabled: true  # 是否启用 NextDoc4j，默认为 false
+  enabled: true  # 是否启用 NextDoc4j，默认 false
 ```
 
-**方式二：使用 application.properties**
-
-```properties
+```properties [application.properties]
 nextdoc4j.enabled=true
 ```
 
+:::
+
 ### 第三步：启动并访问
-
-1. **启动应用**
-   ```bash
-   mvn spring-boot:run
-   ```
-
-2. **访问文档页面**
 
    在浏览器中打开以下地址：
    ```
@@ -50,9 +46,26 @@ nextdoc4j.enabled=true
    ```
 
    > 💡 **提示**：请将 `8080` 替换为您实际的应用端口号
+   
 
-## 🎉 恭喜
+## 📋 重要提示
+::: tip 💡 提示
+### 适配基础
+目前所有的 SpringDoc 和 OpenAPI 3.x 适配功能均基于作者维护的另一个项目 [ContiNew](https://continew.top/) 进行开发和适配。
 
-到这里，您已经成功集成了 NextDoc4j！现在可以享受现代化的API文档体验了。
+### 问题反馈
+如果您在使用过程中遇到以下问题：
+- 数据无法正确解析
+- 数据不显示或展示异常
+- 其他功能性问题
 
-如需了解更多高级功能和配置选项，请查阅详细文档或访问官方仓库。
+请及时提交 Issue 到项目仓库：
+**📍 Issue 提交地址：** https://gitee.com/nextdoc4j/nextdoc4j/issues
+
+### 技术支持
+我们会及时响应并处理您提交的问题，以确保 OpenAPI 3.x 适配功能的稳定性和可用性。
+
+---
+
+> **注意：** 为了更好地解决问题，建议在提交 Issue 时详细描述遇到的问题、使用环境和重现步骤。
+:::
