@@ -28,7 +28,7 @@
     <div v-if="showPaymentModal" class="payment-modal-overlay" @click.self="showPaymentModal = false">
       <div class="payment-modal">
         <div class="modal-header">
-          <h3>选择支付方式</h3>
+          <h3>每一份赞助都是对我们持续维护开源的认可 🌟</h3>
           <button @click="showPaymentModal = false" class="close-btn">
             <svg viewBox="0 0 24 24" width="24" height="24">
               <path fill="currentColor" d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
@@ -36,49 +36,16 @@
           </button>
         </div>
 
-        <div class="payment-options">
-          <div class="payment-tabs">
-            <button
-                :class="['tab-btn', { active: activePayment === 'alipay' }]"
-                @click="activePayment = 'alipay'"
-            >
-              <span class="tab-icon"></span>
-              支付宝
-            </button>
-            <button
-                :class="['tab-btn', { active: activePayment === 'wechat' }]"
-                @click="activePayment = 'wechat'"
-            >
-              <span class="tab-icon"></span>
-              微信支付
-            </button>
-          </div>
-
-          <div class="payment-content">
-            <!-- 支付宝 -->
-            <div v-show="activePayment === 'alipay'" class="payment-panel">
-              <div class="qr-container">
-                <div class="qr-code">
-                  <img :src="config.sponsor?.payments?.alipay || '/images/alipay-qr.png'" alt="支付宝收款码" />
-                </div>
-                <div class="qr-tips">
-                  <p class="main-tip">打开支付宝扫一扫</p>
-                  <p class="sub-tip">感谢您的支持 ❤️</p>
-                </div>
-              </div>
+        <div class="payment-content">
+          <div class="qr-codes-horizontal">
+            <!-- 微信支付收款码 -->
+            <div class="qr-item">
+              <img :src="config.sponsor?.payments?.wechat || '/images/wechat-qr.png'" alt="微信收款码" class="qr-image" />
             </div>
 
-            <!-- 微信支付 -->
-            <div v-show="activePayment === 'wechat'" class="payment-panel">
-              <div class="qr-container">
-                <div class="qr-code wechat">
-                  <img :src="config.sponsor?.payments?.wechat || '/images/wechat-qr.png'" alt="微信收款码" />
-                </div>
-                <div class="qr-tips">
-                  <p class="main-tip">打开微信扫一扫</p>
-                  <p class="sub-tip">感谢您的支持 ❤️</p>
-                </div>
-              </div>
+            <!-- 支付宝收款码 -->
+            <div class="qr-item">
+              <img :src="config.sponsor?.payments?.alipay || '/images/alipay-qr.png'" alt="支付宝收款码" class="qr-image" />
             </div>
           </div>
         </div>
@@ -121,7 +88,6 @@ interface TeamConfig {
 
 // 响应式数据
 const showPaymentModal = ref<boolean>(false)
-const activePayment = ref<'alipay' | 'wechat'>('alipay')
 const selectedAmount = ref<number>(10)
 const config = ref<TeamConfig>({})
 
@@ -306,12 +272,6 @@ onUnmounted(() => {
   animation: pulse 2s infinite;
 }
 
-.price-hint {
-  color: var(--vp-c-text-2);
-  font-size: 0.9rem;
-  font-weight: 500;
-}
-
 /* 弹窗样式 */
 .payment-modal-overlay {
   position: fixed;
@@ -332,9 +292,9 @@ onUnmounted(() => {
   background: var(--vp-c-bg);
   border-radius: 20px;
   width: 90vw;
-  max-width: 480px;
+  max-width: 750px;
   max-height: 90vh;
-  overflow: hidden;
+  overflow-y: auto;
   box-shadow: 0 24px 48px rgba(0, 0, 0, 0.2);
   animation: slideUp 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
@@ -369,133 +329,33 @@ onUnmounted(() => {
   color: var(--vp-c-text-1);
 }
 
-.payment-options {
-  padding: 0;
+/* 左右平铺的二维码 */
+.payment-content {
+  padding: 2.5rem 2rem;
 }
 
-.payment-tabs {
+.qr-codes-horizontal {
   display: flex;
-  border-bottom: 1px solid var(--vp-c-divider-light);
+  flex-direction: row;
+  gap: 3rem;
+  justify-content: center;
+  align-items: center;
 }
 
-.tab-btn {
+.qr-item {
   flex: 1;
   display: flex;
-  align-items: center;
   justify-content: center;
-  gap: 0.5rem;
-  padding: 1rem;
-  background: none;
-  border: none;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  color: var(--vp-c-text-2);
-  transition: all 0.3s ease;
-  border-bottom: 3px solid transparent;
+  max-width: 320px;
 }
 
-.tab-btn.active {
-  color: var(--vp-c-green-1);
-  border-bottom-color: var(--vp-c-green-1);
-  background: var(--vp-c-green-soft);
-}
-
-.tab-btn:hover:not(.active) {
-  background: var(--vp-c-bg-soft);
-  color: var(--vp-c-text-1);
-}
-
-.tab-icon {
-  font-size: 1.2em;
-}
-
-.payment-panel {
-  padding: 2rem;
-}
-
-.qr-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 2rem;
-}
-
-.qr-code {
-  width: 200px;
-  height: 200px;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-  margin-bottom: 1rem;
-  position: relative;
-}
-
-.qr-code img {
+.qr-image {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.qr-code.wechat {
-  border: 2px solid #07c160;
-}
-
-.qr-tips {
-  text-align: center;
-}
-
-.main-tip {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: var(--vp-c-text-1);
-  margin-bottom: 0.5rem;
-}
-
-.sub-tip {
-  color: var(--vp-c-text-2);
-  font-size: 0.9rem;
-  margin: 0;
-}
-
-.amount-suggestions {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-}
-
-.amount-label {
-  color: var(--vp-c-text-2);
-  font-weight: 500;
-}
-
-.amount-buttons {
-  display: flex;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.amount-btn {
-  padding: 0.5rem 1rem;
-  border: 2px solid var(--vp-c-divider);
-  background: var(--vp-c-bg);
-  border-radius: 8px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.amount-btn:hover {
-  border-color: var(--vp-c-green-1);
-  color: var(--vp-c-green-1);
-}
-
-.amount-btn.active {
-  background: var(--vp-c-green-1);
-  border-color: var(--vp-c-green-1);
-  color: white;
+  height: auto;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  background: white;
 }
 
 .modal-footer {
@@ -514,58 +374,6 @@ onUnmounted(() => {
 .heart {
   font-size: 1.1em;
   animation: heartbeat 1.5s ease-in-out infinite;
-}
-
-/* 支持者部分 */
-.supporters-section {
-  margin-top: 4rem;
-  padding-top: 2rem;
-  border-top: 1px solid var(--vp-c-divider-light);
-}
-
-.supporters-section h3 {
-  font-size: 1.2rem;
-  color: var(--vp-c-text-1);
-  margin-bottom: 1.5rem;
-}
-
-.supporters-list {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-.supporter-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.supporter-avatar {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  border: 2px solid var(--vp-c-green-1);
-  transition: all 0.3s ease;
-}
-
-.supporter-avatar:hover {
-  transform: scale(1.1);
-  box-shadow: 0 4px 16px rgba(34, 197, 94, 0.3);
-}
-
-.supporter-name {
-  font-size: 0.8rem;
-  color: var(--vp-c-text-2);
-  text-align: center;
-}
-
-.supporter-more {
-  color: var(--vp-c-text-2);
-  font-size: 0.9rem;
 }
 
 /* 动画效果 */
@@ -626,20 +434,25 @@ onUnmounted(() => {
 
   .payment-modal {
     width: 95vw;
+    max-width: none;
     margin: 1rem;
   }
 
-  .qr-code {
-    width: 160px;
-    height: 160px;
+  .payment-content {
+    padding: 2rem 1rem;
+  }
+
+  .qr-codes-horizontal {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .qr-item {
+    max-width: 350px;
   }
 
   .modal-header {
     padding: 1rem 1.5rem;
-  }
-
-  .payment-panel {
-    padding: 1.5rem;
   }
 }
 </style>
