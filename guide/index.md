@@ -72,7 +72,7 @@
 | 资源    | 链接                                                           |
 |-------|--------------------------------------------------------------|
 | Gitee | [https://gitee.com/nextdoc4j](https://gitee.com/nextdoc4j)   |
-| 在线演示  | [https://demo.dockit4j.top](https://demo.dockit4j.top)       |
+| 在线演示  | [https://demo.nextdoc4j.top](https://demo.nextdoc4j.top)     |
 | 问题反馈  | [Gitee Issues](https://gitee.com/nextdoc4j/nextdoc4j/issues) |
 
 ## 📄 开源协议

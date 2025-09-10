@@ -17,7 +17,7 @@ hero:
       link: /guide/
     - theme: alt
       text: "🎮 在线演示"
-      link: https://demo.dockit4j.top/
+      link: https://demo.nextdoc4j.top/
 
 features:
   - icon: 🎨

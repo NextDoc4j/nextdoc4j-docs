@@ -68,8 +68,8 @@ export default defineConfig({
 
         footer: {
             copyright: [
-                'Copyright © 2025 <a href="https://docs.dockit4j.top" target="_blank" rel="noopener noreferrer">NextDoc4j 版权所有</a>',
-                '<a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">浙ICP备2025151976号</a>'
+                'Copyright © 2025 <a href="https://www.nextdoc4j.top/" target="_blank" rel="noopener noreferrer">NextDoc4j 版权所有</a>',
+                '<a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">浙ICP备2025151976号-2</a>'
             ].join('<br>')
         },
 
