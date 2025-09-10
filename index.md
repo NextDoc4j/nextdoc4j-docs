@@ -76,7 +76,7 @@ features:
 
 ```xml [Maven]
 <dependency>
-    <groupId>dw.nextdoc4j</groupId>
+    <groupId>top.nextdoc4j</groupId>
     <artifactId>nextdoc4j-springboot3-starter</artifactId>
     <version>1.0.0</version>
 </dependency>

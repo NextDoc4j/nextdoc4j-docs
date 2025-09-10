@@ -39,7 +39,7 @@ nextdoc4j/
 
 **主要包结构**:
 ```
-dw.nextdoc4j.core/
+top.nextdoc4j.core/
 ├── configuration/          # 配置相关
 │   ├── extension/         # 扩展配置
 │   │   ├── NextDoc4jBasicAuth.java    # 基础认证配置
@@ -72,7 +72,7 @@ dw.nextdoc4j.core/
 
 **主要包结构**:
 ```
-dw.nextdoc4j.enums/
+top.nextdoc4j.enums/
 ├── core/                  # 核心枚举
 │   └── BaseEnum.java     # 基础枚举接口
 ├── handler/              # 处理器
@@ -86,7 +86,7 @@ dw.nextdoc4j.enums/
 
 **主要包结构**:
 ```
-dw.nextdoc4j.springboot/
+top.nextdoc4j.springboot/
 ├── configuration/         # 自动配置
 │   ├── NextDoc4jAutoConfiguration.java      # 主配置类
 │   └── NextDoc4jFilterConfiguration.java    # 过滤器配置
