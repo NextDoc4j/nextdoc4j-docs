@@ -14,19 +14,20 @@
     "docs:dev": "vitepress dev",
     "docs:build": "pnpm run team:update && vitepress build",
     "docs:preview": "vitepress preview",
-
     "team:update": "tsx more/team/build-team-cache.ts",
     "team:force-update": "tsx more/team/build-team-cache.ts --force",
     "team:status": "tsx more/team/build-team-cache.ts --status",
-
     "prebuild": "npm run team:update",
     "build": "npm run docs:build",
     "preview": "npm run docs:preview",
-
     "type-check": "tsc --noEmit",
     "build:ts": "tsc"
   },
   "dependencies": {
+    "medium-zoom": "^1.1.0",
+    "photoswipe": "^5.4.4",
+    "viewerjs": "^1.11.7",
+    "vitepress-plugin-image-viewer": "^1.1.6",
     "vue": "^3.5.20"
   }
 }
