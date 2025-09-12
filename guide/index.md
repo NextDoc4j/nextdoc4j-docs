@@ -46,17 +46,26 @@
 - 灵活的布局样式调整能力，支持菜单模式、标签页等配置
 - 自定义 CSS 样式支持，满足企业级项目的个性化需求
 
+
 ## 🏗️ 技术架构
 
-- **前端框架**: 基于 [Vben Admin](https://doc.vben.pro/) 企业级管理系统框架
-- **核心技术栈**: Vue.js 3 + TypeScript + Vite
-- **UI 组件库**: Element Plus + 二次封装组件
-- **样式方案**: UnoCSS + CSS Variables 主题系统
-- **状态管理**: Pinia + 数据持久化
-- **工程化**: ESLint + Prettier + Husky + Commitlint
-- **后端技术**: Spring Boot 3.4.x + SpringDoc + OpenAPI 3.0
-- **构建工具**: Maven
-- **浏览器支持**: Chrome 88+, Firefox 85+, Safari 14+, Edge 88+
+我们的系统基于现代化前后端技术栈，兼顾 **高性能**、**可维护性** 和 **扩展性**。
+
+### 前端架构
+
+*  **框架**：[Vben Admin 5.x](https://doc.vben.pro/) —— 企业级管理系统解决方案
+* **核心技术**：[Vue3](https://vuejs.org/) + [TypeScript](https://www.typescriptlang.org/) + [Vite](https://vitejs.dev/)
+* **UI & 样式**： [Element Plus](https://element-plus.org/) + 二次封装组件，结合 [TailwindCSS](https://tailwindcss.com/) 与 CSS Variables 实现动态主题
+* **状态管理**：[Pinia](https://pinia.vuejs.org/) —— 简洁高效，支持数据持久化
+
+### 工程化体系
+* **代码规范**：[ESLint](https://eslint.org/)、[Prettier](https://prettier.io/)
+* **提交校验**：[Husky](https://typicode.github.io/husky)、[Commitlint](https://commitlint.js.org/)
+
+### 后端架构
+* **框架**：[Spring Boot 3.4.x](https://spring.io/projects/spring-boot)
+* **接口文档**：[SpringDoc](https://springdoc.org/) + [OpenAPI 3.0](https://swagger.io/specification/)
+* **版本与构建**：[Maven](https://maven.apache.org/)
 
 ## 🎯 项目目标
 
@@ -69,11 +78,12 @@
 
 ## 🤝 社区与支持
 
-| 资源    | 链接                                                           |
-|-------|--------------------------------------------------------------|
-| Gitee | [https://gitee.com/nextdoc4j](https://gitee.com/nextdoc4j)   |
-| 在线演示  | [https://demo.nextdoc4j.top](https://demo.nextdoc4j.top)     |
-| 问题反馈  | [Gitee Issues](https://gitee.com/nextdoc4j/nextdoc4j/issues) |
+| 资源     | 链接                                                           |
+|--------|--------------------------------------------------------------|
+| Gitee  | [https://gitee.com/nextdoc4j](https://gitee.com/nextdoc4j)   |
+| Github | [https://github.com/nextdoc4j](https://github.com/nextdoc4j) |
+| 在线演示   | [https://demo.nextdoc4j.top](https://demo.nextdoc4j.top)     |
+| 问题反馈   | [Gitee Issues](https://gitee.com/nextdoc4j/nextdoc4j/issues) |
 
 ## 📄 开源协议
 
