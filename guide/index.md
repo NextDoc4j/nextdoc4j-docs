@@ -1,14 +1,69 @@
-# 💡 诞生背景
+# 项目简介
+<br>
+<a href="https://github.com/nextdoc4j/nextdoc4j">
+  <img src="https://img.shields.io/badge/version-1.0.0-green" alt="Project Version 1.0.0" style="display:inline-block;margin-right:10px;" />
+</a>
+<a href="https://spring.io/projects/spring-boot">
+  <img src="https://img.shields.io/badge/SpringBoot-3.5.5-green?logo=spring" alt="Spring Boot 3.5.5" style="display:inline-block;margin-right:10px;" />
+</a>
+<a href="https://springdoc.org/">
+  <img src="https://img.shields.io/badge/SpringDoc-2.8.13-orange?logo=openapiinitiative" alt="SpringDoc 2.8.13" style="display:inline-block;margin-right:10px;" />
+</a>
+<a href="https://www.openapis.org/">
+  <img src="https://img.shields.io/badge/OpenAPI-3.1-lightgrey?logo=openapiinitiative" alt="OpenAPI 3.1" style="display:inline-block;margin-right:10px;" />
+</a>
+<a href="https://openjdk.org/">
+  <img src="https://img.shields.io/badge/OpenJDK-17-brightgreen?logo=OpenJDK" alt="OpenJDK 17" style="display:inline-block;margin-right:10px;" />
+</a>
+<a href="https://vuejs.org/">
+  <img src="https://img.shields.io/badge/Vue-3.5.17-brightgreen?logo=vue.js" alt="Vue 3.5.17" style="display:inline-block;margin-right:10px;" />
+</a>
+<a href="https://element-plus.org/">
+  <img src="https://img.shields.io/badge/ElementPlus-2.10.2-4BC0C0?logo=element" alt="Element Plus 2.10.2" style="display:inline-block;margin-right:10px;" />
+</a>
+<a href="https://www.typescriptlang.org/">
+  <img src="https://img.shields.io/badge/TypeScript-5.8.3-3178C6?logo=typescript" alt="TypeScript 5.8.3" style="display:inline-block;margin-right:10px;" />
+</a>
+<a href="https://vitejs.dev/">
+  <img src="https://img.shields.io/badge/Vite-6.3.5-CF9E53?logo=vite" alt="Vite 6.3.5" style="display:inline-block;margin-right:10px;" />
+</a>
+<a href="https://www.apache.org/licenses/LICENSE-2.0">
+  <img src="https://img.shields.io/badge/License-Apache%202.0-red?logo=apache" alt="Apache License 2.0" style="display:inline-block;margin-right:10px;" />
+</a>
+<a href="https://github.com/nextdoc4j/nextdoc4j/stargazers">
+  <img src="https://img.shields.io/github/stars/nextdoc4j/nextdoc4j?style=social" alt="GitHub Stars" style="display:inline-block;margin-right:10px;" />
+</a>
+<a href="https://github.com/nextdoc4j/nextdoc4j/network/members">
+  <img src="https://img.shields.io/github/forks/nextdoc4j/nextdoc4j?style=social" alt="GitHub Forks" style="display:inline-block;margin-right:10px;" />
+</a>
+<a href="https://gitee.com/nextdoc4j/nextdoc4j/stargazers">
+  <img src="https://gitee.com/nextdoc4j/nextdoc4j/badge/star.svg?theme=dark" alt="Gitee Stars" style="display:inline-block;margin-right:10px;"/>
+</a>
+<a href="https://gitee.com/nextdoc4j/nextdoc4j/members">
+  <img src="https://gitee.com/nextdoc4j/nextdoc4j/badge/fork.svg?theme=dark" alt="Gitee Forks" style="display:inline-block;margin-right:10px;" />
+</a>
 
-**NextDoc4j** 完全是受 **[Knife4j](https://doc.xiaominfo.com/)** 的启发，也感谢 **Knife4j** 开源项目的贡献。在使用 Knife4j 的过程中，我们深深体会到了优秀 API 文档工具的重要性，同时也看到了在现代化 Web 技术发展下，API 文档界面还有更大的提升空间。
+[在线演示](https://demo.nextdoc4j.top) | [问题反馈](https://gitee.com/nextdoc4j/nextdoc4j/issues)
 
-同时，前端 UI 基于优秀的 **[Vben Admin](https://doc.vben.pro/)** 企业级管理系统框架构建，感谢 Vben 提供的开箱即用的现代化前端解决方案。Vben Admin 基于 Vue3.0、Vite、TypeScript 的技术栈，为我们提供了完善的组件库、工具函数、主题配置等基础能力，让我们能够专注于 API 文档的核心功能开发。
-
-## 🚀 项目简介
 
 **NextDoc4j** 是一个现代化的 API 文档 UI 工具，专为 **SpringDoc** 和 **OpenAPI 3** 设计的现代化文档界面，旨在完全替代传统的 Swagger UI，为开发者提供更美观、更强大的开发体验，让 API 文档焕然一新。
 
 基于现代 Web 技术栈构建，采用响应式设计理念，提供清晰直观的界面布局，支持暗色/亮色主题切换，为开发者带来舒适的文档浏览体验。重新设计的用户交互流程，改进了参数输入、请求测试、响应查看等核心功能，让 API 调试工作更加顺手。
+
+## 🤝 社区与支持
+
+| 资源     | 链接                                                           |
+|--------|--------------------------------------------------------------|
+| Gitee  | [https://gitee.com/nextdoc4j](https://gitee.com/nextdoc4j)   |
+| Github | [https://github.com/nextdoc4j](https://github.com/nextdoc4j) |
+| 在线演示   | [https://demo.nextdoc4j.top](https://demo.nextdoc4j.top)     |
+| 问题反馈   | [Gitee Issues](https://gitee.com/nextdoc4j/nextdoc4j/issues) |
+
+## 💡 诞生背景
+
+**NextDoc4j** 完全是受 **[Knife4j](https://doc.xiaominfo.com/)** 的启发，也感谢 **Knife4j** 开源项目的贡献。在使用 Knife4j 的过程中，我们深深体会到了优秀 API 文档工具的重要性，同时也看到了在现代化 Web 技术发展下，API 文档界面还有更大的提升空间。
+
+同时，前端 UI 基于优秀的 **[Vben Admin](https://doc.vben.pro/)** 企业级管理系统框架构建，感谢 Vben 提供的开箱即用的现代化前端解决方案。Vben Admin 基于 Vue3.0、Vite、TypeScript 的技术栈，为我们提供了完善的组件库、工具函数、主题配置等基础能力，让我们能够专注于 API 文档的核心功能开发。
 
 ## 📸 界面展示
 
@@ -76,14 +131,7 @@
 - **高度可定制** - 适应不同团队和项目的个性化需求
 - **全平台支持** - 完美适配各种设备和屏幕尺寸
 
-## 🤝 社区与支持
 
-| 资源     | 链接                                                           |
-|--------|--------------------------------------------------------------|
-| Gitee  | [https://gitee.com/nextdoc4j](https://gitee.com/nextdoc4j)   |
-| Github | [https://github.com/nextdoc4j](https://github.com/nextdoc4j) |
-| 在线演示   | [https://demo.nextdoc4j.top](https://demo.nextdoc4j.top)     |
-| 问题反馈   | [Gitee Issues](https://gitee.com/nextdoc4j/nextdoc4j/issues) |
 
 ## 📄 开源协议
 

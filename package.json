@@ -24,6 +24,7 @@
     "build:ts": "tsc"
   },
   "dependencies": {
+    "badge-maker": "^5.0.2",
     "medium-zoom": "^1.1.0",
     "photoswipe": "^5.4.4",
     "viewerjs": "^1.11.7",
