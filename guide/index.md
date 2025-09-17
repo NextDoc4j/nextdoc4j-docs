@@ -52,12 +52,10 @@
 
 ## 🤝 社区与支持
 
-| 资源     | 链接                                                           |
-|--------|--------------------------------------------------------------|
-| Gitee  | [https://gitee.com/nextdoc4j](https://gitee.com/nextdoc4j)   |
-| Github | [https://github.com/nextdoc4j](https://github.com/nextdoc4j) |
-| 在线演示   | [https://demo.nextdoc4j.top](https://demo.nextdoc4j.top)     |
-| 问题反馈   | [Gitee Issues](https://gitee.com/nextdoc4j/nextdoc4j/issues) |
+| 平台     | 后端                                                                               | 前端 UI                                                                                  |
+|--------|----------------------------------------------------------------------------------|----------------------------------------------------------------------------------------|
+| Gitee  | [https://gitee.com/nextdoc4j/nextdoc4j](https://gitee.com/nextdoc4j/nextdoc4j)   | [https://gitee.com/nextdoc4j/nextdoc4j-ui](https://gitee.com/nextdoc4j/nextdoc4j-ui)   |
+| Github | [https://github.com/nextdoc4j/nextdoc4j](https://github.com/nextdoc4j/nextdoc4j) | [https://github.com/nextdoc4j/nextdoc4j-ui](https://github.com/nextdoc4j/nextdoc4j-ui) |
 
 ## 💡 诞生背景
 
