@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "type": "module",
   "devDependencies": {
-    "@iconify-json/simple-icons": "^1.2.49",
+    "@iconify-json/simple-icons": "^1.2.54",
     "@types/node": "^20.0.0",
-    "tsx": "^4.7.0",
-    "typescript": "^5.3.0",
-    "unplugin-icons": "^22.2.0",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3",
+    "unplugin-icons": "^22.4.2",
     "vitepress": "2.0.0-alpha.12"
   },
   "scripts": {
@@ -29,6 +29,6 @@
     "photoswipe": "^5.4.4",
     "viewerjs": "^1.11.7",
     "vitepress-plugin-image-viewer": "^1.1.6",
-    "vue": "^3.5.20"
+    "vue": "^3.5.22"
   }
 }
