@@ -23,7 +23,6 @@ export default defineConfig({
             {
                 text: '更多',
                 items: [
-
                     {text: '贡献指南', link: '/more/contribute'},
                     {text: '更新日志', link: '/more/changelog'},
                     {text: 'FAQ', link: '/more/faq'},

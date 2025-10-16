@@ -3,11 +3,12 @@ layout: home
 
 hero:
   name: "NextDoc4j"
-  text: "现代化 API 文档 UI 工具"
+  text: >
+    现代化 API 文档 UI 工具
+
+    全面替代 Swagger UI
   tagline: >
-    专为 SpringDoc 和 OpenAPI 3 设计的现代化文档界面，
-    替代 Swagger UI，提供更美观、更强大的开发体验。
-    让 API 文档焕然一新。
+    专为 SpringDoc 和 OpenAPI 3 设计的现代化文档界面，更美观、更强大的开发体验。让 API 文档焕然一新。
   image:
     src: /logo/logo.png
     alt: NextDoc4j
@@ -90,7 +91,7 @@ features:
 
 ```yaml [application.yml]
 nextdoc4j:
-  enabled: true  # 是否启用 NextDoc4j，默认 false
+  enabled: true # 是否启用 NextDoc4j，默认 false
 ```
 
 ```properties [application.properties]
@@ -108,9 +109,10 @@ http://localhost:端口/doc.html
 ```
 
 ::: tip 💡 提示
+
 - 默认端口通常是 `8080`
 - 完整地址示例：`http://localhost:8080/doc.html`
-- 启用全局鉴权的项目需要配置路径白名单：/doc.html 和 /nextdoc/**
+- 启用全局鉴权的项目需要配置路径白名单：/doc.html 和 /nextdoc/\*\*
   :::
 
 ### 主界面预览
@@ -121,8 +123,9 @@ http://localhost:端口/doc.html
 </div>
 
 ::: details 🎯 界面功能说明
-- **左侧导航栏**：展示所有API分组和接口列表
+
+- **左侧导航栏**：展示所有 API 分组和接口列表
 - **右侧内容区**：显示接口详细信息、参数说明和调试功能
 - **顶部搜索栏**：快速查找特定接口
-- **在线调试**：直接在页面中测试API接口
+- **在线调试**：直接在页面中测试 API 接口
   :::
