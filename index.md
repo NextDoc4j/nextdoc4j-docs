@@ -79,7 +79,7 @@ features:
 <dependency>
     <groupId>top.nextdoc4j</groupId>
     <artifactId>nextdoc4j-springboot3-starter</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
 </dependency>
 ```
 
