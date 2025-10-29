@@ -55,13 +55,7 @@
 ::: tip 💡
 选择您喜欢的代码托管平台,给我们一个 Star ⭐ 支持项目持续发展!
 :::
-
-|     平台      | 后端                                                             | 前端                                                                   |
-|:-----------:|----------------------------------------------------------------|----------------------------------------------------------------------|
-| **GitCode** | [NextDoc4j/nextdoc4j](https://gitcode.com/NextDoc4j/nextdoc4j) | [NextDoc4j/nextdoc4j-ui](https://gitcode.com/NextDoc4j/nextdoc4j-ui) |
-| **GitHub**  | [nextdoc4j/nextdoc4j](https://github.com/nextdoc4j/nextdoc4j)  | [nextdoc4j/nextdoc4j-ui](https://github.com/nextdoc4j/nextdoc4j-ui)  |
-|  **Gitee**  | [nextdoc4j/nextdoc4j](https://gitee.com/nextdoc4j/nextdoc4j)   | [nextdoc4j/nextdoc4j-ui](https://gitee.com/nextdoc4j/nextdoc4j-ui)   |
-
+<CommunityPlatforms></CommunityPlatforms>
 
 ## 💡 诞生背景
 

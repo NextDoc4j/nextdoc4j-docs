@@ -8,6 +8,7 @@ import imageViewer from "vitepress-plugin-image-viewer";
 
 import TeamMembers from "./components/TeamMembers.vue";
 import SponsorSection from "./components/SponsorSection.vue";
+import CommunityPlatforms from "./components/CommunityPlatforms.vue";
 import { useRoute } from "vitepress";
 
 export default {
@@ -24,5 +25,6 @@ export default {
   enhanceApp({ app }: { app: App }) {
     app.component("TeamMembers", TeamMembers);
     app.component("SponsorSection", SponsorSection);
+    app.component("CommunityPlatforms", CommunityPlatforms);
   },
 };
