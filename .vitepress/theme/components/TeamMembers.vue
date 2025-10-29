@@ -14,7 +14,9 @@
              target="_blank"
              class="social-link github-link">
             <svg class="social-icon" viewBox="0 0 24 24">
-              <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" fill="currentColor"/>
+              <path
+                  d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
+                  fill="currentColor"/>
             </svg>
           </a>
 
@@ -23,7 +25,9 @@
              target="_blank"
              class="social-link gitee-link">
             <svg class="social-icon" viewBox="0 0 24 24">
-              <path d="M11.984 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.016 0zm6.09 5.333c.328 0 .593.266.592.593v1.482a.594.594 0 0 1-.593.592H9.777c-.982 0-1.778.796-1.778 1.778v5.63c0 .327.266.592.593.592h5.63c.982 0 1.778-.796 1.778-1.778v-.296a.593.593 0 0 0-.592-.593h-4.15a.592.592 0 0 1-.592-.592v-1.482a.593.593 0 0 1 .593-.592h6.815c.327 0 .593.265.593.592v3.408a4 4 0 0 1-4 4H5.926a.593.593 0 0 1-.593-.593V9.778a4.444 4.444 0 0 1 4.445-4.444h8.296z" fill="#C71D23"/>
+              <path
+                  d="M11.984 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.016 0zm6.09 5.333c.328 0 .593.266.592.593v1.482a.594.594 0 0 1-.593.592H9.777c-.982 0-1.778.796-1.778 1.778v5.63c0 .327.266.592.593.592h5.63c.982 0 1.778-.796 1.778-1.778v-.296a.593.593 0 0 0-.592-.593h-4.15a.592.592 0 0 1-.592-.592v-1.482a.593.593 0 0 1 .593-.592h6.815c.327 0 .593.265.593.592v3.408a4 4 0 0 1-4 4H5.926a.593.593 0 0 1-.593-.593V9.778a4.444 4.444 0 0 1 4.445-4.444h8.296z"
+                  fill="#C71D23"/>
             </svg>
           </a>
 
@@ -32,7 +36,9 @@
              target="_blank"
              class="social-link blog-link">
             <svg class="social-icon" viewBox="0 0 24 24">
-              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" fill="currentColor"/>
+              <path
+                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"
+                  fill="currentColor"/>
             </svg>
           </a>
         </div>
@@ -58,7 +64,9 @@
 
             <div class="member-location" v-if="member.location || member.bio">
               <svg class="location-icon" viewBox="0 0 24 24" width="12" height="12">
-                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="currentColor"/>
+                <path
+                    d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
+                    fill="currentColor"/>
               </svg>
               <span class="location-text">{{ member.location || member.bio || '未知' }}</span>
             </div>
@@ -89,7 +97,9 @@
              target="_blank"
              class="social-link github-link">
             <svg class="social-icon" viewBox="0 0 24 24">
-              <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" fill="currentColor"/>
+              <path
+                  d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
+                  fill="currentColor"/>
             </svg>
           </a>
 
@@ -97,7 +107,21 @@
              target="_blank"
              class="social-link gitee-link">
             <svg class="social-icon" viewBox="0 0 24 24">
-              <path d="M11.984 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.016 0zm6.09 5.333c.328 0 .593.266.592.593v1.482a.594.594 0 0 1-.593.592H9.777c-.982 0-1.778.796-1.778 1.778v5.63c0 .327.266.592.593.592h5.63c.982 0 1.778-.796 1.778-1.778v-.296a.593.593 0 0 0-.592-.593h-4.15a.592.592 0 0 1-.592-.592v-1.482a.593.593 0 0 1 .593-.592h6.815c.327 0 .593.265.593.592v3.408a4 4 0 0 1-4 4H5.926a.593.593 0 0 1-.593-.593V9.778a4.444 4.444 0 0 1 4.445-4.444h8.296z" fill="#C71D23"/>
+              <path
+                  d="M11.984 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.016 0zm6.09 5.333c.328 0 .593.266.592.593v1.482a.594.594 0 0 1-.593.592H9.777c-.982 0-1.778.796-1.778 1.778v5.63c0 .327.266.592.593.592h5.63c.982 0 1.778-.796 1.778-1.778v-.296a.593.593 0 0 0-.592-.593h-4.15a.592.592 0 0 1-.592-.592v-1.482a.593.593 0 0 1 .593-.592h6.815c.327 0 .593.265.593.592v3.408a4 4 0 0 1-4 4H5.926a.593.593 0 0 1-.593-.593V9.778a4.444 4.444 0 0 1 4.445-4.444h8.296z"
+                  fill="#C71D23"/>
+            </svg>
+          </a>
+
+          <a :href="config.project?.gitcodeOrgHome"
+             target="_blank"
+             class="social-link gitcode-link">
+            <svg class="social-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <image
+                  href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAMAAADVRocKAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAA/UExURQAAANsgQNogP9sgPdogPtogP9ogPtogP9ogP9ogPtsgQN8gQNsgPtogPt0gPtggPdsgPtwgQNogPtogPv///3+ZkFoAAAATdFJOUwAgUHCfz9+/r4BAEO9gb3CQMM9sefpCAAAAAWJLR0QUkt/JNQAAAAd0SU1FB+gLFw4SAP63MKEAAAM4SURBVGje7VrdmqMwCFUT8+9sHN//XdfWWasBEhL124td7mbaniMHAoS26/4561d7BngQclTLjyltrPP3gQu5Qx9tlMMd6FYvtAXpLqH7KYf+I9fUHBRvQxF+c6OJggv/prD1ER8UG34TqjK0Ze1TMzU6ffHVOej0i61+bIB/meRFoh8b8dejx2Ho66KbBKKMP7fI/7FiMl3EX8aSPhfxlyVfmy7pv1k2V30tfpzBv2SOQNbB6/XshhqCryp49Vb7GziVCUDyVpMTTE+E05kml+L5zp1bZVDq/bcyYv7zIZES0CVvQt/qrB5f0EbgTd6xQwAzlFd+z3Vd0R+CGTSzCM4u0BHoAf7CnBfsIUiZSoQcAW4T3Bl0RlTEATZB109SaymyMZuWZol4hp2pO4dch+CrOx3Aqpy8Dvt3FbrVAfuwA51+2IHuaQfmpx0Yqk+xn6xcy8NmMlrh5tzQCGOcPWQev7UFHQXxXLJGofzFJxisRMIHyihUHL2Ruw4YPRZaUFvCxyhAodC0A7zZzxY+FEn8mYW/zlQnDcDL9ADrmARnEYAHdIy5HpxVAAT0wOL594chQ5ApRJws2kx9wgDOQZcx/hX3k0qyhqDrrRlZQgX6ocq3Xe8GYddylz0We67gczXbXmu82QkDCPZEArnHG3sBUSr1XpN9SlC5miG13l9Iq11sJEhPyS51yly6rpMmCQJQYVpXopYgAAXANhJE6jnTsxwaCb4pFKBRWx4l+X4o2UCj0BSFRIhjWwFFMjbgp6uIY0EAZ61BpPSed+7soKKG2noBbvLnR4TXzEoGgJ9Oh0gjYS9aV3OgRaSNHeu2kZ1LcNUEp08BCbgrb2TTHZCegs7MunwdRzfRmLzESrPwDYcz2IfweiwWwjQx+PeTxB8qEM+UG0le14v9GuP7QURNzxZk6Mp799ferji0RDodrm9+l3xDvINBZZPiOoMqTFVXGUr4VxnK+E1fcVXhdzWXgMQ0tzpObTJVTDt95VcJb3nq1pTVTvCbxx6JGgpGWUd0YlM0wW9CMVI2mEs74j7mS6wW13+dsPYVnETF6bbfPngnrNHjuxesPUHLOM33/bDivz1pvwFpJhpiuTDDXwAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAyNC0xMS0yM1QxNDoxODowMCswMDowMJCjfg0AAAAldEVYdGRhdGU6bW9kaWZ5ADIwMjQtMTEtMjNUMTQ6MTg6MDArMDA6MDDh/saxAAAAKHRFWHRkYXRlOnRpbWVzdGFtcAAyMDI0LTExLTIzVDE0OjE4OjAwKzAwOjAwtuvnbgAAAABJRU5ErkJggg=="
+                  width="24"
+                  height="24"
+              />
             </svg>
           </a>
         </div>
@@ -123,7 +147,9 @@
 
             <div class="member-location">
               <svg class="location-icon" viewBox="0 0 24 24" width="12" height="12">
-                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="currentColor"/>
+                <path
+                    d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
+                    fill="currentColor"/>
               </svg>
               <span class="location-text">远程协作</span>
             </div>
@@ -157,7 +183,8 @@
     <div v-if="cacheInfo && !loading && !error" class="cache-info">
       <p class="cache-status">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+          <path
+              d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
         </svg>
         数据更新于 {{ formatDate(cacheInfo.lastUpdate) }}
       </p>
@@ -166,7 +193,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
+import {ref, onMounted} from 'vue'
 
 // 类型定义
 interface SocialLinks {
@@ -194,6 +221,7 @@ interface Team {
 interface ProjectConfig {
   githubOrgHome?: string
   giteeOrgHome?: string
+  gitcodeOrgHome?: string
 }
 
 interface TeamConfig {
@@ -265,7 +293,8 @@ const loadConfig = async (): Promise<void> => {
       ],
       project: {
         githubOrgHome: 'https://github.com/NextDoc4j',
-        giteeOrgHome: 'https://gitee.com/NextDoc4j'
+        giteeOrgHome: 'https://gitee.com/NextDoc4j',
+        gitcodeOrgHome: 'https://gitcode.com/NextDoc4j'
       }
     }
   }
@@ -284,7 +313,7 @@ const loadFromCache = async (): Promise<boolean> => {
 
     if (cacheData.members && cacheData.members.length > 0) {
       teamMembers.value = cacheData.members
-      cacheInfo.value = { lastUpdate: cacheData.lastUpdate }
+      cacheInfo.value = {lastUpdate: cacheData.lastUpdate}
       console.log('✓ 成功从缓存加载团队数据')
       return true
     }
@@ -304,7 +333,7 @@ const fetchGitHubUser = async (username: string): Promise<TeamMember | null> => 
       throw new Error(`GitHub API 请求失败: ${response.status}`)
     }
     const data = await response.json()
-    return { ...data, platform: 'github' }
+    return {...data, platform: 'github'}
   } catch (error) {
     console.error(`获取 GitHub 用户 ${username} 失败:`, (error as Error).message)
     return null
@@ -320,7 +349,7 @@ const fetchGiteeUser = async (username: string): Promise<TeamMember | null> => {
     }
     const data = await response.json()
     data.html_url = data.html_url || `https://gitee.com/${data.login}`
-    return { ...data, platform: 'gitee' }
+    return {...data, platform: 'gitee'}
   } catch (error) {
     console.error(`获取 Gitee 用户 ${username} 失败:`, (error as Error).message)
     return null
@@ -530,6 +559,13 @@ onMounted(async () => {
   background: #c71d23;
   color: white;
   border-color: #c71d23;
+  box-shadow: 0 4px 12px rgba(199, 29, 35, 0.4);
+}
+
+.gitcode-link:hover {
+  background: #f3070f;
+  color: white;
+  border-color: #f3070f;
   box-shadow: 0 4px 12px rgba(199, 29, 35, 0.4);
 }
 
@@ -795,8 +831,12 @@ onMounted(async () => {
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 /* 响应式设计 */

@@ -24,6 +24,7 @@ interface Team {
 interface ProjectConfig {
     githubOrgHome?: string
     giteeOrgHome?: string
+    gitcodeOrgHome?: string
 }
 
 interface PaymentMethods {
@@ -84,7 +85,8 @@ const teamConfig: TeamConfiguration = {
     // 项目配置
     project: {
         githubOrgHome: 'https://github.com/NextDoc4j',
-        giteeOrgHome: 'https://gitee.com/NextDoc4j'
+        giteeOrgHome: 'https://gitee.com/NextDoc4j',
+        gitcodeOrgHome: 'https://gitcode.com/NextDoc4j'
     },
 
     // 赞助配置

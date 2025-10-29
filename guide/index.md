@@ -43,7 +43,7 @@
   <img src="https://gitee.com/nextdoc4j/nextdoc4j/badge/fork.svg?theme=dark" alt="Gitee Forks" style="display:inline-block;margin-right:10px;" />
 </a>
 
-[在线演示](https://demo.nextdoc4j.top) | [问题反馈](https://gitee.com/nextdoc4j/nextdoc4j/issues)
+[在线演示](https://demo.nextdoc4j.top) 
 
 
 **NextDoc4j** 是一个现代化的 API 文档 UI 工具，专为 **SpringDoc** 和 **OpenAPI 3** 设计的现代化文档界面，旨在完全替代传统的 Swagger UI，为开发者提供更美观、更强大的开发体验，让 API 文档焕然一新。
@@ -52,10 +52,16 @@
 
 ## 🤝 社区与支持
 
-| 平台     | 后端                                                                               | 前端 UI                                                                                  |
-|--------|----------------------------------------------------------------------------------|----------------------------------------------------------------------------------------|
-| Gitee  | [https://gitee.com/nextdoc4j/nextdoc4j](https://gitee.com/nextdoc4j/nextdoc4j)   | [https://gitee.com/nextdoc4j/nextdoc4j-ui](https://gitee.com/nextdoc4j/nextdoc4j-ui)   |
-| Github | [https://github.com/nextdoc4j/nextdoc4j](https://github.com/nextdoc4j/nextdoc4j) | [https://github.com/nextdoc4j/nextdoc4j-ui](https://github.com/nextdoc4j/nextdoc4j-ui) |
+::: tip 💡
+选择您喜欢的代码托管平台,给我们一个 Star ⭐ 支持项目持续发展!
+:::
+
+|     平台      | 后端                                                             | 前端                                                                   |
+|:-----------:|----------------------------------------------------------------|----------------------------------------------------------------------|
+| **GitCode** | [NextDoc4j/nextdoc4j](https://gitcode.com/NextDoc4j/nextdoc4j) | [NextDoc4j/nextdoc4j-ui](https://gitcode.com/NextDoc4j/nextdoc4j-ui) |
+| **GitHub**  | [nextdoc4j/nextdoc4j](https://github.com/nextdoc4j/nextdoc4j)  | [nextdoc4j/nextdoc4j-ui](https://github.com/nextdoc4j/nextdoc4j-ui)  |
+|  **Gitee**  | [nextdoc4j/nextdoc4j](https://gitee.com/nextdoc4j/nextdoc4j)   | [nextdoc4j/nextdoc4j-ui](https://gitee.com/nextdoc4j/nextdoc4j-ui)   |
+
 
 ## 💡 诞生背景
 
@@ -65,11 +71,10 @@
 
 ## 📸 界面展示
 
-### 亮色主题
-![NextDoc4j 亮色主题](/images/screenshots/bright.png)
-
-### 暗色主题
-![NextDoc4j 暗色主题](/images/screenshots/dark.png)
+<div class="theme-image">
+  <img src="/images/screenshots/bright.png" alt="NextDoc4j 主界面" class="light-only" />
+  <img src="/images/screenshots/dark.png" alt="NextDoc4j 主界面" class="dark-only" />
+</div>
 
 ## ✨ 核心特性
 

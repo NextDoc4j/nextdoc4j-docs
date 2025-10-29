@@ -1119,6 +1119,12 @@ html.dark .dark-only {
   border-color: #c71d23;
 }
 
+.gitcode-link:hover {
+    background: linear-gradient(135deg, #c71d23, #a01419);
+    color: white;
+    border-color: #f3070e;
+}
+
 .blog-link:hover,
 .contribute-link:hover {
   background: var(--vp-gradient-primary);
@@ -1518,4 +1524,441 @@ html.dark .dark-only {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #e1e1e1;
+}
+
+
+/**
+ * 社区与支持平台长条样式 - 绿色主题
+ * ---------------------------------------------------------------- */
+.community-platforms {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin: 2rem 0;
+}
+
+.platform-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.0rem;
+    padding: 1.5rem 2rem;
+    background: var(--vp-c-bg);
+    border: 2px solid var(--vp-c-divider-light);
+    border-radius: var(--vp-radius-xl);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--vp-shadow-subtle);
+}
+
+/* 长条背景渐变效果 */
+.platform-row::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    transition: left 0.6s ease;
+    z-index: 0;
+}
+
+.gitee-row::before {
+    background: linear-gradient(
+            90deg,
+            transparent,
+            rgba(199, 29, 35, 0.08),
+            transparent
+    );
+}
+
+.github-row::before {
+    background: linear-gradient(
+            90deg,
+            transparent,
+            rgba(51, 51, 51, 0.08),
+            transparent
+    );
+}
+
+.gitcode-row::before {
+    background: linear-gradient(
+            90deg,
+            transparent,
+            rgba(243, 7, 14, 0.08),
+            transparent
+    );
+}
+
+.platform-row:hover::before {
+    left: 100%;
+}
+
+.platform-row:hover {
+    transform: translateX(8px);
+    box-shadow: var(--vp-shadow-large);
+}
+
+.gitee-row:hover {
+    border-color: #c71d23;
+    background: linear-gradient(
+            135deg,
+            rgba(199, 29, 35, 0.03),
+            rgba(199, 29, 35, 0.01)
+    );
+}
+
+.github-row:hover {
+    border-color: #333;
+    background: linear-gradient(
+            135deg,
+            rgba(51, 51, 51, 0.03),
+            rgba(51, 51, 51, 0.01)
+    );
+}
+
+.gitcode-row:hover {
+    border-color: #f3070e;
+    background: linear-gradient(
+            135deg,
+            rgba(243, 7, 14, 0.03),
+            rgba(243, 7, 14, 0.01)
+    );
+}
+
+/* 平台信息区域 */
+.platform-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    min-width: 180px;
+    position: relative;
+    z-index: 1;
+}
+
+.platform-logo {
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 14px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    flex-shrink: 0;
+}
+
+.platform-logo svg {
+    width: 33px;
+    height: 36px;
+    transition: transform 0.3s ease;
+}
+
+.gitee-row .platform-logo {
+    background: linear-gradient(135deg, #c71d23, #a01419);
+    color: white;
+    box-shadow: 0 4px 16px rgba(199, 29, 35, 0.25);
+}
+
+.github-row .platform-logo {
+    background: linear-gradient(135deg, #333, #1a1a1a);
+    color: white;
+    box-shadow: 0 4px 16px rgba(51, 51, 51, 0.25);
+}
+
+.gitcode-row .platform-logo {
+    background: linear-gradient(135deg, #fafafa, #ffffff);
+    color: white;
+    box-shadow: 0 4px 16px rgba(243, 7, 14, 0.25);
+}
+
+.platform-row:hover .platform-logo {
+    transform: scale(1.08) rotate(-3deg);
+}
+
+.platform-row:hover .platform-logo svg {
+    transform: scale(1.1);
+}
+
+.platform-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--vp-c-text-1);
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.gitee-row:hover .platform-title {
+    color: #c71d23;
+}
+
+.github-row:hover .platform-title {
+    color: #c71d23;
+}
+
+.gitcode-row:hover .platform-title {
+    color: #c71d23;
+}
+
+/* 链接按钮区域 */
+.platform-links {
+    display: flex;
+    gap: 1rem;
+    position: relative;
+    z-index: 1;
+    flex-wrap: wrap;
+}
+
+.repo-button {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.875rem 0.875rem;
+    background: var(--vp-c-bg-soft);
+    border: 1px solid var(--vp-c-divider);
+    border-radius: 12px;
+    text-decoration: none;
+    color: var(--vp-c-text-1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    font-weight: 600;
+    min-width: 180px;
+}
+
+.repo-button:hover::after {
+    opacity: 1;
+    transform: translateX(0);
+    color: var(--vp-c-green-1);
+}
+
+.repo-button:hover {
+    transform: translateY(-3px);
+    border-color: var(--vp-c-green-1);
+    background: linear-gradient(
+            100deg,
+            rgba(34, 197, 94, 0.08),
+            rgba(22, 163, 74, 0.05)
+    );
+    box-shadow: 0 6px 20px rgba(34, 197, 94, 0.2);
+    padding-right: 2.5rem;
+}
+
+.button-icon {
+    font-size: 1.25rem;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.repo-button:hover .button-icon {
+    transform: scale(1.15);
+}
+
+.button-text {
+    font-size: 0.95rem;
+    color: var(--vp-c-text-2);
+    transition: color 0.3s ease;
+}
+
+.repo-button:hover .button-text {
+    color: var(--vp-c-green-1);
+}
+
+.button-repo {
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    font-size: 0.85rem;
+    color: var(--vp-c-text-3);
+    transition: color 0.3s ease;
+}
+
+.repo-button:hover .button-repo {
+    color: var(--vp-c-text-1);
+}
+
+/* 特殊样式：后端/前端标识 */
+.repo-button.backend .button-text::before {
+    content: "";
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    border-radius: 50%;
+    margin-right: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.repo-button.frontend .button-text::before {
+    content: "";
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: linear-gradient(135deg, #ec4899, #db2777);
+    border-radius: 50%;
+    margin-right: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.repo-button:hover .button-text::before {
+    transform: scale(1.3);
+    box-shadow: 0 0 8px currentColor;
+}
+
+/* 暗色模式优化 */
+.dark .platform-row {
+    border-color: rgba(255, 255, 255, 0.1);
+    background: linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.03),
+            rgba(255, 255, 255, 0.01)
+    );
+}
+
+.dark .platform-row:hover {
+    box-shadow: 0 10px 30px rgba(74, 222, 128, 0.15),
+    0 0 0 1px var(--vp-c-green-1);
+}
+
+.dark .github-row:hover .platform-title {
+    color: #f0f0f0;
+}
+
+.dark .github-row:hover {
+    border-color: #555;
+}
+
+.dark .repo-button {
+    background: rgba(255, 255, 255, 0.03);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.dark .repo-button:hover {
+    background: linear-gradient(
+            135deg,
+            rgba(74, 222, 128, 0.08),
+            rgba(34, 197, 94, 0.05)
+    );
+}
+
+/* 响应式设计 */
+@media (max-width: 1024px) {
+    .platform-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+    }
+
+    .platform-info {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .platform-links {
+        width: 80%;
+    }
+
+    .repo-button {
+        flex: 1;
+        min-width: 0;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .community-platforms {
+        gap: 1.25rem;
+    }
+
+    .platform-row {
+        padding: 1.5rem;
+    }
+
+    .platform-logo {
+        width: 48px;
+        height: 48px;
+    }
+
+    .platform-logo svg {
+        width: 30px;
+        height: 30px;
+    }
+
+    .platform-title {
+        font-size: 1.2rem;
+    }
+
+    .platform-links {
+        flex-direction: column;
+        width: 80%;
+    }
+
+    .repo-button {
+        width: 100%;
+        min-width: 0;
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width: 480px) {
+    .platform-row {
+        padding: 1.25rem;
+    }
+
+    .platform-info {
+        gap: 0.75rem;
+    }
+
+    .platform-logo {
+        width: 40px;
+        height: 40px;
+    }
+
+    .platform-logo svg {
+        width: 26px;
+        height: 26px;
+    }
+
+    .platform-title {
+        font-size: 1.1rem;
+    }
+
+    .repo-button {
+        padding: 0.75rem 1.25rem;
+        gap: 0.5rem;
+    }
+
+    .button-icon {
+        font-size: 1.1rem;
+    }
+
+    .button-text {
+        font-size: 0.9rem;
+    }
+
+    .button-repo {
+        font-size: 0.8rem;
+    }
+}
+
+/* 可访问性优化 */
+@media (prefers-reduced-motion: reduce) {
+    .platform-row,
+    .platform-logo,
+    .repo-button {
+        transition: none;
+    }
+
+    .platform-row::before {
+        display: none;
+    }
+}
+
+/* 高对比度模式 */
+@media (prefers-contrast: high) {
+    .platform-row {
+        border-width: 3px;
+    }
+
+    .repo-button {
+        border-width: 3px;
+    }
 }
