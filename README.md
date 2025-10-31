@@ -77,3 +77,9 @@ nextdoc4j-docs/
 
 - `public/images/screenshots/`：产品截图和界面展示
 - `public/logo/`：品牌 Logo 和网站图标
+
+<div align="center">
+
+**NextDoc4j** - 让 API 文档焕然一新！ 如果这个项目对你有帮助，请给它一个 ⭐️
+
+</div>
