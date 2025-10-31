@@ -1,6 +1,23 @@
-# NextDoc4J 官方文档
+<p align="center">
+  <img src="public/logo/logo.png" alt="Nextdoc4j Logo" width="180">
+</p>
 
-这是 NextDoc4J 的官方文档网站，基于 VitePress 构建，提供完整的使用指南和开发文档。
+<h1 align="center">Nextdoc4j</h1>
+
+<p align="center">
+  <strong>🚀 现代化的 API 文档后端解决方案</strong><br>
+  基于 <strong>SpringBoot 3.4.x</strong> + <strong>SpringDoc</strong> 构建，替代 Swagger UI，<br>
+  提供更美观、更强大的开发体验，让 API 文档焕然一新。
+</p>
+
+<p align="center">
+  🌐 <a href="https://demo.nextdoc4j.top/">在线演示</a> |
+  📘 <a href="https://nextdoc4j.top/">官方文档</a> |
+  🧩 <a href="https://nextdoc4j.top/more/changelog.html">更新日志</a> |
+  ❓ <a href="https://nextdoc4j.top/more/faq.html">常见问题</a>
+</p>
+
+# 这是 NextDoc4J 的官方文档网站，基于 VitePress 构建，提供完整的使用指南和开发文档。
 
 ## 目录结构
 
