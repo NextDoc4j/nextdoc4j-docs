@@ -66,8 +66,8 @@
 ## 📸 界面展示
 
 <div class="theme-image">
-  <img src="/images/screenshots/bright.png" alt="NextDoc4j 主界面" class="light-only" />
-  <img src="/images/screenshots/dark.png" alt="NextDoc4j 主界面" class="dark-only" />
+  <img src="/images/screenshots/bright-home.png" alt="NextDoc4j 主界面" class="light-only" />
+  <img src="/images/screenshots/dark-home.png" alt="NextDoc4j 主界面" class="dark-only" />
 </div>
 
 ## ✨ 核心特性

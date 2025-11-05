@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="public/logo/logo.png" alt="Nextdoc4j Logo" width="180">
+  <img src="./public/logo/logo.png" alt="Nextdoc4j Logo" width="180">
 </p>
 
 <h1 align="center">Nextdoc4j</h1>
@@ -53,18 +53,18 @@ nextdoc4j-docs/
 
 - **首页 (`index.md`)**：文档网站主页，提供 NextDoc 的整体介绍
 - **使用指南 (`guide/`)**：面向用户的完整使用教程
-    - 快速开始指南
-    - 基础配置说明
-    - 认证系统配置
-    - 品牌定制配置
-    - Markdown 集成配置
+  - 快速开始指南
+  - 基础配置说明
+  - 认证系统配置
+  - 品牌定制配置
+  - Markdown 集成配置
 - **开发文档 (`development/`)**：面向开发者的技术文档
-    - 前端开发指南
-    - 开发环境搭建
+  - 前端开发指南
+  - 开发环境搭建
 - **更多信息 (`more/`)**：补充资料
-    - 版本更新日志
-    - 社区贡献指南
-    - 常见问题解答
+  - 版本更新日志
+  - 社区贡献指南
+  - 常见问题解答
 
 ### 🛠️ 技术栈
 

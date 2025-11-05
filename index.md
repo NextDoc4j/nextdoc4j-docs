@@ -79,7 +79,7 @@ features:
 <dependency>
     <groupId>top.nextdoc4j</groupId>
     <artifactId>nextdoc4j-springboot3-starter</artifactId>
-    <version>1.0.1</version>
+    <version>1.1.0</version>
 </dependency>
 ```
 
@@ -118,8 +118,8 @@ http://localhost:端口/doc.html
 ### 主界面预览
 
 <div class="theme-image">
-  <img src="/images/screenshots/bright.png" alt="NextDoc4j 主界面" class="light-only" />
-  <img src="/images/screenshots/dark.png" alt="NextDoc4j 主界面" class="dark-only" />
+  <img src="/images/screenshots/bright-home.png" alt="NextDoc4j 主界面" class="light-only" />
+  <img src="/images/screenshots/dark-home.png" alt="NextDoc4j 主界面" class="dark-only" />
 </div>
 
 ::: details 🎯 界面功能说明
