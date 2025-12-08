@@ -2,6 +2,7 @@
 
 - [Spring Boot 版本兼容性](#spring-boot-版本兼容性)
 - [实体对象参数在文档中显示为空](#实体对象参数在文档中显示为空)
+- [入参展示不稳定/部分入参不显示](#入参展示不稳定/部分入参不显示)
 
 ## Spring Boot 版本兼容性
 
@@ -129,3 +130,58 @@ public Result saveUser(@ParameterObject UserDTO userDTO) {
 - 不同 DTO 需要不同的展示方式
 - 更精细的控制粒度
   :::
+
+## 入参展示不稳定/部分入参不显示
+### 问题现象
+
+在定义接口后，访问 SpringDoc / Swagger UI 文档时，会出现以下异常情况：
+
+* 入参列表 **不显示**
+* 入参展示 **不全**
+* 入参展示 **偶尔正常、偶尔缺失**（表现不稳定）
+
+---
+
+### 问题原因
+
+Java 默认不会保留方法参数名
+
+Java 编译器 **默认不会**在 `.class` 文件中保存方法参数名。
+要保留参数名，必须显式开启：
+
+```
+-parameters
+```
+
+SpringDoc 在生成 API 文档时，需要从字节码中读取以下内容：
+
+* 方法参数的真实名称
+* `@RequestParam`
+* `@RequestBody`
+* `@Parameter`
+* `@PathVariable`
+  等参数注解
+
+➡️ **如果参数名未保留，SpringDoc 将无法正确推断参数，导致展示异常或不稳定。**
+
+> ⚠️ Spring Boot 2.2+ 官方明确要求：
+> 若要正确展示方法入参信息，必须确保编译时加入 `-parameters`。
+
+---
+
+### 解决方案
+
+在 `maven-compiler-plugin` 中添加 `-parameters`，确保编译时保留参数名：
+
+```xml
+<!-- 编译插件 -->
+<plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-compiler-plugin</artifactId>
+    <configuration>
+        <encoding>${project.build.sourceEncoding}</encoding>
+        <!-- 保留方法参数名以确保 SpringDoc 入参正常展示 -->
+        <compilerArgument>-parameters</compilerArgument>
+    </configuration>
+</plugin>
+```
