@@ -38,17 +38,24 @@ export default defineConfig({
                     collapsed: false,
                     items: [
                         {text: '概述', link: '/guide/'},
-                        {text: '快速开始', link: '/guide/started'}
+                        {text: '快速开始', link: '/guide/start/started'}
                     ]
                 },
                 {
                     text: '配置说明',
                     collapsed: false,
                     items: [
-                        {text: '基础配置', link: '/guide/basicconfiguration'},
-                        {text: '品牌配置', link: '/guide/brandconfiguration'},
-                        {text: '简单认证配置', link: '/guide/authconfiguration'},
-                        {text: 'markdown文档配置', link: '/guide/markdownIntegrationConfiguration'}
+                        {text: '基础配置', link: '/guide/config/basicconfiguration'},
+                        {text: '品牌配置', link: '/guide/config/brandconfiguration'},
+                        {text: '简单认证配置', link: '/guide/config/authconfiguration'},
+                        {text: 'markdown文档配置', link: '/guide/config/markdownIntegrationConfiguration'}
+                    ]
+                },
+                {
+                    text: '插件使用',
+                    collapsed: false,
+                    items: [
+                        {text: '枚举插件', link: '/guide/plugin/enum'}
                     ]
                 }
             ],
