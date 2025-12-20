@@ -55,7 +55,9 @@ export default defineConfig({
                     text: '插件使用',
                     collapsed: false,
                     items: [
-                        {text: '枚举插件', link: '/guide/plugin/enum'}
+                        {text: '枚举插件', link: '/guide/plugin/enum'},
+                        {text: '认证展示插件', link: '/guide/plugin/security'}
+
                     ]
                 }
             ],
