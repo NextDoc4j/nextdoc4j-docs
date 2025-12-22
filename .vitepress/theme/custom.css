@@ -1542,7 +1542,7 @@ html.dark .dark-only {
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
-    padding: 1.5rem 2rem;
+    padding: 1rem 1.5rem;
     background: #fff;
     border: 1px solid transparent;
     border-radius: var(--vp-radius-xl);
@@ -1574,8 +1574,8 @@ html.dark .dark-only {
 }
 
 .platform-logo {
-    width: 56px;
-    height: 56px;
+    width: 42px;
+    height: 42px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1622,8 +1622,8 @@ html.dark .dark-only {
 .repo-button {
     display: flex;
     align-items: center;
-    gap: 0.75rem;
-    padding: 0.875rem 0.875rem;
+    gap: 0.5rem;
+    padding: 0.6rem 0.6rem;
     background: #fff; /* 默认白色 */
     border: 1px solid transparent;
     border-radius: 12px;
@@ -1659,7 +1659,7 @@ html.dark .dark-only {
 }
 
 .button-text {
-    font-size: 0.95rem;
+    font-size: 0.85rem;
     color: var(--vp-c-text-2);
     transition: color 0.4s ease;
 }
@@ -1679,29 +1679,56 @@ html.dark .dark-only {
     color: var(--vp-c-text-1);
 }
 
-/* 特殊标识 */
-.repo-button.backend .button-text::before,
-.repo-button.frontend .button-text::before {
-    content: "";
-    display: inline-block;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    margin-right: 0.5rem;
-    transition: all 0.3s ease;
+/* 移除特殊标识 */
+
+/* 仓库按钮基础样式 */
+.repo-button {
+    position: relative;
 }
 
-.repo-button.backend .button-text::before {
-    background: linear-gradient(135deg, #3b82f6, #2563eb);
+/* 后端按钮左侧细线 */
+.repo-button.backend {
+    border-left: 4px solid #3b82f6;
+}
+
+/* 前端按钮左侧细线 */
+.repo-button.frontend {
+    border-left: 4px solid #ec4899;
+}
+
+/* 悬停时细线效果 */
+.repo-button.backend:hover {
+    border-left-color: #2563eb;
+    box-shadow: -4px 0 12px rgba(59, 130, 246, 0.2);
 }
 
 .repo-button.frontend .button-text::before {
     background: linear-gradient(135deg, #ec4899, #db2777);
 }
 
-.repo-button:hover .button-text::before {
-    transform: scale(1.3);
-    box-shadow: 0 0 8px currentColor;
+/* 按钮文字增强 */
+.button-text {
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    color: var(--vp-c-text-1);
+}
+
+.button-repo {
+    font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;
+    font-size: 0.78rem;
+    color: var(--vp-c-text-3);
+    font-weight: 500;
+}
+
+/* 悬停时仓库名颜色变化 */
+.repo-button:hover .button-repo {
+    color: var(--vp-c-text-1);
+}
+
+/* 简洁的悬停效果 */
+.repo-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 /* ---------------------- 深色模式 ---------------------- */

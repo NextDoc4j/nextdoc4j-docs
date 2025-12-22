@@ -1,13 +1,13 @@
 # 项目简介
 <br>
 <a href="https://github.com/nextdoc4j/nextdoc4j">
-  <img src="https://img.shields.io/badge/version-1.0.0-green" alt="Project Version 1.0.0" style="display:inline-block;margin-right:10px;" />
+  <img src="https://img.shields.io/badge/version-1.1.4-green" alt="Project Version 1.1.4" style="display:inline-block;margin-right:10px;" />
 </a>
 <a href="https://spring.io/projects/spring-boot">
-  <img src="https://img.shields.io/badge/SpringBoot-3.5.5-green?logo=spring" alt="Spring Boot 3.5.5" style="display:inline-block;margin-right:10px;" />
+  <img src="https://img.shields.io/badge/SpringBoot-3.5.7-green?logo=spring" alt="Spring Boot 3.5.7" style="display:inline-block;margin-right:10px;" />
 </a>
 <a href="https://springdoc.org/">
-  <img src="https://img.shields.io/badge/SpringDoc-2.8.13-orange?logo=openapiinitiative" alt="SpringDoc 2.8.13" style="display:inline-block;margin-right:10px;" />
+  <img src="https://img.shields.io/badge/SpringDoc-2.8.14-orange?logo=openapiinitiative" alt="SpringDoc 2.8.14" style="display:inline-block;margin-right:10px;" />
 </a>
 <a href="https://www.openapis.org/">
   <img src="https://img.shields.io/badge/OpenAPI-3.1-lightgrey?logo=openapiinitiative" alt="OpenAPI 3.1" style="display:inline-block;margin-right:10px;" />
@@ -41,6 +41,9 @@
 </a>
 <a href="https://gitee.com/nextdoc4j/nextdoc4j/members">
   <img src="https://gitee.com/nextdoc4j/nextdoc4j/badge/fork.svg?theme=dark" alt="Gitee Forks" style="display:inline-block;margin-right:10px;" />
+</a>
+<a href="https://gitcode.com/NextDoc4j/nextdoc4j">
+  <img src="https://gitcode.com/NextDoc4j/nextdoc4j/star/badge.svg" alt="Gitee Forks" style="display:inline-block;margin-right:10px;" />
 </a>
 
 [在线演示](https://demo.nextdoc4j.top) 
