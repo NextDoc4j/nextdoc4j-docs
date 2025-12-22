@@ -1,15 +1,34 @@
 import {defineConfig} from 'vitepress'
 
+const SITE_URL = 'https://nextdoc4j.top'
+
 export default defineConfig({
     title: "NextDoc4j",
     description: "现代化 API 文档 UI 工具 - 专为 SpringDoc 设计",
+    
+    // 启用 Git 支持以获取最后更新时间
+    lastUpdated: true,
+    
+    // 站点地图和 SEO
+    sitemap: {
+        hostname: SITE_URL
+    },
 
     head: [
         ['link', {rel: 'icon', href: '/logo/favicon.ico'}],
+        ['link', {rel: 'canonical', href: SITE_URL}],
         ['meta', {name: 'theme-color', content: '#3c82f6'}],
+        ['meta', {name: 'author', content: 'NextDoc4j Team'}],
+        ['meta', {name: 'keywords', content: 'NextDoc4j, API文档, SpringDoc, OpenAPI, Swagger UI替代, Java文档工具'}],
+        ['meta', {property: 'og:type', content: 'website'}],
+        ['meta', {property: 'og:url', content: SITE_URL}],
         ['meta', {property: 'og:title', content: 'NextDoc4j - 现代化 API 文档工具'}],
         ['meta', {property: 'og:description', content: '专为 SpringDoc 和 OpenAPI 3 设计的现代化文档界面'}],
-        ['meta', {property: 'og:image', content: '/logo/logo.png'}],
+        ['meta', {property: 'og:image', content: `${SITE_URL}/logo/logo.png`}],
+        ['meta', {property: 'og:site_name', content: 'NextDoc4j'}],
+        ['meta', {name: 'twitter:card', content: 'summary_large_image'}],
+        ['meta', {name: 'twitter:title', content: 'NextDoc4j - 现代化 API 文档工具'}],
+        ['meta', {name: 'twitter:description', content: '专为 SpringDoc 和 OpenAPI 3 设计的现代化文档界面'}],
     ],
 
     themeConfig: {

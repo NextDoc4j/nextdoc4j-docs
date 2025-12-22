@@ -58,6 +58,37 @@
 }
 
 /**
+ * 组件：kbd 键盘样式
+ * ---------------------------------------------------------------- */
+kbd {
+    display: inline-block;
+    padding: 0.15em 0.4em;
+    font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+    font-size: 0.85em;
+    font-weight: 500;
+    line-height: 1.4;
+    color: var(--vp-c-text-1);
+    background-color: var(--vp-c-bg-soft);
+    border: 1px solid var(--vp-c-divider);
+    border-radius: 6px;
+    box-shadow: inset 0 -1px 0 var(--vp-c-divider);
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+.dark kbd {
+    background-color: var(--vp-c-bg-soft);
+    border-color: var(--vp-c-divider);
+    box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.VPHero .tagline kbd {
+    font-size: 0.75em;
+    padding: 0.1em 0.35em;
+    margin: 0 0.1em;
+}
+
+/**
  * 组件：算法
  * ---------------------------------------------------------------- */
 .vp-doc [class*="language-"] {

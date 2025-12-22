@@ -23,28 +23,45 @@
 
 ```
 nextdoc4j-docs/
+├── .vitepress/               # VitePress 配置和主题
+│   ├── config.mts           # VitePress 配置文件
+│   └── theme/               # 自定义主题
+│       ├── components/      # Vue 组件
+│       ├── custom.css       # 自定义样式
+│       └── index.ts         # 主题入口
 ├── development/              # 开发相关文档
-│   ├── frontend.md          # 前端开发指南
-│   └── index.md             # 开发文档首页
-├── guide/                   # 使用指南
-│   ├── authconfiguration.md      # 认证配置
-│   ├── basicconfiguration.md     # 基础配置
-│   ├── brandconfiguration.md     # 品牌配置
-│   ├── index.md                  # 指南首页
-│   ├── markdownIntegrationConfiguration.md  # Markdown 集成配置
-│   └── started.md                # 快速开始
-├── more/                    # 更多信息
+│   ├── index.md             # 前端开发指南
+│   └── backend.md           # 后端开发指南
+├── guide/                    # 使用指南
+│   ├── index.md             # 指南首页
+│   ├── start/               # 快速开始
+│   │   └── started.md       # 快速开始文档
+│   ├── config/              # 配置说明
+│   │   ├── basicconfiguration.md        # 基础配置
+│   │   ├── brandconfiguration.md        # 品牌配置
+│   │   ├── authconfiguration.md         # 认证配置
+│   │   └── markdownIntegrationConfiguration.md  # Markdown 集成配置
+│   └── plugin/              # 插件使用
+│       ├── enum.md          # 枚举插件
+│       └── security.md      # 认证展示插件
+├── more/                     # 更多信息
+│   ├── team/                # 团队信息
+│   │   ├── team.md          # 团队介绍页
+│   │   ├── team.config.ts   # 团队配置
+│   │   └── build-team-cache.ts  # 团队缓存构建
 │   ├── changelog.md         # 更新日志
 │   ├── contribute.md        # 贡献指南
-│   └── faq.md              # 常见问题
-├── public/                  # 静态资源
+│   └── faq.md               # 常见问题
+├── public/                   # 静态资源
 │   ├── images/              # 图片资源
 │   │   └── screenshots/     # 截图
-│   └── logo/               # Logo 文件
-├── index.md                # 文档首页
-├── LICENSE                 # 许可证
-├── package.json           # 项目配置
-└── pnpm-lock.yaml         # 依赖锁定文件
+│   ├── logo/                # Logo 文件
+│   └── team-cache.json      # 团队数据缓存
+├── index.md                  # 文档首页
+├── package.json              # 项目配置
+├── pnpm-lock.yaml            # 依赖锁定文件
+├── pnpm-workspace.yaml       # 工作区配置
+└── tsconfig.json             # TypeScript 配置
 ```
 
 ## 文档说明
