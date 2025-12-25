@@ -75,8 +75,8 @@ export default defineConfig({
                     collapsed: false,
                     items: [
                         {text: '枚举插件', link: '/guide/plugin/enum'},
-                        {text: '认证展示插件', link: '/guide/plugin/security'}
-
+                        {text: '认证展示插件', link: '/guide/plugin/authentication'},
+                        {text: 'Sa-Token 权限码插件', link: '/guide/plugin/satoken'}
                     ]
                 }
             ],
