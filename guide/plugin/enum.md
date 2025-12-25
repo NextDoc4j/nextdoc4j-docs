@@ -55,21 +55,21 @@ public enum OrderStatus implements EnumValue<String> {
 
 ## 模块说明
 
-| 类 | 说明 |
-|---|-----|
-| `EnumValue<T>` | 枚举值接口，定义 getValue() 和 getDescription() |
-| `DefaultEnumMetadataResolver` | 默认解析器，处理 EnumValue 接口枚举 |
-| `EnumMetadataResolver` | 自定义解析器接口 |
+| 类                             | 说明                                     |
+|-------------------------------|----------------------------------------|
+| `EnumValue<T>`                | 枚举值接口，定义 getValue() 和 getDescription() |
+| `DefaultEnumMetadataResolver` | 默认解析器，处理 EnumValue 接口枚举                |
+| `EnumMetadataResolver`        | 自定义解析器接口                               |
 
 ## 支持的类型
 
-| Java 类型 | OpenAPI Type | OpenAPI Format |
-|-----------|--------------|----------------|
-| `Integer` / `int` | `integer` | `int32` |
-| `Long` / `long` | `integer` | `int64` |
-| `String` | `string` | - |
-| `Double` / `double` | `number` | `double` |
-| `Float` / `float` | `number` | `double` |
+| Java 类型             | OpenAPI Type | OpenAPI Format |
+|---------------------|--------------|----------------|
+| `Integer` / `int`   | `integer`    | `int32`        |
+| `Long` / `long`     | `integer`    | `int64`        |
+| `String`            | `string`     | -              |
+| `Double` / `double` | `number`     | `double`       |
+| `Float` / `float`   | `number`     | `double`       |
 
 ## 自定义解析器
 
@@ -84,6 +84,11 @@ public class BusinessEnumResolver implements EnumMetadataResolver {
         return enumClass != null
             && enumClass.isEnum()
             && BusinessEnum.class.isAssignableFrom(enumClass);
+    }
+    
+    @Override
+    public Class<?> getEnumInterfaceType() {
+      return BaseEnum.class;
     }
 
     @Override

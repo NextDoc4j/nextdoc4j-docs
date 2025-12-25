@@ -88,3 +88,36 @@ public class UserController {
 ```
 
 nextdoc4j UI 会读取 `x-nextdoc4j-security` 扩展字段，在调试时显示权限码输入框，并动态拼接权限码参数。
+
+## 自定义权限框架
+
+如果使用的是非 Sa-Token 的鉴权框架，可通过 `NextDoc4jSecurityMetadataResolver` 接口集成，满足 UI 元数据格式即可：
+
+```java
+@Component
+public class CustomSecurityResolver implements NextDoc4jSecurityMetadataResolver {
+
+    @Override
+    public void resolve(HandlerMethod handlerMethod, Operation operation, NextDoc4jSecurityMetadata metadata) {
+        CustomSecurity annotation = handlerMethod.getMethodAnnotation(CustomSecurity.class);
+        if (annotation != null) {
+            metadata.addPermission(annotation.permissions(), "AND", "custom");
+        }
+    }
+
+    @Override
+    public boolean supports(HandlerMethod handlerMethod) {
+        return handlerMethod.hasMethodAnnotation(CustomSecurity.class);
+    }
+
+    @Override
+    public int getOrder() {
+        return 200;  // 数值越小优先级越高
+    }
+
+    @Override
+    public String getName() {
+        return "CustomSecurityResolver";
+    }
+}
+```
