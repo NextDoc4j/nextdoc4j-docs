@@ -2,9 +2,9 @@
 
 认证展示插件用于在 API 文档中配置全局认证信息，让接口调试工具自动显示认证输入框。
 
-## nextdoc4j UI 适配效果
+## UI 适配效果
 
-配置插件后，nextdoc4j UI 会在接口调试区域显示认证输入框：
+配置插件后 UI 会在接口调试区域显示认证输入框：
 
 ![authentication-plugin-ui](../../public/images/screenshots/guide/authentication-plugin-ui.png)
 *▲ 全局认证输入框*
@@ -14,15 +14,15 @@
 
 ## 快速开始
 
-### 1. 引入依赖（可选）
+### 1. 引入依赖
 
-如需使用 Sa-Token 集成模块：
+如需使用认证展示插件：
 
 ```xml
 <dependency>
     <groupId>top.nextdoc4j</groupId>
-    <artifactId>nextdoc4j-plugin-security-satoken</artifactId>
-    <version>${nextdoc4j.version}</version>
+    <artifactId>nextdoc4j-plugin-security-core</artifactId>
+    <version>${latest.version}</version>
 </dependency>
 ```
 
@@ -30,8 +30,6 @@
 
 ```yaml
 springdoc:
-  default-flat-param-object: true
-
   ## 组件配置
   components:
     # 鉴权配置
@@ -51,31 +49,6 @@ nextdoc4j:
   plugin:
     security:
       enabled: true
-```
-
-## OpenAPI 输出效果
-
-配置成功后，OpenAPI 文档会包含：
-
-```json
-{
-  "securitySchemes": {
-    "Authorization": {
-      "type": "http",
-      "in": "header",
-      "name": "Authorization",
-      "scheme": "Bearer",
-      "description": "请输入 Bearer Token，格式：Bearer {token}"
-    }
-  },
-  "paths": {
-    "/api/user/{id}": {
-      "get": {
-        "security": [{ "Authorization": [] }]
-      }
-    }
-  }
-}
 ```
 
 nextdoc4j UI 会读取 `securitySchemes` 配置，在调试时显示认证输入框。

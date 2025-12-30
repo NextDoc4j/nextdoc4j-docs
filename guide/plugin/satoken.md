@@ -2,9 +2,9 @@
 
 Sa-Token 权限码插件用于解析 `@SaCheckPermission` 等权限注解，在接口调试时动态添加权限码请求头。
 
-## nextdoc4j UI 适配效果
+## UI 适配效果
 
-配置插件后，nextdoc4j UI 会在接口详情显示权限码：
+配置插件后 UI 会在接口详情显示权限码：
 
 ![satoken-plugin-1](../../public/images/screenshots/guide/security-plugin-1.png)
 *▲ SaCheckPermission 注解*
@@ -20,7 +20,7 @@ Sa-Token 权限码插件用于解析 `@SaCheckPermission` 等权限注解，在�
 <dependency>
     <groupId>top.nextdoc4j</groupId>
     <artifactId>nextdoc4j-plugin-security-satoken</artifactId>
-    <version>${nextdoc4j.version}</version>
+    <version>${latest.version}</version>
 </dependency>
 ```
 
@@ -59,11 +59,11 @@ public class UserController {
 
 ## 支持的注解
 
-| 注解 | 说明 |
-|-----|-----|
+| 注解                   | 说明   |
+|----------------------|------|
 | `@SaCheckPermission` | 权限校验 |
-| `@SaCheckRole` | 角色校验 |
-| `@SaIgnore` | 忽略校验 |
+| `@SaCheckRole`       | 角色校验 |
+| `@SaIgnore`          | 忽略校验 |
 
 ## OpenAPI 输出效果
 

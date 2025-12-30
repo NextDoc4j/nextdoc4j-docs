@@ -2,9 +2,9 @@
 
 枚举展示插件用于在 API 文档中增强枚举类型的展示效果，自动解析枚举的 value-description 映射关系。
 
-## nextdoc4j UI 适配效果
+## UI 适配效果
 
-配置插件后，nextdoc4j UI 会在接口调试时自动展示枚举下拉选项，显示枚举值的描述信息：
+配置插件后 UI 会在接口调试时自动展示枚举下拉选项，显示枚举值的描述信息：
 
 ![enum-plugin-ui](../../public/images/screenshots/guide/enum-plugin-ui.png)
 *▲ 接口调试时自动显示枚举下拉选项*
@@ -20,7 +20,7 @@
 <dependency>
     <groupId>top.nextdoc4j</groupId>
     <artifactId>nextdoc4j-plugin-enums</artifactId>
-    <version>${nextdoc4j.version}</version>
+    <version>${latest.version}</version>
 </dependency>
 ```
 
@@ -88,7 +88,7 @@ public class BusinessEnumResolver implements EnumMetadataResolver {
     
     @Override
     public Class<?> getEnumInterfaceType() {
-      return BaseEnum.class;
+      return BusinessEnum.class;
     }
 
     @Override
