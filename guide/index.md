@@ -1,7 +1,7 @@
 # 项目简介
 <br>
 <a href="https://github.com/nextdoc4j/nextdoc4j">
-  <img src="https://img.shields.io/badge/version-1.1.5-green" alt="Project Version 1.1.5" style="display:inline-block;margin-right:10px;" />
+  <img src="https://img.shields.io/badge/version-1.1.6-green" alt="Project Version 1.1.6" style="display:inline-block;margin-right:10px;" />
 </a>
 <a href="https://spring.io/projects/spring-boot">
   <img src="https://img.shields.io/badge/SpringBoot-3.5.7-green?logo=spring" alt="Spring Boot 3.5.7" style="display:inline-block;margin-right:10px;" />
