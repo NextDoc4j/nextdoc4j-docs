@@ -3,8 +3,8 @@ import {defineConfig} from 'vitepress'
 const SITE_URL = 'https://nextdoc4j.top'
 
 export default defineConfig({
-    title: "NextDoc4j",
-    description: "现代化 API 文档 UI 工具 - 专为 SpringDoc 设计",
+    title: "下一代接口文档 - NextDoc4j",
+    description: "下一代接口文档 - 现代化 API 文档 UI 工具 - 专为 SpringDoc 设计",
     
     // 启用 Git 支持以获取最后更新时间
     lastUpdated: true,
@@ -33,7 +33,7 @@ export default defineConfig({
 
     themeConfig: {
         logo: '/logo/logo.png',
-        siteTitle: 'NextDoc4j',
+        siteTitle: '下一代接口文档',
 
         nav: [
             {text: '首页', link: '/'},
@@ -95,7 +95,7 @@ export default defineConfig({
 
         footer: {
             copyright: [
-                'Copyright © 2025 <a href="https://nextdoc4j.top/" target="_blank" rel="noopener noreferrer">NextDoc4j 版权所有</a>',
+                'Copyright © 2025 <a href="https://nextdoc4j.top/" target="_blank" rel="noopener noreferrer">下一代接口文档 版权所有</a>',
                 '<a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">浙ICP备2025151976号-2</a>'
             ].join('<br>')
         },

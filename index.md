@@ -2,16 +2,16 @@
 layout: home
 
 hero:
-  name: "NextDoc4j"
+  name: "下一代接口文档"
   text: >
-    现代化 API 文档 UI 工具
+    NextDoc4j - 现代化 API 文档 UI 工具
 
     全面替代 Swagger UI
   tagline: >
     专为 SpringDoc 和 OpenAPI 3 设计的现代化文档界面，更美观、更强大的开发体验。让 API 文档焕然一新。
   image:
     src: /logo/logo.png
-    alt: NextDoc4j
+    alt: 下一代接口文档
   actions:
     - theme: brand
       text: "🚀 快速开始"
