@@ -43,7 +43,9 @@ nextdoc4j-docs/
 │   │   └── markdownIntegrationConfiguration.md  # Markdown 集成配置
 │   └── plugin/              # 插件使用
 │       ├── enum.md          # 枚举插件
-│       └── authentication.md      # 认证展示插件
+│       ├── authentication.md      # 认证展示插件
+│       ├── satoken.md       # Sa-Token 权限码插件
+│       └── gateway.md       # 网关聚合插件
 ├── more/                     # 更多信息
 │   ├── team/                # 团队信息
 │   │   ├── team.md          # 团队介绍页
