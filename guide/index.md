@@ -1,7 +1,7 @@
 # 项目简介
 <br>
 <a href="https://github.com/nextdoc4j/nextdoc4j">
-  <img src="https://img.shields.io/badge/version-1.1.6-green" alt="Project Version 1.1.6" style="display:inline-block;margin-right:10px;" />
+  <img src="https://img.shields.io/badge/version-1.1.7-green" alt="Project Version 1.1.7" style="display:inline-block;margin-right:10px;" />
 </a>
 <a href="https://spring.io/projects/spring-boot">
   <img src="https://img.shields.io/badge/SpringBoot-3.5.7-green?logo=spring" alt="Spring Boot 3.5.7" style="display:inline-block;margin-right:10px;" />
@@ -30,21 +30,6 @@
 <a href="https://www.apache.org/licenses/LICENSE-2.0">
   <img src="https://img.shields.io/badge/License-Apache%202.0-red?logo=apache" alt="Apache License 2.0" style="display:inline-block;margin-right:10px;" />
 </a>
-<a href="https://github.com/nextdoc4j/nextdoc4j/stargazers">
-  <img src="https://img.shields.io/github/stars/nextdoc4j/nextdoc4j?style=social" alt="GitHub Stars" style="display:inline-block;margin-right:10px;" />
-</a>
-<a href="https://github.com/nextdoc4j/nextdoc4j/network/members">
-  <img src="https://img.shields.io/github/forks/nextdoc4j/nextdoc4j?style=social" alt="GitHub Forks" style="display:inline-block;margin-right:10px;" />
-</a>
-<a href="https://gitee.com/nextdoc4j/nextdoc4j/stargazers">
-  <img src="https://gitee.com/nextdoc4j/nextdoc4j/badge/star.svg?theme=dark" alt="Gitee Stars" style="display:inline-block;margin-right:10px;"/>
-</a>
-<a href="https://gitee.com/nextdoc4j/nextdoc4j/members">
-  <img src="https://gitee.com/nextdoc4j/nextdoc4j/badge/fork.svg?theme=dark" alt="Gitee Forks" style="display:inline-block;margin-right:10px;" />
-</a>
-<a href="https://gitcode.com/NextDoc4j/nextdoc4j">
-  <img src="https://gitcode.com/NextDoc4j/nextdoc4j/star/badge.svg" alt="Gitee Forks" style="display:inline-block;margin-right:10px;" />
-</a>
 
 [在线演示](https://demo.nextdoc4j.top) 
 
@@ -56,7 +41,7 @@
 ## 🤝 社区与支持
 
 ::: tip 💡
-选择您喜欢的代码托管平台,给我们一个 Star ⭐ 支持项目持续发展!
+选择您喜欢的代码托管平台，给我们一个 Star ⭐ 或 Fork 🍴，支持项目持续发展！
 :::
 <CommunityPlatforms></CommunityPlatforms>
 

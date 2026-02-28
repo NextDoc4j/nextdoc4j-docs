@@ -11,12 +11,30 @@
       </div>
       <div class="platform-links">
         <a href="https://gitee.com/nextdoc4j/nextdoc4j" class="repo-button backend" target="_blank">
-          <span class="button-text">后端</span>
-          <span class="button-repo">nextdoc4j</span>
+          <div class="button-main">
+            <span class="button-text">后端</span>
+          </div>
+          <div class="button-metrics">
+            <span class="metric-slot metric-star">
+              <img class="metric-badge" src="https://gitee.com/nextdoc4j/nextdoc4j/badge/star.svg?theme=dark" alt="Gitee Backend Stars" loading="lazy" />
+            </span>
+            <span class="metric-slot metric-fork">
+              <img class="metric-badge" src="https://gitee.com/nextdoc4j/nextdoc4j/badge/fork.svg?theme=dark" alt="Gitee Backend Forks" loading="lazy" />
+            </span>
+          </div>
         </a>
         <a href="https://gitee.com/nextdoc4j/nextdoc4j-ui" class="repo-button frontend" target="_blank">
-          <span class="button-text">前端</span>
-          <span class="button-repo">nextdoc4j-ui</span>
+          <div class="button-main">
+            <span class="button-text">前端</span>
+          </div>
+          <div class="button-metrics">
+            <span class="metric-slot metric-star">
+              <img class="metric-badge" src="https://gitee.com/nextdoc4j/nextdoc4j-ui/badge/star.svg?theme=dark" alt="Gitee Frontend Stars" loading="lazy" />
+            </span>
+            <span class="metric-slot metric-fork">
+              <img class="metric-badge" src="https://gitee.com/nextdoc4j/nextdoc4j-ui/badge/fork.svg?theme=dark" alt="Gitee Frontend Forks" loading="lazy" />
+            </span>
+          </div>
         </a>
       </div>
     </div>
@@ -31,12 +49,30 @@
       </div>
       <div class="platform-links">
         <a href="https://github.com/nextdoc4j/nextdoc4j" class="repo-button backend" target="_blank">
-          <span class="button-text">后端</span>
-          <span class="button-repo">nextdoc4j</span>
+          <div class="button-main">
+            <span class="button-text">后端</span>
+          </div>
+          <div class="button-metrics">
+            <span class="metric-slot metric-star">
+              <img class="metric-badge" src="https://img.shields.io/github/stars/nextdoc4j/nextdoc4j?style=flat-square&label=Star" alt="GitHub Backend Stars" loading="lazy" />
+            </span>
+            <span class="metric-slot metric-fork">
+              <img class="metric-badge" src="https://img.shields.io/github/forks/nextdoc4j/nextdoc4j?style=flat-square&label=Fork" alt="GitHub Backend Forks" loading="lazy" />
+            </span>
+          </div>
         </a>
         <a href="https://github.com/nextdoc4j/nextdoc4j-ui" class="repo-button frontend" target="_blank">
-          <span class="button-text">前端</span>
-          <span class="button-repo">nextdoc4j-ui</span>
+          <div class="button-main">
+            <span class="button-text">前端</span>
+          </div>
+          <div class="button-metrics">
+            <span class="metric-slot metric-star">
+              <img class="metric-badge" src="https://img.shields.io/github/stars/nextdoc4j/nextdoc4j-ui?style=flat-square&label=Star" alt="GitHub Frontend Stars" loading="lazy" />
+            </span>
+            <span class="metric-slot metric-fork">
+              <img class="metric-badge" src="https://img.shields.io/github/forks/nextdoc4j/nextdoc4j-ui?style=flat-square&label=Fork" alt="GitHub Frontend Forks" loading="lazy" />
+            </span>
+          </div>
         </a>
       </div>
     </div>
@@ -55,12 +91,26 @@
       </div>
       <div class="platform-links">
         <a href="https://gitcode.com/NextDoc4j/nextdoc4j" class="repo-button backend" target="_blank">
-          <span class="button-text">后端</span>
-          <span class="button-repo">nextdoc4j</span>
+          <div class="button-main">
+            <span class="button-text">后端</span>
+          </div>
+          <div class="button-metrics">
+            <span class="metric-slot metric-star">
+              <img class="metric-badge" src="https://gitcode.com/NextDoc4j/nextdoc4j/star/badge.svg" alt="GitCode Backend Stars" loading="lazy" />
+            </span>
+            <span class="metric-slot metric-fork metric-slot-empty" aria-hidden="true"></span>
+          </div>
         </a>
         <a href="https://gitcode.com/NextDoc4j/nextdoc4j-ui" class="repo-button frontend" target="_blank">
-          <span class="button-text">前端</span>
-          <span class="button-repo">nextdoc4j-ui</span>
+          <div class="button-main">
+            <span class="button-text">前端</span>
+          </div>
+          <div class="button-metrics">
+            <span class="metric-slot metric-star">
+              <img class="metric-badge" src="https://gitcode.com/NextDoc4j/nextdoc4j-ui/star/badge.svg" alt="GitCode Frontend Stars" loading="lazy" />
+            </span>
+            <span class="metric-slot metric-fork metric-slot-empty" aria-hidden="true"></span>
+          </div>
         </a>
       </div>
     </div>
