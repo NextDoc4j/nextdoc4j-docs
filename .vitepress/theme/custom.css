@@ -1008,11 +1008,27 @@ html.dark .dark-only {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
+.dark .repo-button.backend {
+    border-left: 4px solid #60a5fa;
+}
+
+.dark .repo-button.frontend {
+    border-left: 4px solid #f472b6;
+}
+
 .dark .repo-button:hover {
     transform: translateY(-4px);
     border-color: var(--vp-c-green-1);
     box-shadow: 0 8px 24px rgba(74, 222, 128, 0.25);
     background: #2c2c2c;
+}
+
+.dark .repo-button.backend:hover {
+    border-left-color: #93c5fd;
+}
+
+.dark .repo-button.frontend:hover {
+    border-left-color: #f9a8d4;
 }
 
 .dark .repo-button .button-text {
