@@ -23,7 +23,7 @@ nextdoc4j:
 ### 认证效果
 启用后，用户访问文档需要先通过登录验证：
 
-![NextDoc4j 登录界面](/public/images/screenshots/guide/login.png)
+![NextDoc4j 登录界面](/images/screenshots/guide/login.png)
 
 
 ## 配置参数

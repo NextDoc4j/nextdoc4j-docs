@@ -118,7 +118,7 @@
 * **提交校验**：[Husky](https://typicode.github.io/husky)、[Commitlint](https://commitlint.js.org/)
 
 ### 后端架构
-* **框架**：[Spring Boot 3.4.x](https://spring.io/projects/spring-boot)
+* **框架**：[Spring Boot 3.5.x](https://spring.io/projects/spring-boot)（最低 3.4.0）
 * **接口文档**：[SpringDoc](https://springdoc.org/) + [OpenAPI 3.0](https://swagger.io/specification/)
 * **版本与构建**：[Maven](https://maven.apache.org/)
 

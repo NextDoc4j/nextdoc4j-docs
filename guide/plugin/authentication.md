@@ -6,10 +6,10 @@
 
 配置插件后 UI 会在接口调试区域显示认证输入框：
 
-![authentication-plugin-ui](../../public/images/screenshots/guide/authentication-plugin-ui.png)
+![authentication-plugin-ui](/images/screenshots/guide/authentication-plugin-ui.png)
 *▲ 全局认证输入框*
 
-![authentication-plugin-ui-2.png](../../public/images/screenshots/guide/authentication-plugin-ui-2.png)
+![authentication-plugin-ui-2.png](/images/screenshots/guide/authentication-plugin-ui-2.png)
 *▲ 在线调试自动添加全局请求头*
 
 ## 快速开始

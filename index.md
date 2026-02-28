@@ -70,7 +70,7 @@ features:
 ## 🚀 三步即刻体验
 
 ::: warning 📋 版本要求
-**仅支持 Spring Boot 3.4.x** - 确保您的项目版本符合要求
+**最低支持 Spring Boot 3.4.0，推荐 3.5.x** - 确保您的项目版本符合要求
 :::
 
 ### 第一步：引入依赖
@@ -79,7 +79,7 @@ features:
 <dependency>
     <groupId>top.nextdoc4j</groupId>
     <artifactId>nextdoc4j-springboot3-starter</artifactId>
-    <version>1.1.6</version>
+    <version>1.1.7</version>
 </dependency>
 ```
 

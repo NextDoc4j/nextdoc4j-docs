@@ -1,7 +1,7 @@
 # NextDoc4j 快速开始
 
 ::: warning  ⚠️ 重要说明
-**版本要求：** NextDoc4j 目前仅支持 **Spring Boot 3.4.x** 版本，请确保您的项目版本符合要求。
+**版本要求：** NextDoc4j 最低支持 **Spring Boot 3.4.0**，推荐使用 **Spring Boot 3.5.x**，请确保您的项目版本符合要求。
 
 **适配说明：** 目前基于 [ContiNew Admin](https://continew.top/) 项目进行开发适配，部分 OpenAPI 3.1.x 特性可能尚未完全支持。
 :::
@@ -16,7 +16,7 @@
 <dependency>
     <groupId>top.nextdoc4j</groupId>
     <artifactId>nextdoc4j-springboot3-starter</artifactId>
-    <version>1.1.6</version>
+    <version>1.1.7</version>
 </dependency>
 ```
 
@@ -79,4 +79,3 @@ NextDoc4j 项目持续迭代中，多个平台仓库保持同步更新。
 
 > 💪 我们致力于提供更高效、更智能的 API 文档解决方案，  
 > 您的反馈与支持是我们不断前进的动力！
-

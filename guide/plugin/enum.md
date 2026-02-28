@@ -6,10 +6,10 @@
 
 配置插件后 UI 会在接口调试时自动展示枚举下拉选项，显示枚举值的描述信息：
 
-![enum-plugin-ui](../../public/images/screenshots/guide/enum-plugin-ui.png)
+![enum-plugin-ui](/images/screenshots/guide/enum-plugin-ui.png)
 *▲ 接口调试时自动显示枚举下拉选项*
 
-![enum-plugin-dropdown](../../public/images/screenshots/guide/enum-plugin-dropdown.png)
+![enum-plugin-dropdown](/images/screenshots/guide/enum-plugin-dropdown.png)
 *▲ 枚举值带描述提示*
 
 ## 快速开始

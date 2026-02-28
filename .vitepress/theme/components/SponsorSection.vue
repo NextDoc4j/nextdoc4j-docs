@@ -40,12 +40,12 @@
           <div class="qr-codes-horizontal">
             <!-- 微信支付收款码 -->
             <div class="qr-item">
-              <img :src="config.sponsor?.payments?.wechat || '/images/wechat-qr.png'" alt="微信收款码" class="qr-image" />
+              <img :src="config.sponsor?.payments?.wechat || '/images/paymentcode/wechat-qr.jpg'" alt="微信收款码" class="qr-image" />
             </div>
 
             <!-- 支付宝收款码 -->
             <div class="qr-item">
-              <img :src="config.sponsor?.payments?.alipay || '/images/alipay-qr.png'" alt="支付宝收款码" class="qr-image" />
+              <img :src="config.sponsor?.payments?.alipay || '/images/paymentcode/alipay-qr.jpg'" alt="支付宝收款码" class="qr-image" />
             </div>
           </div>
         </div>
@@ -112,8 +112,8 @@ const loadConfig = async (): Promise<void> => {
       sponsor: {
         enabled: true,
         payments: {
-          alipay: '/images/alipay-qr.png',
-          wechat: '/images/wechat-qr.png',
+          alipay: '/images/paymentcode/alipay-qr.jpg',
+          wechat: '/images/paymentcode/wechat-qr.jpg',
         },
         gratitudeText: '每一份支持都是我们前进的动力',
         supporters: []

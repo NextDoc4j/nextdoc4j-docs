@@ -6,7 +6,7 @@
 
 <p align="center">
   <strong>🚀 现代化的 API 文档后端解决方案</strong><br>
-  基于 <strong>SpringBoot 3.4.x</strong> + <strong>SpringDoc</strong> 构建，替代 Swagger UI，<br>
+  基于 <strong>SpringBoot 3.5.x（最低 3.4.0）</strong> + <strong>SpringDoc</strong> 构建，替代 Swagger UI，<br>
   提供更美观、更强大的开发体验，让 API 文档焕然一新。
 </p>
 
@@ -43,7 +43,7 @@ nextdoc4j-docs/
 │   │   └── markdownIntegrationConfiguration.md  # Markdown 集成配置
 │   └── plugin/              # 插件使用
 │       ├── enum.md          # 枚举插件
-│       └── security.md      # 认证展示插件
+│       └── authentication.md      # 认证展示插件
 ├── more/                     # 更多信息
 │   ├── team/                # 团队信息
 │   │   ├── team.md          # 团队介绍页

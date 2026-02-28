@@ -31,19 +31,20 @@ Caused by: java.lang.ClassNotFoundException: org.springframework.web.servlet.res
 ::: warning 版本兼容性问题
 这是由于 **Spring Boot 版本过低** 导致的兼容性问题。
 
-`LiteWebJarsResourceResolver` 是 Spring Boot 3.4.x 引入的新特性，NextDoc4j 依赖此特性来优化资源加载性能。
+`LiteWebJarsResourceResolver` 是 Spring Boot 3.4.0 引入的新特性，NextDoc4j 依赖此特性来优化资源加载性能。
 :::
 
 版本要求
 
 | 组件              | 最低版本    | 推荐版本       | 备注       |
 |-----------------|---------|------------|----------|
-| **Spring Boot** | `3.4.0` | `3.4.x 最新` | 🔴 硬性要求  |
+| **Spring Boot** | `3.4.0` | `3.5.x 最新` | 🔴 硬性要求  |
 | **SpringDoc**   | `2.8.0` | `2.8.11+`  | ✅ 推荐     |
 | **Java**        | `17`    | `21+`      | ✅ LTS 版本 |
 
 ::: tip 版本兼容性说明
-- ✅ Spring Boot 3.4.x + SpringDoc 2.8.x = 完全兼容
+- ✅ Spring Boot 3.5.x + SpringDoc 2.8.x = 完全兼容
+- ✅ Spring Boot 3.4.x + SpringDoc 2.8.x = 可用（建议尽快升级到 3.5.x）
 - ❌ Spring Boot 3.3.x + SpringDoc 2.8.x = 不兼容
 - ❌ 无法通过配置或依赖调整来规避版本要求
   :::
