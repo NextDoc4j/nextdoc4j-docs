@@ -16,8 +16,8 @@ nextdoc4j:
 ```
 
 ### 效果预览
-- **登录页**：显示自定义 Logo 和标题
-![登录页](/images/screenshots/guide/login-logo.png)
+- **认证页**：显示自定义 Logo 和标题
+![认证页](/images/screenshots/guide/login-logo.png)
 
 
 - **文档主页**：展示完整的品牌元素（Logo、标题、页脚）
@@ -31,7 +31,7 @@ nextdoc4j:
 | 参数            | 类型     | 说明               |
 |---------------|--------|------------------|
 | `logo`        | string | 自定义 Logo 文件路径    |
-| `title`       | string | 项目标题（登录页和文档页标题）  |
+| `title`       | string | 项目标题（认证页和文档页标题）  |
 | `footer-text` | string | 页脚文本，支持 Markdown |
 
 

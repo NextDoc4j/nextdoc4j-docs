@@ -70,18 +70,57 @@ features:
 ## 🚀 三步即刻体验
 
 ::: warning 📋 版本要求
-**最低支持 Spring Boot 3.4.0，推荐 3.5.x** - 确保您的项目版本符合要求
+**NextDoc4j 1.2.0 支持 Spring Boot 3 / 4 双轨**  
+推荐使用：`Spring Boot 3.5.x` 或 `Spring Boot 4.0.x`
 :::
 
 ### 第一步：引入依赖
 
-```xml [Maven]
-<dependency>
-    <groupId>top.nextdoc4j</groupId>
-    <artifactId>nextdoc4j-springboot3-starter</artifactId>
-    <version>1.1.7</version>
-</dependency>
+::: code-group
+
+```xml [Spring Boot 3]
+<dependencyManagement>
+    <dependencies>
+        <dependency>
+            <groupId>top.nextdoc4j</groupId>
+            <artifactId>nextdoc4j-bom-springboot3</artifactId>
+            <version>1.2.0</version>
+            <type>pom</type>
+            <scope>import</scope>
+        </dependency>
+    </dependencies>
+</dependencyManagement>
+
+<dependencies>
+    <dependency>
+        <groupId>top.nextdoc4j</groupId>
+        <artifactId>nextdoc4j-springboot3-starter</artifactId>
+    </dependency>
+</dependencies>
 ```
+
+```xml [Spring Boot 4]
+<dependencyManagement>
+    <dependencies>
+        <dependency>
+            <groupId>top.nextdoc4j</groupId>
+            <artifactId>nextdoc4j-bom-springboot4</artifactId>
+            <version>1.2.0</version>
+            <type>pom</type>
+            <scope>import</scope>
+        </dependency>
+    </dependencies>
+</dependencyManagement>
+
+<dependencies>
+    <dependency>
+        <groupId>top.nextdoc4j</groupId>
+        <artifactId>nextdoc4j-springboot4-starter</artifactId>
+    </dependency>
+</dependencies>
+```
+
+:::
 
 ### 第二步：添加配置
 
@@ -113,7 +152,7 @@ http://localhost:端口/doc.html
 - 默认端口通常是 `8080`
 - 完整地址示例：`http://localhost:8080/doc.html`
 - 启用全局鉴权的项目需要配置路径白名单：/doc.html 和 /nextdoc/\*\*
-  :::
+:::
 
 ### 主界面预览
 

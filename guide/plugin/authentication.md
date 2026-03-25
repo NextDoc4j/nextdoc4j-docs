@@ -1,6 +1,6 @@
 # 认证展示插件
 
-认证展示插件用于在 API 文档中配置全局认证信息，让接口调试工具自动显示认证输入框。
+认证展示插件用于在 API 文档中读取 `springdoc.components.security-schemes` 配置，并在调试区域展示全局认证输入框。
 
 ## UI 适配效果
 
@@ -16,23 +16,31 @@
 
 ### 1. 引入依赖
 
-如需使用认证展示插件：
+::: code-group
 
-```xml
+```xml [Spring Boot 3]
 <dependency>
     <groupId>top.nextdoc4j</groupId>
-    <artifactId>nextdoc4j-plugin-security-core</artifactId>
-    <version>${latest.version}</version>
+    <artifactId>nextdoc4j-plugin-security-schemes-springboot3</artifactId>
 </dependency>
 ```
 
-### 2. 配置 springdoc
+```xml [Spring Boot 4]
+<dependency>
+    <groupId>top.nextdoc4j</groupId>
+    <artifactId>nextdoc4j-plugin-security-schemes-springboot4</artifactId>
+</dependency>
+```
+
+:::
+
+> 建议先在 `dependencyManagement` 中引入 `nextdoc4j-bom-springboot3/4`，这样这里无需单独写版本号。
+
+### 2. 配置 `springdoc` 鉴权方案
 
 ```yaml
 springdoc:
-  ## 组件配置
   components:
-    # 鉴权配置
     security-schemes:
       Authorization:
         type: HTTP
@@ -51,7 +59,7 @@ nextdoc4j:
       enabled: true
 ```
 
-nextdoc4j UI 会读取 `securitySchemes` 配置，在调试时显示认证输入框。
+NextDoc4j UI 会读取 `securitySchemes` 配置，在调试时显示认证输入框。
 
 ## 路径排除
 

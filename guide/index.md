@@ -1,13 +1,19 @@
 # 项目简介
 <br>
 <a href="https://github.com/nextdoc4j/nextdoc4j">
-  <img src="https://img.shields.io/badge/version-1.1.7-green" alt="Project Version 1.1.7" style="display:inline-block;margin-right:10px;" />
+  <img src="https://img.shields.io/badge/version-1.2.0-green" alt="Project Version 1.2.0" style="display:inline-block;margin-right:10px;" />
 </a>
 <a href="https://spring.io/projects/spring-boot">
-  <img src="https://img.shields.io/badge/SpringBoot-3.5.7-green?logo=spring" alt="Spring Boot 3.5.7" style="display:inline-block;margin-right:10px;" />
+  <img src="https://img.shields.io/badge/SpringBoot3-3.5.11-green?logo=spring" alt="Spring Boot 3.5.11" style="display:inline-block;margin-right:10px;" />
 </a>
 <a href="https://springdoc.org/">
-  <img src="https://img.shields.io/badge/SpringDoc-2.8.14-orange?logo=openapiinitiative" alt="SpringDoc 2.8.14" style="display:inline-block;margin-right:10px;" />
+  <img src="https://img.shields.io/badge/SpringBoot4-4.0.3-green?logo=spring" alt="Spring Boot 4.0.3" style="display:inline-block;margin-right:10px;" />
+</a>
+<a href="https://springdoc.org/">
+  <img src="https://img.shields.io/badge/SpringDoc3-2.8.16-orange?logo=openapiinitiative" alt="SpringDoc 2.8.16" style="display:inline-block;margin-right:10px;" />
+</a>
+<a href="https://springdoc.org/">
+  <img src="https://img.shields.io/badge/SpringDoc4-3.0.2-orange?logo=openapiinitiative" alt="SpringDoc 3.0.2" style="display:inline-block;margin-right:10px;" />
 </a>
 <a href="https://www.openapis.org/">
   <img src="https://img.shields.io/badge/OpenAPI-3.1-lightgrey?logo=openapiinitiative" alt="OpenAPI 3.1" style="display:inline-block;margin-right:10px;" />
@@ -34,7 +40,7 @@
 [在线演示](https://demo.nextdoc4j.top) 
 
 
-**NextDoc4j** 是一个现代化的 API 文档 UI 工具，专为 **SpringDoc** 和 **OpenAPI 3** 设计的现代化文档界面，旨在完全替代传统的 Swagger UI，为开发者提供更美观、更强大的开发体验，让 API 文档焕然一新。
+**NextDoc4j** 是一个现代化的 API 文档 UI 工具，专为 **SpringDoc** 和 **OpenAPI 3** 设计，支持 **Spring Boot 3 / 4 双轨**，旨在完全替代传统的 Swagger UI，为开发者提供更美观、更强大的开发体验，让 API 文档焕然一新。
 
 基于现代 Web 技术栈构建，采用响应式设计理念，提供清晰直观的界面布局，支持暗色/亮色主题切换，为开发者带来舒适的文档浏览体验。重新设计的用户交互流程，改进了参数输入、请求测试、响应查看等核心功能，让 API 调试工作更加顺手。
 
@@ -103,7 +109,7 @@
 * **提交校验**：[Husky](https://typicode.github.io/husky)、[Commitlint](https://commitlint.js.org/)
 
 ### 后端架构
-* **框架**：[Spring Boot 3.5.x](https://spring.io/projects/spring-boot)（最低 3.4.0）
+* **框架**：[Spring Boot 3.5.x / 4.0.x](https://spring.io/projects/spring-boot)
 * **接口文档**：[SpringDoc](https://springdoc.org/) + [OpenAPI 3.0](https://swagger.io/specification/)
 * **版本与构建**：[Maven](https://maven.apache.org/)
 

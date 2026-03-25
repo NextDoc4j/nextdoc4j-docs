@@ -1,6 +1,6 @@
 # 枚举展示插件
 
-枚举展示插件用于在 API 文档中增强枚举类型的展示效果，自动解析枚举的 value-description 映射关系。
+枚举展示插件用于在 API 文档中增强枚举类型的展示效果，自动解析枚举的 `value-description` 映射关系。
 
 ## UI 适配效果
 
@@ -16,13 +16,25 @@
 
 ### 1. 引入依赖
 
-```xml
+::: code-group
+
+```xml [Spring Boot 3]
 <dependency>
     <groupId>top.nextdoc4j</groupId>
-    <artifactId>nextdoc4j-plugin-enums</artifactId>
-    <version>${latest.version}</version>
+    <artifactId>nextdoc4j-plugin-enum-springboot3</artifactId>
 </dependency>
 ```
+
+```xml [Spring Boot 4]
+<dependency>
+    <groupId>top.nextdoc4j</groupId>
+    <artifactId>nextdoc4j-plugin-enum-springboot4</artifactId>
+</dependency>
+```
+
+:::
+
+> 建议先在 `dependencyManagement` 中引入 `nextdoc4j-bom-springboot3/4`，这样这里无需单独写版本号。
 
 ### 2. 启用插件
 
@@ -57,8 +69,8 @@ public enum OrderStatus implements EnumValue<String> {
 
 | 类                             | 说明                                     |
 |-------------------------------|----------------------------------------|
-| `EnumValue<T>`                | 枚举值接口，定义 getValue() 和 getDescription() |
-| `DefaultEnumMetadataResolver` | 默认解析器，处理 EnumValue 接口枚举                |
+| `EnumValue<T>`                | 枚举值接口，定义 `getValue()` 和 `getDescription()` |
+| `DefaultEnumMetadataResolver` | 默认解析器，处理 `EnumValue` 接口枚举                |
 | `EnumMetadataResolver`        | 自定义解析器接口                               |
 
 ## 支持的类型
@@ -85,7 +97,7 @@ public class BusinessEnumResolver implements EnumMetadataResolver {
             && enumClass.isEnum()
             && BusinessEnum.class.isAssignableFrom(enumClass);
     }
-    
+
     @Override
     public Class<?> getEnumInterfaceType() {
       return BusinessEnum.class;
@@ -93,12 +105,12 @@ public class BusinessEnumResolver implements EnumMetadataResolver {
 
     @Override
     public String getValueMethodName() {
-        return "getCode";  // 自定义获取值的方法名
+        return "getCode";
     }
 
     @Override
     public String getDescriptionMethodName() {
-        return "getLabel";  // 自定义获取描述的方法名
+        return "getLabel";
     }
 }
 ```
@@ -123,4 +135,4 @@ public class BusinessEnumResolver implements EnumMetadataResolver {
 }
 ```
 
-nextdoc4j UI 会读取 `x-nextdoc4j-enum` 扩展字段，在调试时下拉展示枚举值及其描述。
+NextDoc4j UI 会读取 `x-nextdoc4j-enum` 扩展字段，在调试时下拉展示枚举值及其描述。

@@ -71,6 +71,17 @@ export default defineConfig({
                     ]
                 },
                 {
+                    text: '界面功能',
+                    collapsed: false,
+                    items: [
+                        {text: '功能总览', link: '/guide/ui/overview'},
+                        {text: '文档浏览与调试', link: '/guide/ui/browse-debug'},
+                        {text: '认证与权限界面', link: '/guide/ui/security-permissions'},
+                        {text: '网关聚合界面', link: '/guide/ui/gateway-ui'},
+                        {text: '全局搜索与导出', link: '/guide/ui/search-export'}
+                    ]
+                },
+                {
                     text: '插件使用',
                     collapsed: false,
                     items: [
