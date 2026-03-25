@@ -1,13 +1,11 @@
 <p align="center">
-  <img src="./public/logo/logo.png" alt="Nextdoc4j Logo" width="180">
+  <img src="./public/logo/logo.png" alt="NextDoc4j Logo" width="180">
 </p>
 
-<h1 align="center">Nextdoc4j</h1>
+<h1 align="center">NextDoc4j Docs</h1>
 
 <p align="center">
-  <strong>🚀 现代化的 API 文档后端解决方案</strong><br>
-  基于 <strong>SpringBoot 3.5.x（最低 3.4.0）</strong> + <strong>SpringDoc</strong> 构建，替代 Swagger UI，<br>
-  提供更美观、更强大的开发体验，让 API 文档焕然一新。
+  NextDoc4j 官方文档站点仓库（VitePress）
 </p>
 
 <p align="center">
@@ -17,88 +15,113 @@
   ❓ <a href="https://nextdoc4j.top/more/faq.html">常见问题</a>
 </p>
 
-# 这是 NextDoc4J 的官方文档网站，基于 VitePress 构建，提供完整的使用指南和开发文档。
+## 项目说明
 
-## 目录结构
+本仓库用于维护 NextDoc4j 官网文档内容与静态资源，覆盖：
 
+- 使用指南（快速开始、配置说明、插件说明）
+- 界面功能文档（UI 功能拆解与截图）
+- 开发指南（前端/后端）
+- 更新日志、贡献指南、FAQ、团队页
+
+关联仓库：
+
+- 后端主仓：`nextdoc4j`
+- 演示仓：`nextdoc4j-demo`
+
+## 本地开发
+
+### 环境要求
+
+- Node.js 20+
+- pnpm 9+
+
+### 常用命令
+
+```bash
+pnpm install
+pnpm docs:dev
+pnpm docs:build
+pnpm docs:preview
 ```
+
+团队页缓存相关：
+
+```bash
+pnpm team:status
+pnpm team:update
+pnpm team:force-update
+```
+
+## 当前目录结构
+
+```text
 nextdoc4j-docs/
-├── .vitepress/               # VitePress 配置和主题
-│   ├── config.mts           # VitePress 配置文件
-│   └── theme/               # 自定义主题
-│       ├── components/      # Vue 组件
-│       ├── custom.css       # 自定义样式
-│       └── index.ts         # 主题入口
-├── development/              # 开发相关文档
-│   ├── index.md             # 前端开发指南
-│   └── backend.md           # 后端开发指南
-├── guide/                    # 使用指南
-│   ├── index.md             # 指南首页
-│   ├── start/               # 快速开始
-│   │   └── started.md       # 快速开始文档
-│   ├── config/              # 配置说明
-│   │   ├── basicconfiguration.md        # 基础配置
-│   │   ├── brandconfiguration.md        # 品牌配置
-│   │   ├── authconfiguration.md         # 认证配置
-│   │   └── markdownIntegrationConfiguration.md  # Markdown 集成配置
-│   └── plugin/              # 插件使用
-│       ├── enum.md          # 枚举插件
-│       ├── authentication.md      # 认证展示插件
-│       ├── satoken.md       # Sa-Token 权限码插件
-│       └── gateway.md       # 网关聚合插件
-├── more/                     # 更多信息
-│   ├── team/                # 团队信息
-│   │   ├── team.md          # 团队介绍页
-│   │   ├── team.config.ts   # 团队配置
-│   │   └── build-team-cache.ts  # 团队缓存构建
-│   ├── changelog.md         # 更新日志
-│   ├── contribute.md        # 贡献指南
-│   └── faq.md               # 常见问题
-├── public/                   # 静态资源
-│   ├── images/              # 图片资源
-│   │   └── screenshots/     # 截图
-│   ├── logo/                # Logo 文件
-│   └── team-cache.json      # 团队数据缓存
-├── index.md                  # 文档首页
-├── package.json              # 项目配置
-├── pnpm-lock.yaml            # 依赖锁定文件
-├── pnpm-workspace.yaml       # 工作区配置
-└── tsconfig.json             # TypeScript 配置
+├── .vitepress/
+│   ├── config.mts
+│   └── theme/
+│       ├── components/
+│       ├── custom.css
+│       └── index.ts
+├── development/
+│   ├── index.md
+│   └── backend.md
+├── guide/
+│   ├── index.md
+│   ├── start/
+│   │   └── started.md
+│   ├── config/
+│   │   ├── basicconfiguration.md
+│   │   ├── brandconfiguration.md
+│   │   ├── authconfiguration.md
+│   │   └── markdownIntegrationConfiguration.md
+│   ├── plugin/
+│   │   ├── enum.md
+│   │   ├── authentication.md
+│   │   ├── satoken.md
+│   │   └── gateway.md
+│   └── ui/
+│       ├── overview.md
+│       ├── browse-debug.md
+│       ├── security-permissions.md
+│       ├── gateway-ui.md
+│       └── search-export.md
+├── more/
+│   ├── changelog.md
+│   ├── contribute.md
+│   ├── faq.md
+│   └── team/
+│       ├── team.md
+│       ├── team.config.ts
+│       └── build-team-cache.ts
+├── public/
+│   ├── images/
+│   │   ├── paymentcode/
+│   │   └── screenshots/
+│   ├── logo/
+│   └── team-cache.json
+├── index.md
+├── package.json
+├── pnpm-lock.yaml
+├── pnpm-workspace.yaml
+└── tsconfig.json
 ```
 
-## 文档说明
+## 文档分组说明
 
-### 📖 内容结构
+- `index.md`：官网首页内容。
+- `guide/`：面向用户的使用文档。
+- `guide/ui/`：前端界面功能说明与截图（可见能力，不是后端配置项）。
+- `development/`：面向开发者的前后端开发说明。
+- `more/`：项目补充内容（更新日志、贡献指南、FAQ、团队页）。
+- `public/images/screenshots/`：文档截图资源。
 
-- **首页 (`index.md`)**：文档网站主页，提供 NextDoc 的整体介绍
-- **使用指南 (`guide/`)**：面向用户的完整使用教程
-  - 快速开始指南
-  - 基础配置说明
-  - 认证系统配置
-  - 品牌定制配置
-  - Markdown 集成配置
-- **开发文档 (`development/`)**：面向开发者的技术文档
-  - 前端开发指南
-  - 开发环境搭建
-- **更多信息 (`more/`)**：补充资料
-  - 版本更新日志
-  - 社区贡献指南
-  - 常见问题解答
+## 维护建议
 
-### 🛠️ 技术栈
+- 截图优先使用最新 UI 实际页面，不使用过期占位图。
+- 插件文档示例需与 `nextdoc4j`、`nextdoc4j-demo` 当前代码保持一致。
+- 提交前建议执行一次 `pnpm docs:build`。
 
-- **VitePress**：静态站点生成器
-- **Vue 3**：前端框架
-- **TypeScript**：类型支持
-- **Iconify**：图标库
+---
 
-### 📸 资源文件
-
-- `public/images/screenshots/`：产品截图和界面展示
-- `public/logo/`：品牌 Logo 和网站图标
-
-<div align="center">
-
-**NextDoc4j** - 让 API 文档焕然一新！ 如果这个项目对你有帮助，请给它一个 ⭐️
-
-</div>
+如果文档内容与代码实现不一致，欢迎直接提交 PR 或 Issue。

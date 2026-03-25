@@ -1285,3 +1285,14 @@ html.dark .dark-only {
         border-width: 3px;
     }
 }
+
+/**
+ * 图片预览（PhotoSwipe）
+ * ---------------------------------------------------------------- */
+.vp-doc img:not(.no-zoom) {
+    cursor: zoom-in;
+}
+
+.pswp {
+    z-index: 99999 !important;
+}
