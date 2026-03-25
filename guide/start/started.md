@@ -8,50 +8,62 @@
 
 ## 三步快速集成（单体服务）
 
-### 第一步：添加 Maven 依赖（推荐使用 BOM）
+### 第一步：添加 Maven 依赖（最简方式）
 
 ::: code-group
 
-```xml
-<dependencyManagement>
-    <dependencies>
-        <dependency>
-            <groupId>top.nextdoc4j</groupId>
-            <artifactId>nextdoc4j-bom-springboot3</artifactId>
-            <version>1.2.0</version>
-            <type>pom</type>
-            <scope>import</scope>
-        </dependency>
-    </dependencies>
-</dependencyManagement>
-
-<dependencies>
-    <dependency>
-        <groupId>top.nextdoc4j</groupId>
-        <artifactId>nextdoc4j-springboot3-starter</artifactId>
-    </dependency>
-</dependencies>
+```xml [Spring Boot 3]
+<dependency>
+    <groupId>top.nextdoc4j</groupId>
+    <artifactId>nextdoc4j-springboot3-starter</artifactId>
+    <version>1.2.0</version>
+</dependency>
 ```
 
-```xml
-<dependencyManagement>
-    <dependencies>
-        <dependency>
-            <groupId>top.nextdoc4j</groupId>
-            <artifactId>nextdoc4j-bom-springboot4</artifactId>
-            <version>1.2.0</version>
-            <type>pom</type>
-            <scope>import</scope>
-        </dependency>
-    </dependencies>
-</dependencyManagement>
+```xml [Spring Boot 4]
+<dependency>
+    <groupId>top.nextdoc4j</groupId>
+    <artifactId>nextdoc4j-springboot4-starter</artifactId>
+    <version>1.2.0</version>
+</dependency>
+```
 
-<dependencies>
-    <dependency>
-        <groupId>top.nextdoc4j</groupId>
-        <artifactId>nextdoc4j-springboot4-starter</artifactId>
-    </dependency>
-</dependencies>
+:::
+
+::: details 推荐方式（可选）：使用 BOM 统一版本
+
+```xml [Spring Boot 3]
+<!-- 放到 dependencyManagement > dependencies 中 -->
+<dependency>
+    <groupId>top.nextdoc4j</groupId>
+    <artifactId>nextdoc4j-bom-springboot3</artifactId>
+    <version>1.2.0</version>
+    <type>pom</type>
+    <scope>import</scope>
+</dependency>
+
+<!-- 放到 dependencies 中 -->
+<dependency>
+    <groupId>top.nextdoc4j</groupId>
+    <artifactId>nextdoc4j-springboot3-starter</artifactId>
+</dependency>
+```
+
+```xml [Spring Boot 4]
+<!-- 放到 dependencyManagement > dependencies 中 -->
+<dependency>
+    <groupId>top.nextdoc4j</groupId>
+    <artifactId>nextdoc4j-bom-springboot4</artifactId>
+    <version>1.2.0</version>
+    <type>pom</type>
+    <scope>import</scope>
+</dependency>
+
+<!-- 放到 dependencies 中 -->
+<dependency>
+    <groupId>top.nextdoc4j</groupId>
+    <artifactId>nextdoc4j-springboot4-starter</artifactId>
+</dependency>
 ```
 
 :::

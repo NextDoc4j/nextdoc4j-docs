@@ -18,21 +18,17 @@
 ::: code-group
 
 ```xml [Spring Boot 3]
-<dependencies>
-    <dependency>
-        <groupId>top.nextdoc4j</groupId>
-        <artifactId>nextdoc4j-springboot3-gateway-starter</artifactId>
-    </dependency>
-</dependencies>
+<dependency>
+    <groupId>top.nextdoc4j</groupId>
+    <artifactId>nextdoc4j-springboot3-gateway-starter</artifactId>
+</dependency>
 ```
 
 ```xml [Spring Boot 4]
-<dependencies>
-    <dependency>
-        <groupId>top.nextdoc4j</groupId>
-        <artifactId>nextdoc4j-springboot4-gateway-starter</artifactId>
-    </dependency>
-</dependencies>
+<dependency>
+    <groupId>top.nextdoc4j</groupId>
+    <artifactId>nextdoc4j-springboot4-gateway-starter</artifactId>
+</dependency>
 ```
 
 :::
