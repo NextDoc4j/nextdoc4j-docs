@@ -101,14 +101,14 @@ http://localhost:8080/doc.html
 
 ::: code-group
 
-```xml
+```xml [Spring Boot3]
 <dependency>
     <groupId>top.nextdoc4j</groupId>
     <artifactId>nextdoc4j-springboot3-gateway-starter</artifactId>
 </dependency>
 ```
 
-```xml
+```xml [Spring Boot4]
 <dependency>
     <groupId>top.nextdoc4j</groupId>
     <artifactId>nextdoc4j-springboot4-gateway-starter</artifactId>
