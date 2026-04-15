@@ -10,7 +10,7 @@
 
 ### 微信群
 
-![微信群](/images/contact/wechat-group.png)
+![微信群](/images/contact/wechat-group.jpg)
 
 <div class="qrcode-tip">扫码加入微信群</div>
 
