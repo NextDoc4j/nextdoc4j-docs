@@ -4,13 +4,13 @@
 
 ## UI 适配效果
 
-配置插件后 UI 会在接口调试时自动展示枚举下拉选项，显示枚举值的描述信息：
+配置插件后，UI 会在接口详情与在线调试中增强枚举展示，直接呈现枚举值与说明信息：
 
 ![enum-plugin-ui](/images/screenshots/guide/enum-plugin-ui.png)
-*▲ 接口调试时自动显示枚举下拉选项*
+*▲ 接口详情中的枚举值与说明展示*
 
 ![enum-plugin-dropdown](/images/screenshots/guide/enum-plugin-dropdown.png)
-*▲ 枚举值带描述提示*
+*▲ 在线调试时可下拉选择枚举值*
 
 ## 快速开始
 

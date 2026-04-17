@@ -1,6 +1,6 @@
 # 网关聚合插件
 
-网关聚合插件用于在 **Spring Cloud Gateway** 场景下，自动聚合多个微服务的 OpenAPI 文档，并在 NextDoc4j UI 中按服务维度统一浏览与调试。
+网关聚合插件用于在 **Spring Cloud Gateway WebFlux / WebMvc** 场景下，自动聚合多个微服务的 OpenAPI 文档，并在 NextDoc4j UI 中按服务维度统一浏览与调试。
 
 ## UI 适配效果
 
@@ -13,31 +13,51 @@
 
 ### 1. 引入依赖（网关服务）
 
-> 1.2.0 推荐直接使用网关 starter。
+> `1.3.0` 起，网关 starter 按运行时拆分为 `WebFlux` / `WebMvc`。
 
 ::: code-group
 
-```xml [Spring Boot 3]
+```xml [Spring Boot 3 + WebFlux]
 <dependency>
     <groupId>top.nextdoc4j</groupId>
-    <artifactId>nextdoc4j-springboot3-gateway-starter</artifactId>
+    <artifactId>nextdoc4j-springboot3-gateway-webflux-starter</artifactId>
+    <version>1.3.0</version>
 </dependency>
 ```
 
-```xml [Spring Boot 4]
+```xml [Spring Boot 3 + WebMvc]
 <dependency>
     <groupId>top.nextdoc4j</groupId>
-    <artifactId>nextdoc4j-springboot4-gateway-starter</artifactId>
+    <artifactId>nextdoc4j-springboot3-gateway-webmvc-starter</artifactId>
+    <version>1.3.0</version>
+</dependency>
+```
+
+```xml [Spring Boot 4 + WebFlux]
+<dependency>
+    <groupId>top.nextdoc4j</groupId>
+    <artifactId>nextdoc4j-springboot4-gateway-webflux-starter</artifactId>
+    <version>1.3.0</version>
+</dependency>
+```
+
+```xml [Spring Boot 4 + WebMvc]
+<dependency>
+    <groupId>top.nextdoc4j</groupId>
+    <artifactId>nextdoc4j-springboot4-gateway-webmvc-starter</artifactId>
+    <version>1.3.0</version>
 </dependency>
 ```
 
 :::
 
-### 2. 配置网关路由（含 metadata 注释）
+### 2. 配置网关路由（按运行时选择 `webflux` 或 `webmvc`）
 
-在 `spring.cloud.gateway.server.webflux.routes` 中定义路由，建议配置 `metadata.nextdoc4j.name`：
+建议为每个微服务路由配置 `metadata.nextdoc4j.name`，这样 UI 能稳定展示服务名：
 
-```yaml
+::: code-group
+
+```yaml [Gateway WebFlux]
 spring:
   cloud:
     gateway:
@@ -70,9 +90,39 @@ spring:
                 # nextdoc4j.context-path: /echo
 ```
 
+```yaml [Gateway WebMvc]
+spring:
+  cloud:
+    gateway:
+      server:
+        webmvc:
+          routes:
+            - id: user-service-webmvc
+              uri: lb://user-service
+              predicates:
+                - Path=/user/**,/role/**,/auth/**
+              filters:
+                - StripPrefix=1
+              metadata:
+                nextdoc4j:
+                  name: 用户管理
+
+            - id: file-service-webmvc
+              uri: lb://file-service
+              predicates:
+                - Path=/file/**
+              filters:
+                - StripPrefix=1
+              metadata:
+                nextdoc4j:
+                  name: 文件服务
+```
+
+:::
+
 ### 3. 统一配置（基础能力 + `gateway` 聚合）
 
-> 1.2.0 统一前缀为 `nextdoc4j`。  
+> `1.3.0` 仍然统一前缀为 `nextdoc4j`。  
 > 只有一个总开关：`nextdoc4j.enabled`，`nextdoc4j.gateway` 下没有第二个 `enabled`。
 
 ```yaml
@@ -284,7 +334,7 @@ public class ProjectProperties {
 # 项目基础配置
 project:
   name: NextDoc4j-网关聚合服务-springboot3
-  version: 1.2.0
+  version: 1.3.0
   description: 专为 SpringDoc 和 OpenAPI 3 设计的现代化文档界面，替代 Swagger UI，提供更美观、更强大的开发体验。让 API 文档焕然一新。这个演示项目展示了完整的 CRUD 操作、文件上传、SSE 推送、批量操作等各种场景。
 
   contact:

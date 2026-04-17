@@ -7,10 +7,10 @@ Sa-Token 权限码插件用于解析 `@SaCheckPermission`、`@SaCheckRole`、`@S
 配置插件后 UI 会在接口详情显示权限码：
 
 ![satoken-plugin-1](/images/screenshots/guide/security-plugin-1.png)
-*▲ SaCheckPermission 注解*
+*▲ 权限码展示*
 
 ![satoken-plugin-2](/images/screenshots/guide/security-plugin-2.png)
-*▲ SaCheckRole 注解*
+*▲ 角色码展示*
 
 ## 快速开始
 

@@ -70,7 +70,7 @@ features:
 ## 🚀 三步即刻体验
 
 ::: warning 📋 版本要求
-**NextDoc4j 1.2.0 支持 Spring Boot 3 / 4 双轨**  
+**NextDoc4j 1.3.0 支持 Spring Boot 3 / 4 双轨**  
 推荐使用：`Spring Boot 3.5.x` 或 `Spring Boot 4.0.x`
 :::
 
@@ -82,7 +82,7 @@ features:
 <dependency>
     <groupId>top.nextdoc4j</groupId>
     <artifactId>nextdoc4j-springboot3-starter</artifactId>
-    <version>1.2.0</version>
+    <version>1.3.0</version>
 </dependency>
 ```
 
@@ -90,7 +90,7 @@ features:
 <dependency>
     <groupId>top.nextdoc4j</groupId>
     <artifactId>nextdoc4j-springboot4-starter</artifactId>
-    <version>1.2.0</version>
+    <version>1.3.0</version>
 </dependency>
 ```
 
@@ -103,7 +103,7 @@ features:
 <dependency>
     <groupId>top.nextdoc4j</groupId>
     <artifactId>nextdoc4j-bom-springboot3</artifactId>
-    <version>1.2.0</version>
+    <version>1.3.0</version>
     <type>pom</type>
     <scope>import</scope>
 </dependency>
@@ -120,7 +120,7 @@ features:
 <dependency>
     <groupId>top.nextdoc4j</groupId>
     <artifactId>nextdoc4j-bom-springboot4</artifactId>
-    <version>1.2.0</version>
+    <version>1.3.0</version>
     <type>pom</type>
     <scope>import</scope>
 </dependency>

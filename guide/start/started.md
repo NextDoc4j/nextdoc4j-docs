@@ -16,7 +16,7 @@
 <dependency>
     <groupId>top.nextdoc4j</groupId>
     <artifactId>nextdoc4j-springboot3-starter</artifactId>
-    <version>1.2.0</version>
+    <version>1.3.0</version>
 </dependency>
 ```
 
@@ -24,7 +24,7 @@
 <dependency>
     <groupId>top.nextdoc4j</groupId>
     <artifactId>nextdoc4j-springboot4-starter</artifactId>
-    <version>1.2.0</version>
+    <version>1.3.0</version>
 </dependency>
 ```
 
@@ -37,7 +37,7 @@
 <dependency>
     <groupId>top.nextdoc4j</groupId>
     <artifactId>nextdoc4j-bom-springboot3</artifactId>
-    <version>1.2.0</version>
+    <version>1.3.0</version>
     <type>pom</type>
     <scope>import</scope>
 </dependency>
@@ -54,7 +54,7 @@
 <dependency>
     <groupId>top.nextdoc4j</groupId>
     <artifactId>nextdoc4j-bom-springboot4</artifactId>
-    <version>1.2.0</version>
+    <version>1.3.0</version>
     <type>pom</type>
     <scope>import</scope>
 </dependency>
@@ -97,21 +97,39 @@ http://localhost:8080/doc.html
 
 ## 网关场景快速引入
 
-如果当前服务是 **Spring Cloud Gateway**，请使用网关 starter：
+如果当前服务是 **Spring Cloud Gateway**，从 `1.3.0` 开始请按运行时选择对应 starter：
 
 ::: code-group
 
-```xml [Spring Boot3]
+```xml [Spring Boot 3 + WebFlux]
 <dependency>
     <groupId>top.nextdoc4j</groupId>
-    <artifactId>nextdoc4j-springboot3-gateway-starter</artifactId>
+    <artifactId>nextdoc4j-springboot3-gateway-webflux-starter</artifactId>
+    <version>1.3.0</version>
 </dependency>
 ```
 
-```xml [Spring Boot4]
+```xml [Spring Boot 3 + WebMvc]
 <dependency>
     <groupId>top.nextdoc4j</groupId>
-    <artifactId>nextdoc4j-springboot4-gateway-starter</artifactId>
+    <artifactId>nextdoc4j-springboot3-gateway-webmvc-starter</artifactId>
+    <version>1.3.0</version>
+</dependency>
+```
+
+```xml [Spring Boot 4 + WebFlux]
+<dependency>
+    <groupId>top.nextdoc4j</groupId>
+    <artifactId>nextdoc4j-springboot4-gateway-webflux-starter</artifactId>
+    <version>1.3.0</version>
+</dependency>
+```
+
+```xml [Spring Boot 4 + WebMvc]
+<dependency>
+    <groupId>top.nextdoc4j</groupId>
+    <artifactId>nextdoc4j-springboot4-gateway-webmvc-starter</artifactId>
+    <version>1.3.0</version>
 </dependency>
 ```
 
@@ -125,6 +143,10 @@ nextdoc4j:
   gateway:
     auto-discovery: true
 ```
+
+> 路由定义位置：
+> `Gateway WebFlux` 使用 `spring.cloud.gateway.server.webflux.routes`，
+> `Gateway WebMvc` 使用 `spring.cloud.gateway.server.webmvc.routes`。
 
 ## 技术支持
 

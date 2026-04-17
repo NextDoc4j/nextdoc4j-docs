@@ -1,16 +1,16 @@
 # 认证展示插件
 
-认证展示插件用于在 API 文档中读取 `springdoc.components.security-schemes` 配置，并在调试区域展示全局认证输入框。
+认证展示插件用于在 API 文档中读取 `springdoc.components.security-schemes` 配置，并在 NextDoc4j 中生成独立的全局认证配置页，同时在在线调试时自动携带认证信息。
 
 ## UI 适配效果
 
-配置插件后 UI 会在接口调试区域显示认证输入框：
+配置插件后，UI 会新增“全局认证”页面，并在在线调试时自动注入对应请求头：
 
 ![authentication-plugin-ui](/images/screenshots/guide/authentication-plugin-ui.png)
-*▲ 全局认证输入框*
+*▲ 全局认证配置页*
 
 ![authentication-plugin-ui-2.png](/images/screenshots/guide/authentication-plugin-ui-2.png)
-*▲ 在线调试自动添加全局请求头*
+*▲ 在线调试 Headers 中自动注入全局请求头*
 
 ## 快速开始
 

@@ -1,19 +1,19 @@
 # 项目简介
 <br>
 <a href="https://github.com/nextdoc4j/nextdoc4j">
-  <img src="https://img.shields.io/badge/version-1.2.0-green" alt="Project Version 1.2.0" style="display:inline-block;margin-right:10px;" />
+  <img src="https://img.shields.io/badge/version-1.3.0-green" alt="Project Version 1.3.0" style="display:inline-block;margin-right:10px;" />
 </a>
 <a href="https://spring.io/projects/spring-boot">
-  <img src="https://img.shields.io/badge/SpringBoot3-3.5.11-green?logo=spring" alt="Spring Boot 3.5.11" style="display:inline-block;margin-right:10px;" />
+  <img src="https://img.shields.io/badge/SpringBoot3-3.5.13-green?logo=spring" alt="Spring Boot 3.5.13" style="display:inline-block;margin-right:10px;" />
 </a>
 <a href="https://springdoc.org/">
-  <img src="https://img.shields.io/badge/SpringBoot4-4.0.3-green?logo=spring" alt="Spring Boot 4.0.3" style="display:inline-block;margin-right:10px;" />
+  <img src="https://img.shields.io/badge/SpringBoot4-4.0.5-green?logo=spring" alt="Spring Boot 4.0.5" style="display:inline-block;margin-right:10px;" />
 </a>
 <a href="https://springdoc.org/">
-  <img src="https://img.shields.io/badge/SpringDoc3-2.8.16-orange?logo=openapiinitiative" alt="SpringDoc 2.8.16" style="display:inline-block;margin-right:10px;" />
+  <img src="https://img.shields.io/badge/SpringDoc3-2.8.17-orange?logo=openapiinitiative" alt="SpringDoc 2.8.17" style="display:inline-block;margin-right:10px;" />
 </a>
 <a href="https://springdoc.org/">
-  <img src="https://img.shields.io/badge/SpringDoc4-3.0.2-orange?logo=openapiinitiative" alt="SpringDoc 3.0.2" style="display:inline-block;margin-right:10px;" />
+  <img src="https://img.shields.io/badge/SpringDoc4-3.0.3-orange?logo=openapiinitiative" alt="SpringDoc 3.0.3" style="display:inline-block;margin-right:10px;" />
 </a>
 <a href="https://www.openapis.org/">
   <img src="https://img.shields.io/badge/OpenAPI-3.1-lightgrey?logo=openapiinitiative" alt="OpenAPI 3.1" style="display:inline-block;margin-right:10px;" />

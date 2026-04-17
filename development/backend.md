@@ -42,10 +42,14 @@ nextdoc4j/
 │       ├── nextdoc4j-plugin-security-satoken-springboot3
 │       └── nextdoc4j-plugin-security-satoken-springboot4
 ├── nextdoc4j-starter/
-│   ├── nextdoc4j-springboot3-starter
-│   ├── nextdoc4j-springboot3-gateway-starter
-│   ├── nextdoc4j-springboot4-starter
-│   └── nextdoc4j-springboot4-gateway-starter
+│   ├── nextdoc4j-springboot3/
+│   │   ├── nextdoc4j-springboot3-starter
+│   │   ├── nextdoc4j-springboot3-gateway-webflux-starter
+│   │   └── nextdoc4j-springboot3-gateway-webmvc-starter
+│   └── nextdoc4j-springboot4/
+│       ├── nextdoc4j-springboot4-starter
+│       ├── nextdoc4j-springboot4-gateway-webflux-starter
+│       └── nextdoc4j-springboot4-gateway-webmvc-starter
 └── nextdoc4j-ui
 ```
 
@@ -71,12 +75,14 @@ nextdoc4j/
 
 ### 3. `nextdoc4j-starter`
 
-运行时装配层，负责自动配置、过滤器与资源暴露。分为四个 starter：
+运行时装配层，负责自动配置、过滤器与资源暴露。分为六个 starter：
 
 - `nextdoc4j-springboot3-starter`: WebMvc 单体场景
 - `nextdoc4j-springboot4-starter`: WebMvc 单体场景
-- `nextdoc4j-springboot3-gateway-starter`: WebFlux 网关场景
-- `nextdoc4j-springboot4-gateway-starter`: WebFlux 网关场景
+- `nextdoc4j-springboot3-gateway-webflux-starter`: WebFlux 网关场景
+- `nextdoc4j-springboot3-gateway-webmvc-starter`: WebMvc 网关场景
+- `nextdoc4j-springboot4-gateway-webflux-starter`: WebFlux 网关场景
+- `nextdoc4j-springboot4-gateway-webmvc-starter`: WebMvc 网关场景
 
 说明：
 
@@ -120,11 +126,22 @@ nextdoc4j/
 
 ```text
 业务应用
-  -> nextdoc4j-springbootX-gateway-starter
+  -> nextdoc4j-springbootX-gateway-webflux-starter
       -> nextdoc4j-core
       -> nextdoc4j-ui
       -> nextdoc4j-plugin-gateway-springbootX
       -> springdoc-openapi-starter-webflux-ui
+```
+
+### 网关（WebMvc）链路
+
+```text
+业务应用
+  -> nextdoc4j-springbootX-gateway-webmvc-starter
+      -> nextdoc4j-core
+      -> nextdoc4j-ui
+      -> nextdoc4j-plugin-gateway-springbootX
+      -> springdoc-openapi-starter-webmvc-ui
 ```
 
 ### 可选插件接入
@@ -183,8 +200,8 @@ mvn clean compile
 ### 2. 定向编译某个模块
 
 ```bash
-# 例：只编译 SB3 网关 starter 及其依赖
-mvn -pl nextdoc4j-starter/nextdoc4j-springboot3-gateway-starter -am clean compile
+# 例：只编译 SB3 Gateway WebFlux starter 及其依赖
+mvn -pl nextdoc4j-starter/nextdoc4j-springboot3/nextdoc4j-springboot3-gateway-webflux-starter -am clean compile
 
 # 例：只编译 SB4 Sa-Token 插件及其依赖
 mvn -pl nextdoc4j-plugin/nextdoc4j-plugin-security/nextdoc4j-plugin-security-satoken-springboot4 -am clean compile

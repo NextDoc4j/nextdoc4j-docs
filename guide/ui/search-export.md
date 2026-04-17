@@ -20,24 +20,26 @@
 *▲ 输入 URL 关键字 `/api/user` 的搜索结果*
 
 ![global-search-description](/images/screenshots/guide/global-search-description.png)
-*▲ 输入接口描述“更新用户”的搜索结果*
+*▲ 输入接口描述关键字后的搜索结果*
 
 ## 2. 全局参数管理
 
 ### 能力说明
 
 - 支持统一维护常用请求参数。
-- 支持在导出/调试流程中复用参数，减少重复填写。
-- 支持按业务场景组合参数集。
+- 支持在导出 / 调试流程中复用 Header / Query 参数，减少重复填写。
+- 支持按作用域隔离全局参数，并统一控制调试缓存开关。
 
 ![global-params-panel](/images/screenshots/guide/global-params-placeholder.png)
-*▲ 全局参数管理页*
+*▲ 全局配置页：调试缓存 + 全局 Header / Query 参数管理*
 
 ## 3. 文档导出
 
 ### 能力说明
 
-- 支持按分组/接口范围导出文档。
+- 支持按分组 / 接口范围导出文档。
+- 支持 Markdown / HTML / OpenAPI JSON / `docx` / PDF 多格式导出。
+- 支持实时预览、附加品牌信息 / 其它文档，并兼容聚合服务导出。
 
 ![export-doc-panel](/images/screenshots/guide/export-doc-placeholder.png)
-*▲ 文档导出配置与预览页*
+*▲ 导出中心：范围选择、实时预览与多格式导出*
