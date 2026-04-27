@@ -16,7 +16,7 @@
 <dependency>
     <groupId>top.nextdoc4j</groupId>
     <artifactId>nextdoc4j-springboot3-starter</artifactId>
-    <version>1.3.0</version>
+    <version>1.3.1</version>
 </dependency>
 ```
 
@@ -24,7 +24,7 @@
 <dependency>
     <groupId>top.nextdoc4j</groupId>
     <artifactId>nextdoc4j-springboot4-starter</artifactId>
-    <version>1.3.0</version>
+    <version>1.3.1</version>
 </dependency>
 ```
 
@@ -37,7 +37,7 @@
 <dependency>
     <groupId>top.nextdoc4j</groupId>
     <artifactId>nextdoc4j-bom-springboot3</artifactId>
-    <version>1.3.0</version>
+    <version>1.3.1</version>
     <type>pom</type>
     <scope>import</scope>
 </dependency>
@@ -54,7 +54,7 @@
 <dependency>
     <groupId>top.nextdoc4j</groupId>
     <artifactId>nextdoc4j-bom-springboot4</artifactId>
-    <version>1.3.0</version>
+    <version>1.3.1</version>
     <type>pom</type>
     <scope>import</scope>
 </dependency>
@@ -105,7 +105,7 @@ http://localhost:8080/doc.html
 <dependency>
     <groupId>top.nextdoc4j</groupId>
     <artifactId>nextdoc4j-springboot3-gateway-webflux-starter</artifactId>
-    <version>1.3.0</version>
+    <version>1.3.1</version>
 </dependency>
 ```
 
@@ -113,7 +113,7 @@ http://localhost:8080/doc.html
 <dependency>
     <groupId>top.nextdoc4j</groupId>
     <artifactId>nextdoc4j-springboot3-gateway-webmvc-starter</artifactId>
-    <version>1.3.0</version>
+    <version>1.3.1</version>
 </dependency>
 ```
 
@@ -121,7 +121,7 @@ http://localhost:8080/doc.html
 <dependency>
     <groupId>top.nextdoc4j</groupId>
     <artifactId>nextdoc4j-springboot4-gateway-webflux-starter</artifactId>
-    <version>1.3.0</version>
+    <version>1.3.1</version>
 </dependency>
 ```
 
@@ -129,7 +129,7 @@ http://localhost:8080/doc.html
 <dependency>
     <groupId>top.nextdoc4j</groupId>
     <artifactId>nextdoc4j-springboot4-gateway-webmvc-starter</artifactId>
-    <version>1.3.0</version>
+    <version>1.3.1</version>
 </dependency>
 ```
 

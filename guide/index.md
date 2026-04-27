@@ -1,13 +1,13 @@
 # 项目简介
 <br>
 <a href="https://github.com/nextdoc4j/nextdoc4j">
-  <img src="https://img.shields.io/badge/version-1.3.0-green" alt="Project Version 1.3.0" style="display:inline-block;margin-right:10px;" />
+  <img src="https://img.shields.io/badge/version-1.3.1-green" alt="Project Version 1.3.1" style="display:inline-block;margin-right:10px;" />
 </a>
 <a href="https://spring.io/projects/spring-boot">
-  <img src="https://img.shields.io/badge/SpringBoot3-3.5.13-green?logo=spring" alt="Spring Boot 3.5.13" style="display:inline-block;margin-right:10px;" />
+  <img src="https://img.shields.io/badge/SpringBoot3-3.5.14-green?logo=spring" alt="Spring Boot 3.5.14" style="display:inline-block;margin-right:10px;" />
 </a>
 <a href="https://springdoc.org/">
-  <img src="https://img.shields.io/badge/SpringBoot4-4.0.5-green?logo=spring" alt="Spring Boot 4.0.5" style="display:inline-block;margin-right:10px;" />
+  <img src="https://img.shields.io/badge/SpringBoot4-4.0.6-green?logo=spring" alt="Spring Boot 4.0.6" style="display:inline-block;margin-right:10px;" />
 </a>
 <a href="https://springdoc.org/">
   <img src="https://img.shields.io/badge/SpringDoc3-2.8.17-orange?logo=openapiinitiative" alt="SpringDoc 2.8.17" style="display:inline-block;margin-right:10px;" />

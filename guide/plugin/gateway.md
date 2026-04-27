@@ -21,7 +21,7 @@
 <dependency>
     <groupId>top.nextdoc4j</groupId>
     <artifactId>nextdoc4j-springboot3-gateway-webflux-starter</artifactId>
-    <version>1.3.0</version>
+    <version>1.3.1</version>
 </dependency>
 ```
 
@@ -29,7 +29,7 @@
 <dependency>
     <groupId>top.nextdoc4j</groupId>
     <artifactId>nextdoc4j-springboot3-gateway-webmvc-starter</artifactId>
-    <version>1.3.0</version>
+    <version>1.3.1</version>
 </dependency>
 ```
 
@@ -37,7 +37,7 @@
 <dependency>
     <groupId>top.nextdoc4j</groupId>
     <artifactId>nextdoc4j-springboot4-gateway-webflux-starter</artifactId>
-    <version>1.3.0</version>
+    <version>1.3.1</version>
 </dependency>
 ```
 
@@ -45,7 +45,7 @@
 <dependency>
     <groupId>top.nextdoc4j</groupId>
     <artifactId>nextdoc4j-springboot4-gateway-webmvc-starter</artifactId>
-    <version>1.3.0</version>
+    <version>1.3.1</version>
 </dependency>
 ```
 
@@ -334,7 +334,7 @@ public class ProjectProperties {
 # 项目基础配置
 project:
   name: NextDoc4j-网关聚合服务-springboot3
-  version: 1.3.0
+  version: 1.3.1
   description: 专为 SpringDoc 和 OpenAPI 3 设计的现代化文档界面，替代 Swagger UI，提供更美观、更强大的开发体验。让 API 文档焕然一新。这个演示项目展示了完整的 CRUD 操作、文件上传、SSE 推送、批量操作等各种场景。
 
   contact:
