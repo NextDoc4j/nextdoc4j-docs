@@ -168,15 +168,44 @@ http://localhost:端口/doc.html
 
 ### 主界面预览
 
-<div class="theme-image">
-  <img src="/images/screenshots/bright-home.png" alt="NextDoc4j 主界面" class="light-only" />
-  <img src="/images/screenshots/dark-home.png" alt="NextDoc4j 主界面" class="dark-only" />
+<div class="home-preview-grid">
+  <figure>
+    <img src="/images/screenshots/guide/detail-workbench.png" alt="NextDoc4j 接口详情工作台" />
+    <figcaption>接口详情：参数、响应结构与多响应示例集中查看</figcaption>
+  </figure>
+  <figure>
+    <img src="/images/screenshots/guide/debug-panel-placeholder.png" alt="NextDoc4j 在线调试面板" />
+    <figcaption>在线调试：参数编辑、请求发送与响应结果同屏完成</figcaption>
+  </figure>
 </div>
 
 ::: details 🎯 界面功能说明
 
-- **左侧导航栏**：展示所有 API 分组和接口列表
-- **右侧内容区**：显示接口详细信息、参数说明和调试功能
-- **顶部搜索栏**：快速查找特定接口
-- **在线调试**：直接在页面中测试 API 接口
+- **顶部 Tab 切换**：同一接口下通过 `接口详情` 与 `在线调试` 两个 Tab 快速切换
+- **接口详情**：集中展示请求信息、认证方式、参数说明、响应结构与多响应示例
+- **在线调试**：支持 Path / Query / Header / Cookie / Body 参数编辑、请求发送与响应查看
+- **调试结果**：支持实时响应、响应头、实际请求等结果页签，便于定位接口问题
   :::
+
+## 快速链接
+
+<div class="home-quick-links">
+  <section>
+    <h3>社区</h3>
+    <a href="/more/join-group">加入讨论群</a>
+    <a href="/more/contribute">贡献指南</a>
+    <a href="/more/team/team">社区团队</a>
+  </section>
+  <section>
+    <h3>帮助</h3>
+    <a href="/guide/start/started">快速开始</a>
+    <a href="/more/faq">常见问题</a>
+    <a href="/more/changelog">更新日志</a>
+  </section>
+  <section>
+    <h3>关于</h3>
+    <a href="/guide/">项目简介</a>
+    <a href="/development/">开发指南</a>
+    <a href="https://demo.nextdoc4j.top/" target="_blank" rel="noopener noreferrer">在线演示</a>
+  </section>
+</div>
